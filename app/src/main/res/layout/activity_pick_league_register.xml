@@ -6,4 +6,111 @@
     android:layout_height="match_parent"
     tools:context=".register.pickleagueregister.PickLeagueRegisterActivity">
 
+    <Button
+    android:id="@+id/btn_back_account"
+    android:layout_width="32dp"
+    android:layout_height="32dp"
+    android:background="@drawable/ic_back"
+    android:layout_marginLeft="@dimen/dimen24"
+    android:layout_marginTop="@dimen/dimen40"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="parent"
+    android:layout_marginStart="@dimen/dimen24" />
+
+    <TextView
+        android:id="@+id/tv_back_registration"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/poppins_medium"
+        android:text="Account"
+        android:textColor="@color/colorBlack"
+        android:textSize="@dimen/font12"
+        android:layout_marginTop="@dimen/dimen45"
+        android:layout_marginLeft="@dimen/dimen4"
+        app:layout_constraintStart_toEndOf="@+id/btn_back_account"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginStart="4dp" />
+
+    <TextView
+        android:id="@+id/tv_pick_league_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dimen24"
+        android:fontFamily="@font/poppins_bold"
+        android:text="Pick Your Favorite League"
+        android:textSize="@dimen/font20"
+        android:textColor="@color/colorBlack"
+        android:layout_marginLeft="@dimen/dimen24"
+        android:layout_marginStart="@dimen/dimen24"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_back_account"/>
+
+    <TextView
+        android:id="@+id/tv_nation_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/poppins_semibold"
+        android:text="Nation"
+        android:textColor="@color/colorBlack"
+        android:textSize="@dimen/font13"
+        android:layout_marginTop="@dimen/dimen32"
+        android:layout_marginLeft="@dimen/dimen24"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_pick_league_title"
+        android:layout_marginStart="@dimen/dimen24" />
+
+    <Spinner
+        android:id="@+id/spinner_nation"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dimen48"
+        android:layout_marginLeft="@dimen/dimen24"
+        android:layout_marginRight="@dimen/dimen24"
+        android:layout_marginTop="@dimen/dimen8"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_nation_title" />
+
+    <TextView
+        android:id="@+id/tv_league_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/poppins_semibold"
+        android:text="League"
+        android:textColor="@color/colorBlack"
+        android:textSize="@dimen/font13"
+        android:layout_marginTop="@dimen/dimen32"
+        android:layout_marginLeft="@dimen/dimen24"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/spinner_nation"
+        android:layout_marginStart="@dimen/dimen24" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_league"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dimen8"
+        android:layout_marginLeft="@dimen/dimen24"
+        android:layout_marginRight="@dimen/dimen24"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_league_title" />
+
+    <Button
+        android:id="@+id/btn_continue"
+        android:layout_width="@dimen/dimen312"
+        android:layout_height="@dimen/dimen48"
+        android:layout_marginTop="@dimen/dimen40"
+        android:layout_marginLeft="@dimen/dimen24"
+        android:layout_marginRight="@dimen/dimen24"
+        android:layout_marginBottom="@dimen/dimen78"
+        android:background="@color/colorPrimary"
+        android:fontFamily="@font/poppins_bold"
+        android:text="Continue"
+        android:textColor="@color/colorWhitePale"
+        android:textSize="@dimen/font16"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/rv_league" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
