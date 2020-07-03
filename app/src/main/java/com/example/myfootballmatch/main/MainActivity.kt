@@ -1,7 +1,8 @@
-package com.example.myfootballmatch
+package com.example.myfootballmatch.main
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.example.myfootballmatch.R
 
 class MainActivity : AppCompatActivity() {
 

@@ -17,7 +17,7 @@
         <activity android:name=".register.pickleagueregister.PickLeagueRegisterActivity" />
         <activity android:name=".register.pickteamregister.PickTeamRegisterActivity" />
         <activity android:name=".register.RegisterActivity" />
-        <activity android:name=".MainActivity">
+        <activity android:name=".main.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
