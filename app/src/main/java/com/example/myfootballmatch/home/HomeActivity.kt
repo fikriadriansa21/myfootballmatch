@@ -9,10 +9,11 @@ import com.example.myfootballmatch.profile.ProfileFragment
 import com.example.myfootballmatch.search.SearchFragment
 import com.example.myfootballmatch.team.TeamFragment
 import com.google.android.material.bottomnavigation.BottomNavigationView
+import kotlinx.android.synthetic.main.activity_home.*
 
 class HomeActivity : AppCompatActivity() {
 
-    @BindView(R.id.navbar_bottom_menu)
+    @BindView(R.id.nav_menu_bottom)
     lateinit var bottomNavigation: BottomNavigationView
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -20,7 +21,7 @@ class HomeActivity : AppCompatActivity() {
         setContentView(R.layout.activity_home)
 
         loadFragment(HomeFragment())
-        bottomNavigation.setOnNavigationItemSelectedListener {menuItem ->
+        nav_menu_bottom.setOnNavigationItemSelectedListener {menuItem ->
             when (menuItem.itemId) {
                 R.id.home_menu -> {
                     loadFragment(HomeFragment())
