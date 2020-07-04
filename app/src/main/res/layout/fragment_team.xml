@@ -1,14 +1,219 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".home.HomeActivity"
+    android:id="@+id/scroll_daily"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".team.TeamFragment">
+    android:layout_height="match_parent">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/dimen24">
 
-</FrameLayout>
+        <TextView
+            android:id="@+id/tv_football_dream"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/poppins_bold"
+            android:text="MyTeam"
+            android:layout_marginTop="@dimen/dimen4"
+            android:padding="@dimen/dimen4"
+            android:textColor="@color/colorPrimaryDark"
+            android:textSize="@dimen/font24"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+        <TextView
+            android:id="@+id/tv_matchweek"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/poppins_medium"
+            android:text="Upcoming match"
+            android:layout_marginTop="@dimen/dimen40"
+            android:padding="@dimen/dimen4"
+            android:textColor="@color/colorBlack"
+            android:textSize="@dimen/font12"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_football_dream" />
+
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_upcoming_match"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dimen12"
+            android:padding="@dimen/dimen8"
+            android:background="@drawable/border_white_background"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:orientation="horizontal"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintTop_toBottomOf="@id/tv_matchweek" />
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/card_squad_member"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dimen32"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/rv_upcoming_match" >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dimen72"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+                <ImageView
+                    android:id="@+id/iv_squad_card"
+                    android:src="@drawable/ic_jersey"
+                    android:layout_marginLeft="@dimen/dimen12"
+                    android:layout_width="@dimen/dimen24"
+                    android:layout_height="@dimen/dimen24"
+                    android:layout_marginStart="@dimen/dimen12" />
+
+                <TextView
+                    android:id="@+id/tv_squad_member"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Squad Member"
+                    android:layout_marginLeft="@dimen/dimen12"
+                    android:textSize="@dimen/font12"
+                    android:textColor="@color/colorBlack"
+                    android:fontFamily="@font/poppins_semibold"
+                    android:layout_marginStart="@dimen/dimen12" />
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/card_statistic_club"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dimen16"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/card_squad_member" >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dimen72"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+                <ImageView
+                    android:id="@+id/iv_stat_club"
+                    android:src="@drawable/ic_graph"
+                    android:layout_marginLeft="@dimen/dimen12"
+                    android:layout_width="@dimen/dimen24"
+                    android:layout_height="@dimen/dimen24"
+                    android:layout_marginStart="@dimen/dimen12" />
+
+                <TextView
+                    android:id="@+id/tv_stat_club"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Statistic Club"
+                    android:layout_marginLeft="@dimen/dimen12"
+                    android:textSize="@dimen/font12"
+                    android:textColor="@color/colorBlack"
+                    android:fontFamily="@font/poppins_semibold"
+                    android:layout_marginStart="@dimen/dimen12" />
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/card_transfer_player"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dimen32"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/card_statistic_club" >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dimen72"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+                <ImageView
+                    android:id="@+id/iv_transfer"
+                    android:src="@drawable/ic_transfer"
+                    android:layout_marginLeft="@dimen/dimen12"
+                    android:layout_width="@dimen/dimen24"
+                    android:layout_height="@dimen/dimen24"
+                    android:layout_marginStart="@dimen/dimen12" />
+
+                <TextView
+                    android:id="@+id/tv_transfer"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Transfer Player"
+                    android:layout_marginLeft="@dimen/dimen12"
+                    android:textSize="@dimen/font12"
+                    android:textColor="@color/colorBlack"
+                    android:fontFamily="@font/poppins_semibold"
+                    android:layout_marginStart="@dimen/dimen12" />
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/card_pos_club"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dimen32"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/card_transfer_player" >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dimen72"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+                <ImageView
+                    android:id="@+id/iv_club_logo"
+                    android:src="@drawable/ic_launcher_background"
+                    android:layout_marginLeft="@dimen/dimen12"
+                    android:layout_width="@dimen/dimen24"
+                    android:layout_height="@dimen/dimen24"
+                    android:layout_marginStart="@dimen/dimen12" />
+
+                <TextView
+                    android:id="@+id/tv_club_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Manchester United"
+                    android:layout_marginLeft="@dimen/dimen12"
+                    android:textSize="@dimen/font12"
+                    android:textColor="@color/colorBlack"
+                    android:fontFamily="@font/poppins_medium"
+                    android:layout_marginStart="@dimen/dimen12" />
+
+                <TextView
+                    android:id="@+id/tv_status_position"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="5th"
+                    android:layout_marginLeft="@dimen/dimen12"
+                    android:textSize="@dimen/font12"
+                    android:textColor="@color/colorBlack"
+                    android:fontFamily="@font/poppins_semibold"
+                    android:layout_marginStart="@dimen/dimen12" />
+
+                <TextView
+                    android:id="@+id/tv_in_league"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="in League"
+                    android:layout_marginLeft="@dimen/dimen2"
+                    android:textSize="@dimen/font12"
+                    android:textColor="@color/colorBlack"
+                    android:fontFamily="@font/poppins_semibold"
+                    android:layout_marginStart="@dimen/dimen12" />
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>
