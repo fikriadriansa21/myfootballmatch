@@ -63,6 +63,8 @@
         android:id="@+id/rv_team"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="@drawable/border_white_background"
+        android:padding="@dimen/dimen8"
         android:layout_marginTop="@dimen/dimen8"
         android:layout_marginLeft="@dimen/dimen24"
         android:layout_marginRight="@dimen/dimen24"

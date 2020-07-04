@@ -17,21 +17,21 @@
             android:id="@+id/tv_welcome_to"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:fontFamily="@font/poppins_regular"
+            android:fontFamily="@font/poppins_medium"
             android:text="Welcome to"
             android:layout_marginTop="@dimen/dimen16"
             android:padding="@dimen/dimen4"
-            android:textColor="@color/colorPrimary"
+            android:textColor="@color/colorBlack"
             android:textSize="@dimen/font14"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/tv_football_dream"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="@font/poppins_bold"
-            android:text="FootballDream"
+            android:text="Football"
             android:layout_marginTop="@dimen/dimen4"
             android:padding="@dimen/dimen4"
             android:textColor="@color/colorPrimary"
@@ -40,8 +40,21 @@
             app:layout_constraintTop_toBottomOf="@id/tv_welcome_to" />
 
         <TextView
+            android:id="@+id/tv_football_dream2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/poppins_bold"
+            android:text="Dream"
+            android:layout_marginTop="@dimen/dimen4"
+            android:padding="@dimen/dimen4"
+            android:textColor="@color/colorPrimaryDark"
+            android:textSize="@dimen/font24"
+            app:layout_constraintStart_toEndOf="@id/tv_football_dream"
+            app:layout_constraintTop_toBottomOf="@id/tv_welcome_to" />
+
+        <TextView
             android:id="@+id/tv_matchweek"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="@font/poppins_medium"
             android:text="Matchweek 32 in Premier League"
@@ -52,12 +65,26 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/tv_football_dream" />
 
+        <TextView
+            android:id="@+id/tv_see_all_match"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/poppins_regular"
+            android:text="See All Match"
+            android:layout_marginTop="@dimen/dimen40"
+            android:padding="@dimen/dimen4"
+            android:textColor="@color/colorPrimary"
+            android:textSize="@dimen/font12"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_football_dream" />
+
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recyclerview_daily"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/dimen12"
-            android:padding="@dimen/dimen4"
+            android:padding="@dimen/dimen8"
+            android:background="@drawable/border_white_background"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             android:orientation="vertical"
@@ -66,8 +93,8 @@
             app:layout_constraintTop_toBottomOf="@id/tv_matchweek" />
 
         <TextView
-            android:id="@+id/title_text_friend_list"
-            android:layout_width="match_parent"
+            android:id="@+id/tv_league_table"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/dimen16"
             android:fontFamily="@font/poppins_medium"
@@ -75,8 +102,20 @@
             android:text="League Table in Premier League"
             android:textColor="@color/colorBlack"
             android:textSize="@dimen/font12"
-            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/recyclerview_daily" />
+
+        <TextView
+            android:id="@+id/tv_see_full_table_league"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dimen16"
+            android:fontFamily="@font/poppins_regular"
+            android:padding="@dimen/dimen4"
+            android:text="See Full Table"
+            android:textColor="@color/colorPrimary"
+            android:textSize="@dimen/font12"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@id/recyclerview_daily" />
 
         <androidx.recyclerview.widget.RecyclerView
@@ -85,12 +124,13 @@
             android:layout_height="wrap_content"
             android:orientation="vertical"
             android:layout_marginTop="@dimen/dimen12"
-            android:padding="@dimen/dimen4"
+            android:padding="@dimen/dimen8"
+            android:background="@drawable/border_white_background"
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/title_text_friend_list" />
+            app:layout_constraintTop_toBottomOf="@id/tv_league_table" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>
