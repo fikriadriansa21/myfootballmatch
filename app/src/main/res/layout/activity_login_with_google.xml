@@ -1,9 +1,164 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".login.google.LoginWithGoogleActivity">
 
+    <TextView
+        android:id="@+id/tv_football"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/poppins_bold"
+        android:text="Football"
+        android:textColor="@color/colorPrimary"
+        android:textSize="@dimen/font24"
+        android:layout_marginLeft="@dimen/dimen24"
+        android:layout_marginTop="@dimen/dimen48"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_dream"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="0dp"
+        android:layout_marginLeft="0dp"
+        android:fontFamily="@font/poppins_bold"
+        android:textColor="@color/colorPrimaryDark"
+        android:text="Dream"
+        android:textSize="@dimen/font24"
+        app:layout_constraintStart_toEndOf="@id/tv_football"
+        app:layout_constraintTop_toTopOf="@+id/tv_football" />
+
+    <TextView
+        android:id="@+id/tv_login_your_account"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/poppins_medium"
+        android:text="Login to your account"
+        android:layout_marginLeft="@dimen/dimen24"
+        android:layout_marginTop="@dimen/dimen8"
+        android:textColor="@color/colorBlueDark"
+        android:textSize="@dimen/font14"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_football" />
+
+
+    <TextView
+        android:id="@+id/tv_email_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/poppins_semibold"
+        android:text="Email"
+        android:textColor="@color/colorBlack"
+        android:textSize="@dimen/font13"
+        android:layout_marginTop="@dimen/dimen64"
+        android:layout_marginLeft="@dimen/dimen24"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_login_your_account"
+        android:layout_marginStart="@dimen/dimen24" />
+
+    <EditText
+        android:id="@+id/et_email"
+        android:layout_width="@dimen/dimen360"
+        android:layout_height="@dimen/dimen48"
+        android:layout_marginTop="@dimen/dimen8"
+        android:background="@drawable/edit_text_border_background"
+        android:fontFamily="@font/poppins_semibold"
+        android:hint="ex. user@gmail.com"
+        android:paddingStart="@dimen/dimen14"
+        android:paddingLeft="@dimen/dimen14"
+        android:paddingTop="@dimen/dimen14"
+        android:paddingBottom="@dimen/dimen14"
+        android:textColor="@color/colorWhitePale"
+        android:textSize="@dimen/font13"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_email_title"
+        tools:ignore="RtlSymmetry" />
+
+    <TextView
+        android:id="@+id/tv_password_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/poppins_semibold"
+        android:text="Password"
+        android:textColor="@color/colorBlack"
+        android:textSize="@dimen/font13"
+        android:layout_marginTop="@dimen/dimen12"
+        android:layout_marginLeft="@dimen/dimen24"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/et_email"
+        android:layout_marginStart="@dimen/dimen24" />
+
+    <EditText
+        android:id="@+id/et_password"
+        android:layout_width="@dimen/dimen360"
+        android:layout_height="@dimen/dimen48"
+        android:layout_marginTop="@dimen/dimen8"
+        android:background="@drawable/edit_text_border_background"
+        android:fontFamily="@font/poppins_semibold"
+        android:hint="********"
+        android:layout_marginLeft="@dimen/dimen24"
+        android:layout_marginRight="@dimen/dimen24"
+        android:inputType="textPassword"
+        android:paddingStart="@dimen/dimen14"
+        android:paddingLeft="@dimen/dimen14"
+        android:paddingTop="@dimen/dimen14"
+        android:paddingBottom="@dimen/dimen14"
+        android:textColor="@color/colorWhitePale"
+        android:textSize="@dimen/font13"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_password_title"
+        tools:ignore="RtlSymmetry" />
+
+    <Button
+        android:id="@+id/btn_login"
+        android:layout_width="@dimen/dimen360"
+        android:layout_height="@dimen/dimen48"
+        android:layout_marginLeft="@dimen/dimen24"
+        android:layout_marginTop="@dimen/dimen32"
+        android:layout_marginRight="@dimen/dimen24"
+        android:layout_marginBottom="@dimen/dimen78"
+        android:background="@color/colorPrimary"
+        android:fontFamily="@font/poppins_bold"
+        android:text="Login"
+        android:textColor="@color/colorWhitePale"
+        android:textSize="@dimen/font16"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/et_password" />
+
+    <TextView
+        android:id="@+id/tv_or_login"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/poppins_bold"
+        android:text="Or"
+        android:layout_marginTop="@dimen/dimen40"
+        android:textColor="@color/colorBlack"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_login" />
+
+    <Button
+        android:id="@+id/btn_login_with_google"
+        android:layout_width="@dimen/dimen360"
+        android:layout_height="@dimen/dimen48"
+        android:layout_marginLeft="@dimen/dimen24"
+        android:layout_marginTop="@dimen/dimen32"
+        android:layout_marginRight="@dimen/dimen24"
+        android:layout_marginBottom="@dimen/dimen78"
+        android:background="@color/colorWhite"
+        android:fontFamily="@font/poppins_medium"
+        android:text="Login with Google"
+        android:textColor="@color/colorBlack"
+        android:textSize="@dimen/font16"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_or_login" />
 </androidx.constraintlayout.widget.ConstraintLayout>
