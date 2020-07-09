@@ -59,13 +59,16 @@
         app:layout_constraintTop_toBottomOf="@+id/tv_pick_league_title"
         android:layout_marginStart="@dimen/dimen24" />
 
-    <Spinner
+    <Button
         android:id="@+id/spinner_nation"
         android:layout_width="match_parent"
         android:layout_height="@dimen/dimen48"
         android:layout_marginLeft="@dimen/dimen24"
         android:layout_marginRight="@dimen/dimen24"
         android:layout_marginTop="@dimen/dimen8"
+        android:background="@color/colorWhite"
+        android:text="Select Country"
+        android:fontFamily="@font/poppins_regular"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tv_nation_title" />

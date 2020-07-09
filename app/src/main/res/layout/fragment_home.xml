@@ -79,7 +79,7 @@
             app:layout_constraintTop_toBottomOf="@id/tv_football_dream" />
 
         <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/recyclerview_daily"
+            android:id="@+id/rv_matchweek"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/dimen12"
@@ -103,7 +103,7 @@
             android:textColor="@color/colorBlack"
             android:textSize="@dimen/font12"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/recyclerview_daily" />
+            app:layout_constraintTop_toBottomOf="@id/rv_matchweek" />
 
         <TextView
             android:id="@+id/tv_see_full_table_league"
@@ -116,21 +116,77 @@
             android:textColor="@color/colorPrimary"
             android:textSize="@dimen/font12"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/recyclerview_daily" />
+            app:layout_constraintTop_toBottomOf="@id/rv_matchweek" />
 
+        <LinearLayout
+            android:id="@+id/header_klasemen"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:background="@color/colorSuccess"
+            android:padding="@dimen/dimen8"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_league_table">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Pos"
+                android:layout_marginLeft="@dimen/dimen8"
+                android:textColor="@color/colorBlack"
+                android:fontFamily="@font/poppins_regular"
+                android:textSize="@dimen/font12"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Team"
+                android:layout_marginLeft="@dimen/dimen24"
+                android:textColor="@color/colorBlack"
+                android:fontFamily="@font/poppins_regular"
+                android:textSize="@dimen/font12"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="P"
+                android:layout_marginLeft="@dimen/dimen142"
+                android:textColor="@color/colorBlack"
+                android:fontFamily="@font/poppins_regular"
+                android:textSize="@dimen/font12"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="GD"
+                android:layout_marginLeft="@dimen/dimen24"
+                android:textColor="@color/colorBlack"
+                android:fontFamily="@font/poppins_regular"
+                android:textSize="@dimen/font12"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Pts"
+                android:layout_marginLeft="@dimen/dimen24"
+                android:layout_marginRight="@dimen/dimen24"
+                android:textColor="@color/colorBlack"
+                android:fontFamily="@font/poppins_regular"
+                android:textSize="@dimen/font12"/>
+        </LinearLayout>
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recyclerview_friend_list"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:layout_marginTop="@dimen/dimen12"
+            android:layout_marginTop="@dimen/dimen2"
             android:padding="@dimen/dimen8"
             android:background="@drawable/border_white_background"
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/tv_league_table" />
+            app:layout_constraintTop_toBottomOf="@id/header_klasemen" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>
