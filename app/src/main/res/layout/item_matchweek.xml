@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:cardCornerRadius="@dimen/dimen8"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginLeft="@dimen/dimen20"
+            android:layout_marginRight="@dimen/dimen20"
+            android:layout_marginBottom="@dimen/dimen24"
+            android:layout_marginTop="@dimen/dimen24">
+
+            <TextView
+                android:id="@+id/tv_team_nick_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="MUN"
+                android:textSize="@dimen/font16"
+                android:textColor="@color/colorBlack"
+                android:fontFamily="@font/poppins_regular"/>
+
+            <ImageView
+                android:id="@+id/iv_club_logo_fav_team"
+                android:background="@color/colorPrimary"
+                android:layout_marginLeft="@dimen/dimen12"
+                android:layout_toRightOf="@id/tv_team_nick_name"
+                android:layout_width="@dimen/dimen24"
+                android:layout_height="@dimen/dimen24"
+                android:layout_marginStart="@dimen/dimen12"
+                android:layout_toEndOf="@id/tv_team_nick_name" />
+
+            <TextView
+                android:id="@+id/tv_score_club"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@id/iv_club_logo_fav_team"
+                android:layout_marginLeft="@dimen/dimen16"
+                android:text="2"
+                android:textSize="@dimen/font16"
+                android:fontFamily="@font/poppins_semibold"
+                android:textColor="@color/colorBlack"
+                android:layout_marginStart="@dimen/dimen16"
+                android:layout_toEndOf="@id/iv_club_logo_fav_team" />
+
+            <TextView
+                android:id="@+id/tv_strip_separator"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@id/tv_score_club"
+                android:layout_marginLeft="@dimen/dimen2"
+                android:text="-"
+                android:textSize="@dimen/font16"
+                android:fontFamily="@font/poppins_semibold"
+                android:textColor="@color/colorBlack"
+                android:layout_marginStart="@dimen/dimen2"
+                android:layout_toEndOf="@id/tv_score_club" />
+
+            <TextView
+                android:id="@+id/tv_score_opponent"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@id/tv_strip_separator"
+                android:layout_marginLeft="@dimen/dimen2"
+                android:text="0"
+                android:textSize="@dimen/font16"
+                android:fontFamily="@font/poppins_semibold"
+                android:textColor="@color/colorBlack"
+                android:layout_marginStart="@dimen/dimen2"
+                android:layout_toEndOf="@id/tv_strip_separator" />
+
+            <ImageView
+                android:id="@+id/iv_club_logo_opponent"
+                android:background="@color/colorPrimary"
+                android:layout_marginLeft="@dimen/dimen16"
+                android:layout_toRightOf="@id/tv_score_opponent"
+                android:layout_width="@dimen/dimen24"
+                android:layout_height="@dimen/dimen24"
+                android:layout_marginStart="@dimen/dimen16"
+                android:layout_toEndOf="@id/tv_score_opponent" />
+
+            <TextView
+                android:id="@+id/tv_team_nick_name_opponent"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="MCI"
+                android:layout_toRightOf="@id/iv_club_logo_opponent"
+                android:textSize="@dimen/font16"
+                android:layout_marginLeft="@dimen/dimen12"
+                android:textColor="@color/colorBlack"
+                android:fontFamily="@font/poppins_regular"
+                android:layout_marginStart="@dimen/dimen12"
+                android:layout_toEndOf="@id/iv_club_logo_opponent" />
+
+        </RelativeLayout>
+
+    </LinearLayout>
+</androidx.cardview.widget.CardView>
