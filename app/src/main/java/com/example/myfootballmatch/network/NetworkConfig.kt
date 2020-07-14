@@ -1,19 +1,50 @@
 package com.example.myfootballmatch.network
 
 import com.example.myfootballmatch.BuildConfig
+import com.example.myfootballmatch.country.CountryService
+import okhttp3.Interceptor
+import okhttp3.OkHttpClient
+import okhttp3.Request
+import okhttp3.Response
+import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
 object NetworkConfig {
 
-    fun getNetworkFootballApi(): Retrofit {
-        return Retrofit.Builder()
-            .baseUrl(BuildConfig.BASE_URL)
-            .addConverterFactory(GsonConverterFactory.create())
-            .build()
+    private val logger = run {
+        val httpLoggingInterceptor = HttpLoggingInterceptor()
+        httpLoggingInterceptor.apply {
+            httpLoggingInterceptor.level = HttpLoggingInterceptor.Level.BODY
+        }
     }
 
-    fun getApiService(): ApiInterface{
-        return getNetworkFootballApi().create(ApiInterface::class.java)
+    private val headerInterceptor = object: Interceptor{
+        override fun intercept(chain: Interceptor.Chain): Response {
+            var request: Request = chain.request()
+
+            request = request.newBuilder()
+                .addHeader("x-rapidapi-host","api-football-v1.p.rapidapi.com")
+                .addHeader("x-rapidapi-key","ada2296771bmsh53b2c02cf954dd9p11db83jsnc23498be70d0")
+                .addHeader("useQueryString","true")
+                .build()
+
+            return chain.proceed(request)
+        }
     }
+
+    private val okHttp = OkHttpClient.Builder()
+        .addInterceptor(headerInterceptor)
+        .addInterceptor(logger)
+
+    private val builder = Retrofit.Builder()
+        .baseUrl(BuildConfig.BASE_URL)
+        .addConverterFactory(GsonConverterFactory.create())
+        .client(okHttp.build())
+        .build()
+
+    val countryService: CountryService = builder.create(CountryService::class.java)
+
+
+
 }

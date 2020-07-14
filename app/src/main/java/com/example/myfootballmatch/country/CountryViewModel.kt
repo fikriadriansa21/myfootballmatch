@@ -2,18 +2,17 @@ package com.example.myfootballmatch.country
 
 import androidx.lifecycle.ViewModel
 import com.example.myfootballmatch.country.model.Country
-import com.example.myfootballmatch.network.ApiInterface
 import com.example.myfootballmatch.network.NetworkConfig
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 
 class CountryViewModel: ViewModel() {
-    private var apiInterface: ApiInterface = NetworkConfig.getNetworkFootballApi().create(ApiInterface::class.java)
+    private var countryService: CountryService = NetworkConfig.countryService
 
     fun getListCountries(callback: CountriesCallBack){
         try {
-            val call: Call<List<Country>> = apiInterface.getDataCountries()
+            val call: Call<List<Country>> = countryService.getDataCountries()
             call.enqueue(object : Callback<List<Country>> {
                 override fun onFailure(call: Call<List<Country>>, t: Throwable) {
                     callback.onFailure()

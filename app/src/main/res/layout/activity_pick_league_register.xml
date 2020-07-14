@@ -46,34 +46,6 @@
         app:layout_constraintTop_toBottomOf="@+id/btn_back_account"/>
 
     <TextView
-        android:id="@+id/tv_nation_title"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:fontFamily="@font/poppins_semibold"
-        android:text="Nation"
-        android:textColor="@color/colorBlack"
-        android:textSize="@dimen/font13"
-        android:layout_marginTop="@dimen/dimen32"
-        android:layout_marginLeft="@dimen/dimen24"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_pick_league_title"
-        android:layout_marginStart="@dimen/dimen24" />
-
-    <Button
-        android:id="@+id/btn_select_country"
-        android:layout_width="match_parent"
-        android:layout_height="@dimen/dimen48"
-        android:layout_marginLeft="@dimen/dimen24"
-        android:layout_marginRight="@dimen/dimen24"
-        android:layout_marginTop="@dimen/dimen8"
-        android:background="@color/colorWhite"
-        android:text="Select Country"
-        android:fontFamily="@font/poppins_regular"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_nation_title" />
-
-    <TextView
         android:id="@+id/tv_league_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -84,7 +56,7 @@
         android:layout_marginTop="@dimen/dimen32"
         android:layout_marginLeft="@dimen/dimen24"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btn_select_country"
+        app:layout_constraintTop_toBottomOf="@+id/tv_pick_league_title"
         android:layout_marginStart="@dimen/dimen24" />
 
     <androidx.recyclerview.widget.RecyclerView
@@ -118,9 +90,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/rv_league" />
 
-    <include
-        layout="@layout/bottom_sheet_layout"
-        tools:layout_editor_absoluteX="0dp"
-        tools:layout_editor_absoluteY="0dp" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
