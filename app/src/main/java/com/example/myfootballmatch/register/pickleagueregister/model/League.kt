@@ -6,7 +6,7 @@ import com.google.gson.annotations.SerializedName
 import kotlinx.android.parcel.Parcelize
 
 @Parcelize
-data class Country(
+data class League(
     @Expose
     @SerializedName("league_id")
     val league_id:Int,
