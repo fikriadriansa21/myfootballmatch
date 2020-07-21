@@ -11,7 +11,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".home.HomeActivity">
+        <activity android:name="com.example.myfootballmatch.ui.home.HomeActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -22,7 +22,7 @@
         <activity android:name=".login.registeredaccount.LoginWithRegisteredAccountActivity" />
         <activity android:name=".login.google.LoginWithGoogleActivity" />
         <activity android:name=".login.LoginActivity" />
-        <activity android:name=".register.pickleagueregister.PickLeagueRegisterActivity" />
+        <activity android:name=".ui.league.PickLeagueRegisterActivity" />
         <activity android:name=".register.pickteamregister.PickTeamRegisterActivity" />
         <activity android:name=".register.RegisterActivity" />
         <activity android:name=".main.MainActivity"></activity>

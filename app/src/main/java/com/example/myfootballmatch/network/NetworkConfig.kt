@@ -1,7 +1,7 @@
 package com.example.myfootballmatch.network
 
 import com.example.myfootballmatch.BuildConfig
-import com.example.myfootballmatch.country.CountryService
+import com.example.myfootballmatch.ui.league.LeagueService
 import okhttp3.Interceptor
 import okhttp3.OkHttpClient
 import okhttp3.Request
@@ -21,12 +21,13 @@ object NetworkConfig {
 
     private val headerInterceptor = object: Interceptor{
         override fun intercept(chain: Interceptor.Chain): Response {
-            var request: Request = chain.request()
+            val original : Request = chain.request()
 
-            request = request.newBuilder()
-                .addHeader("x-rapidapi-host","api-football-v1.p.rapidapi.com")
-                .addHeader("x-rapidapi-key","ada2296771bmsh53b2c02cf954dd9p11db83jsnc23498be70d0")
-                .addHeader("useQueryString","true")
+            val request = original.newBuilder()
+                .header("x-rapidapi-host","api-football-v1.p.rapidapi.com")
+                .header("x-rapidapi-key","ada2296771bmsh53b2c02cf954dd9p11db83jsnc23498be70d0")
+                .header("useQueryString","true")
+                .method(original.method,original.body)
                 .build()
 
             return chain.proceed(request)
@@ -35,7 +36,6 @@ object NetworkConfig {
 
     private val okHttp = OkHttpClient.Builder()
         .addInterceptor(headerInterceptor)
-        .addInterceptor(logger)
 
     private val builder = Retrofit.Builder()
         .baseUrl(BuildConfig.BASE_URL)
@@ -43,7 +43,8 @@ object NetworkConfig {
         .client(okHttp.build())
         .build()
 
-    val countryService: CountryService = builder.create(CountryService::class.java)
+    val leagueService: LeagueService = builder.create(
+        LeagueService::class.java)
 
 
 

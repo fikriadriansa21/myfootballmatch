@@ -1,4 +1,4 @@
-package com.example.myfootballmatch.team
+package com.example.myfootballmatch.ui.team
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment

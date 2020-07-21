@@ -1,13 +1,13 @@
-package com.example.myfootballmatch.home
+package com.example.myfootballmatch.ui.home
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import butterknife.BindView
 import com.example.myfootballmatch.R
-import com.example.myfootballmatch.profile.ProfileFragment
+import com.example.myfootballmatch.ui.profile.ProfileFragment
 import com.example.myfootballmatch.search.SearchFragment
-import com.example.myfootballmatch.team.TeamFragment
+import com.example.myfootballmatch.ui.team.TeamFragment
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import kotlinx.android.synthetic.main.activity_home.*
 

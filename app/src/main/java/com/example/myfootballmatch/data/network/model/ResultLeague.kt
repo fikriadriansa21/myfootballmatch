@@ -1,4 +1,4 @@
-package com.example.myfootballmatch.register.pickleagueregister.model
+package com.example.myfootballmatch.data.network.model
 
 import android.os.Parcelable
 import com.google.gson.annotations.Expose
