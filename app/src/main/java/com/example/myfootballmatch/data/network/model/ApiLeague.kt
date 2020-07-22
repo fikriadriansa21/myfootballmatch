@@ -9,5 +9,5 @@ import kotlinx.android.parcel.Parcelize
 data class ApiLeague(
     @Expose
     @SerializedName("api")
-    val api: MutableList<ResultLeague>
+    val api: ResultLeague
 ):Parcelable

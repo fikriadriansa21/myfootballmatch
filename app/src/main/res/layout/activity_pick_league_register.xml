@@ -59,6 +59,16 @@
         app:layout_constraintTop_toBottomOf="@+id/tv_pick_league_title"
         android:layout_marginStart="@dimen/dimen24" />
 
+    <ProgressBar
+        android:id="@+id/progress_bar_league"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        app:layout_constraintBottom_toTopOf="@id/rv_league"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_league_title" />
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rv_league"
         android:layout_width="match_parent"

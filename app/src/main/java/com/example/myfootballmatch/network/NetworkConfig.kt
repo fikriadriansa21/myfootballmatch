@@ -1,7 +1,7 @@
 package com.example.myfootballmatch.network
 
 import com.example.myfootballmatch.BuildConfig
-import com.example.myfootballmatch.ui.league.LeagueService
+import com.example.myfootballmatch.data.network.services.LeagueService
 import okhttp3.Interceptor
 import okhttp3.OkHttpClient
 import okhttp3.Request
