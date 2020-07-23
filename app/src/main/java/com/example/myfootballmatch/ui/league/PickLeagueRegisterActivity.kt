@@ -10,6 +10,7 @@ import androidx.recyclerview.widget.RecyclerView
 import butterknife.BindView
 import butterknife.ButterKnife
 import com.example.myfootballmatch.R
+import com.example.myfootballmatch.data.network.model.league.League
 import com.example.myfootballmatch.data.network.services.LeagueService
 import com.example.myfootballmatch.ui.base.BaseActivity
 
@@ -34,7 +35,8 @@ class PickLeagueRegisterActivity : BaseActivity<LeagueViewModel>(), LeagueAdapte
         rvLeague.adapter = leagueAdapter
 
         viewModel?.getLoadingStatus()?.observe(this, loadingObserver)
-        viewModel?.getLeagues()
+        viewModel?.getLeagues(this, movieObserver)
+        viewModel?.loadLeaguesNetwork()
     }
 
     override fun createViewModel(): LeagueViewModel {
@@ -53,6 +55,17 @@ class PickLeagueRegisterActivity : BaseActivity<LeagueViewModel>(), LeagueAdapte
         }
     }
 
+    private var movieObserver = object : Observer<List<League?>?> {
+        override fun onChanged(@Nullable league: List<League?>?) {
+            if (league == null) return
+            leagueAdapter.setItems(league)
+//            if (league.isEmpty()) {
+//                emptyView.setVisibility(View.VISIBLE)
+//            } else {
+//                emptyView.setVisibility(View.GONE)
+//            }
+        }
+    }
     override fun onLeagueListener(id: Int) {
         TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
     }

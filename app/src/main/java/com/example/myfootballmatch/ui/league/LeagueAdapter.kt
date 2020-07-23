@@ -19,7 +19,12 @@ class LeagueAdapter(listener: LeagueListener) : RecyclerView.Adapter<ViewHolder>
 
     lateinit var listener: LeagueListener
 
-    var arrList: ArrayList<League> = ArrayList()
+    lateinit var arrList: List<League?>
+
+    fun setItems(items: List<League?>) {
+        arrList = items
+        notifyDataSetChanged()
+    }
 
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder
@@ -31,12 +36,12 @@ class LeagueAdapter(listener: LeagueListener) : RecyclerView.Adapter<ViewHolder>
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         Glide.with(holder.itemView.context)
-            .load(arrList[position].flag)
+            .load(arrList?.get(position)?.flag)
             .into(holder.imageViewClub)
 
-        holder.textViewClub.text = arrList[position].name
+        holder.textViewClub.text = arrList?.get(position)?.name
         holder.itemView.setOnClickListener {
-            listener.onLeagueListener(arrList[position].league_id)
+            arrList?.get(position)?.league_id?.let { it1 -> listener.onLeagueListener(it1) }
         }
     }
 

@@ -3,6 +3,7 @@ package com.example.myfootballmatch.ui.league
 
 import androidx.annotation.NonNull
 import androidx.lifecycle.MutableLiveData
+import androidx.lifecycle.Observer
 import com.example.myfootballmatch.data.network.model.league.ApiLeague
 import com.example.myfootballmatch.data.network.model.league.League
 import com.example.myfootballmatch.data.network.services.LeagueService
@@ -11,6 +12,7 @@ import com.example.myfootballmatch.ui.base.BaseViewModel
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
+import java.util.*
 
 class LeagueViewModel(leagueService: LeagueService) : BaseViewModel(){
 
@@ -25,11 +27,14 @@ class LeagueViewModel(leagueService: LeagueService) : BaseViewModel(){
 
     fun loadLeaguesNetwork() {
         setIsLoading(true)
-        leagueService.getListDataLeague(2020)
+        leagueService.getListDataLeague(Calendar.getInstance().get(Calendar.YEAR))
             .enqueue(callback)
     }
 
-    fun getLeagues(): MutableLiveData<List<League>>? {
+    fun getLeagues(
+        pickLeagueRegisterActivity: PickLeagueRegisterActivity,
+        movieObserver: Observer<List<League?>?>
+    ): MutableLiveData<List<League>>? {
         return league
     }
 
