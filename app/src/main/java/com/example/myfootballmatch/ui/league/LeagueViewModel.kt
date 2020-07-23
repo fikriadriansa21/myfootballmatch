@@ -6,7 +6,7 @@ import androidx.lifecycle.MutableLiveData
 import com.example.myfootballmatch.data.network.model.ApiLeague
 import com.example.myfootballmatch.data.network.model.League
 import com.example.myfootballmatch.data.network.services.LeagueService
-import com.example.myfootballmatch.network.NetworkConfig.leagueService
+import com.example.myfootballmatch.data.network.NetworkConfig.leagueService
 import com.example.myfootballmatch.ui.base.BaseViewModel
 import retrofit2.Call
 import retrofit2.Callback

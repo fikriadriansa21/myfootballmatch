@@ -6,7 +6,7 @@ import androidx.fragment.app.Fragment
 import butterknife.BindView
 import com.example.myfootballmatch.R
 import com.example.myfootballmatch.ui.profile.ProfileFragment
-import com.example.myfootballmatch.search.SearchFragment
+import com.example.myfootballmatch.ui.search.SearchFragment
 import com.example.myfootballmatch.ui.team.TeamFragment
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import kotlinx.android.synthetic.main.activity_home.*

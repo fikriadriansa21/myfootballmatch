@@ -1,13 +1,13 @@
-package com.example.myfootballmatch.login.registeredaccount
+package com.example.myfootballmatch.ui.register.pickteamregister
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.example.myfootballmatch.R
 
-class LoginWithRegisteredAccountActivity : AppCompatActivity() {
+class PickTeamRegisterActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_login_with_registered_account)
+        setContentView(R.layout.activity_pick_team_register)
     }
 }

@@ -14,10 +14,10 @@
         <activity android:name="com.example.myfootballmatch.ui.home.HomeActivity">
 
         </activity>
-        <activity android:name=".success.SuccessRegistrationActivity" />
-        <activity android:name=".login.registeredaccount.LoginWithRegisteredAccountActivity" />
-        <activity android:name=".login.google.LoginWithGoogleActivity" />
-        <activity android:name=".login.LoginActivity" />
+        <activity android:name="com.example.myfootballmatch.ui.success.SuccessRegistrationActivity" />
+        <activity android:name="com.example.myfootballmatch.ui.login.registeredaccount.LoginWithRegisteredAccountActivity" />
+        <activity android:name="com.example.myfootballmatch.ui.login.google.LoginWithGoogleActivity" />
+        <activity android:name="com.example.myfootballmatch.ui.login.LoginActivity" />
         <activity android:name=".ui.league.PickLeagueRegisterActivity" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -25,9 +25,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".register.pickteamregister.PickTeamRegisterActivity" />
-        <activity android:name=".register.RegisterActivity" />
-        <activity android:name=".main.MainActivity"></activity>
+        <activity android:name="com.example.myfootballmatch.ui.register.pickteamregister.PickTeamRegisterActivity" />
+        <activity android:name="com.example.myfootballmatch.ui.register.RegisterActivity" />
+        <activity android:name="com.example.myfootballmatch.ui.main.MainActivity"></activity>
     </application>
 
 </manifest>

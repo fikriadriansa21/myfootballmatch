@@ -1,4 +1,4 @@
-package com.example.myfootballmatch.network
+package com.example.myfootballmatch.data.network
 
 import com.example.myfootballmatch.BuildConfig
 import com.example.myfootballmatch.data.network.services.LeagueService

@@ -1,4 +1,4 @@
-package com.example.myfootballmatch.search
+package com.example.myfootballmatch.ui.search
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment

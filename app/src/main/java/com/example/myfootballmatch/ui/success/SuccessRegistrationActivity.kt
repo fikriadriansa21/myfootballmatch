@@ -1,13 +1,13 @@
-package com.example.myfootballmatch.register
+package com.example.myfootballmatch.ui.success
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.example.myfootballmatch.R
 
-class RegisterActivity : AppCompatActivity() {
+class SuccessRegistrationActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_register)
+        setContentView(R.layout.activity_success_registration)
     }
 }

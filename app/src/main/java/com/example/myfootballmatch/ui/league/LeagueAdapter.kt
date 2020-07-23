@@ -21,6 +21,7 @@ class LeagueAdapter(listener: LeagueListener) : RecyclerView.Adapter<ViewHolder>
 
     var arrList: ArrayList<League> = ArrayList()
 
+
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder
             = ViewHolder(LayoutInflater.from(parent.context).inflate(R.layout.item_rv_league, parent, false))
 
