@@ -9,23 +9,23 @@ import kotlinx.android.parcel.Parcelize
 data class League(
     @Expose
     @SerializedName("league_id")
-    val league_id:Int,
+    var league_id:Int?=null,
     @Expose
     @SerializedName("name")
-    val name:String,
+    var name:String?="",
     @Expose
     @SerializedName("type")
-    val type:String,
+    var type:String?="",
     @Expose
     @SerializedName("country")
-    val country:String,
+    var country:String?="",
     @Expose
     @SerializedName("country_code")
-    val country_code:String,
+    var country_code:String?="",
     @Expose
     @SerializedName("logo")
-    val logo:String,
+    var logo:String?="",
     @Expose
     @SerializedName("flag")
-    val flag:String
+    var flag:String?=""
 ) : Parcelable

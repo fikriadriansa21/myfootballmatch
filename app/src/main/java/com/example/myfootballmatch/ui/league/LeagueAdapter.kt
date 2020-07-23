@@ -11,21 +11,19 @@ import com.example.myfootballmatch.R
 import com.example.myfootballmatch.data.network.model.league.League
 import kotlinx.android.synthetic.main.item_rv_league.view.*
 
-class LeagueAdapter(listener: LeagueListener) : RecyclerView.Adapter<ViewHolder>(){
+class LeagueAdapter(private var listener: LeagueListener) : RecyclerView.Adapter<LeagueAdapter.ViewHolder>(){
 
-    interface LeagueListener {
-        fun onLeagueListener(id: Int)
+    private var arrList : List<League?> =  ArrayList<League>()
+
+    class ViewHolder(view: View): RecyclerView.ViewHolder(view){
+        val imageViewClub: ImageView = view.findViewById(R.id.iv_league_logo)
+        val textViewClub: TextView = view.findViewById(R.id.tv_league_name)
     }
-
-    lateinit var listener: LeagueListener
-
-    lateinit var arrList: List<League?>
 
     fun setItems(items: List<League?>) {
         arrList = items
         notifyDataSetChanged()
     }
-
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder
             = ViewHolder(LayoutInflater.from(parent.context).inflate(R.layout.item_rv_league, parent, false))
@@ -36,7 +34,7 @@ class LeagueAdapter(listener: LeagueListener) : RecyclerView.Adapter<ViewHolder>
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         Glide.with(holder.itemView.context)
-            .load(arrList?.get(position)?.flag)
+            .load(arrList[position]!!.logo)
             .into(holder.imageViewClub)
 
         holder.textViewClub.text = arrList?.get(position)?.name
@@ -45,10 +43,7 @@ class LeagueAdapter(listener: LeagueListener) : RecyclerView.Adapter<ViewHolder>
         }
     }
 
-
-}
-
-class ViewHolder(view: View): RecyclerView.ViewHolder(view){
-    val imageViewClub: ImageView = view.iv_league_logo
-    val textViewClub: TextView = view.findViewById(R.id.tv_league_name)
+    interface LeagueListener {
+        fun onLeagueListener(id: Int)
+    }
 }

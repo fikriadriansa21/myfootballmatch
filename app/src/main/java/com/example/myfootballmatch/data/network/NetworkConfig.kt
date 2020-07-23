@@ -11,7 +11,6 @@ import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
 object NetworkConfig {
-    private const val BASE_URL = "https://api-football-v1.p.rapidapi.com/v2/"
 
     private val logger = run {
         val httpLoggingInterceptor = HttpLoggingInterceptor()
@@ -39,12 +38,12 @@ object NetworkConfig {
         .addInterceptor(headerInterceptor)
 
     private val builder = Retrofit.Builder()
-        .baseUrl(BASE_URL)
+        .baseUrl("https://api-football-v1.p.rapidapi.com/v2/")
         .addConverterFactory(GsonConverterFactory.create())
         .client(okHttp.build())
         .build()
 
-    var leagueService: LeagueService = builder.create(LeagueService::class.java)
+    val leagueService: LeagueService = builder.create(LeagueService::class.java)
     val fixtureService: FixtureService = builder.create(FixtureService::class.java)
     val standingService: StandingService = builder.create(StandingService::class.java)
     val playerService: PlayerService = builder.create(PlayerService::class.java)
