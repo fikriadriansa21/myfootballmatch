@@ -16,13 +16,17 @@ android {
         targetSdkVersion 29
         versionCode 1
         versionName "1.0"
-        buildConfigField "String", "BASE_URL", "\"https://api-football-v1.p.rapidapi.com/v2\""
+//        buildConfigField "String", "BASE_URL", "\"https://api-football-v1.p.rapidapi.com/v2/\""
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
 
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    viewBinding {
+        enabled = true
     }
 
     buildTypes {

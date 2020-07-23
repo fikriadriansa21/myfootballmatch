@@ -10,6 +10,7 @@ import androidx.recyclerview.widget.RecyclerView
 import butterknife.BindView
 import butterknife.ButterKnife
 import com.example.myfootballmatch.R
+import com.example.myfootballmatch.data.network.NetworkConfig.leagueService
 import com.example.myfootballmatch.data.network.model.league.League
 import com.example.myfootballmatch.data.network.services.LeagueService
 import com.example.myfootballmatch.ui.base.BaseActivity
@@ -18,13 +19,11 @@ import com.example.myfootballmatch.ui.base.BaseActivity
 class PickLeagueRegisterActivity : BaseActivity<LeagueViewModel>(), LeagueAdapter.LeagueListener{
 
     @BindView(R.id.rv_league)
-    lateinit var rvLeague: RecyclerView
+    private var rvLeague: RecyclerView? = null
 
     @BindView(R.id.progress_bar_league)
-    lateinit var pbLeague: ProgressBar
-
-    private val leagueService: LeagueService? = null
-    lateinit var leagueAdapter: LeagueAdapter
+     val pbLeague: ProgressBar? = null
+    private var leagueAdapter: LeagueAdapter? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -32,7 +31,7 @@ class PickLeagueRegisterActivity : BaseActivity<LeagueViewModel>(), LeagueAdapte
 
         ButterKnife.bind(this)
         leagueAdapter = LeagueAdapter(this)
-        rvLeague.adapter = leagueAdapter
+        rvLeague?.adapter = leagueAdapter
 
         viewModel?.getLoadingStatus()?.observe(this, loadingObserver)
         viewModel?.getLeagues(this, movieObserver)
@@ -48,9 +47,9 @@ class PickLeagueRegisterActivity : BaseActivity<LeagueViewModel>(), LeagueAdapte
         override fun onChanged(@Nullable isLoading: Boolean?) {
             if (isLoading == null) return
             if (isLoading) {
-                pbLeague.setVisibility(View.VISIBLE)
+                pbLeague?.visibility = View.VISIBLE
             } else {
-                pbLeague.setVisibility(View.GONE)
+                pbLeague?.visibility = View.GONE
             }
         }
     }
@@ -58,12 +57,7 @@ class PickLeagueRegisterActivity : BaseActivity<LeagueViewModel>(), LeagueAdapte
     private var movieObserver = object : Observer<List<League?>?> {
         override fun onChanged(@Nullable league: List<League?>?) {
             if (league == null) return
-            leagueAdapter.setItems(league)
-//            if (league.isEmpty()) {
-//                emptyView.setVisibility(View.VISIBLE)
-//            } else {
-//                emptyView.setVisibility(View.GONE)
-//            }
+            leagueAdapter?.setItems(league)
         }
     }
     override fun onLeagueListener(id: Int) {

@@ -11,6 +11,7 @@ import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
 object NetworkConfig {
+    private const val BASE_URL = "https://api-football-v1.p.rapidapi.com/v2/"
 
     private val logger = run {
         val httpLoggingInterceptor = HttpLoggingInterceptor()
@@ -25,7 +26,7 @@ object NetworkConfig {
 
             val request = original.newBuilder()
                 .header("x-rapidapi-host","api-football-v1.p.rapidapi.com")
-                .header("x-rapidapi-key","ada2296771bmsh53b2c02cf954dd9p11db83jsnc23498be70d0")
+                .header("x-rapidapi-key","da2296771bmsh53b2c02cf954dd9p11db83jsnc23498be70d0")
                 .header("useQueryString","true")
                 .method(original.method,original.body)
                 .build()
@@ -38,12 +39,12 @@ object NetworkConfig {
         .addInterceptor(headerInterceptor)
 
     private val builder = Retrofit.Builder()
-        .baseUrl(BuildConfig.BASE_URL)
+        .baseUrl(BASE_URL)
         .addConverterFactory(GsonConverterFactory.create())
         .client(okHttp.build())
         .build()
 
-    val leagueService: LeagueService = builder.create(LeagueService::class.java)
+    var leagueService: LeagueService = builder.create(LeagueService::class.java)
     val fixtureService: FixtureService = builder.create(FixtureService::class.java)
     val standingService: StandingService = builder.create(StandingService::class.java)
     val playerService: PlayerService = builder.create(PlayerService::class.java)
