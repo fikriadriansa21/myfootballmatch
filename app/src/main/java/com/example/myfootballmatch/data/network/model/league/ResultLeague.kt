@@ -1,6 +1,7 @@
-package com.example.myfootballmatch.data.network.model
+package com.example.myfootballmatch.data.network.model.league
 
 import android.os.Parcelable
+import com.example.myfootballmatch.data.network.model.league.League
 import com.google.gson.annotations.Expose
 import com.google.gson.annotations.SerializedName
 import kotlinx.android.parcel.Parcelize

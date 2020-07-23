@@ -3,8 +3,8 @@ package com.example.myfootballmatch.ui.league
 
 import androidx.annotation.NonNull
 import androidx.lifecycle.MutableLiveData
-import com.example.myfootballmatch.data.network.model.ApiLeague
-import com.example.myfootballmatch.data.network.model.League
+import com.example.myfootballmatch.data.network.model.league.ApiLeague
+import com.example.myfootballmatch.data.network.model.league.League
 import com.example.myfootballmatch.data.network.services.LeagueService
 import com.example.myfootballmatch.data.network.NetworkConfig.leagueService
 import com.example.myfootballmatch.ui.base.BaseViewModel

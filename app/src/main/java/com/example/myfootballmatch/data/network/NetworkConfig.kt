@@ -1,7 +1,7 @@
 package com.example.myfootballmatch.data.network
 
 import com.example.myfootballmatch.BuildConfig
-import com.example.myfootballmatch.data.network.services.LeagueService
+import com.example.myfootballmatch.data.network.services.*
 import okhttp3.Interceptor
 import okhttp3.OkHttpClient
 import okhttp3.Request
@@ -43,9 +43,11 @@ object NetworkConfig {
         .client(okHttp.build())
         .build()
 
-    val leagueService: LeagueService = builder.create(
-        LeagueService::class.java)
-
+    val leagueService: LeagueService = builder.create(LeagueService::class.java)
+    val fixtureService: FixtureService = builder.create(FixtureService::class.java)
+    val standingService: StandingService = builder.create(StandingService::class.java)
+    val playerService: PlayerService = builder.create(PlayerService::class.java)
+    val topScoreService: TopScoreService = builder.create(TopScoreService::class.java)
 
 
 }

@@ -8,7 +8,7 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.myfootballmatch.R
-import com.example.myfootballmatch.data.network.model.League
+import com.example.myfootballmatch.data.network.model.league.League
 import kotlinx.android.synthetic.main.item_rv_league.view.*
 
 class LeagueAdapter(listener: LeagueListener) : RecyclerView.Adapter<ViewHolder>(){
