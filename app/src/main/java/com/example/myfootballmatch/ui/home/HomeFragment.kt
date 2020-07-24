@@ -119,7 +119,7 @@ class HomeFragment : Fragment(), StandingAdapter.StandingListener , FixtureAdapt
     }
 
     override fun onTopScorerListener(id: Int) {
-        
+
     }
 
 }
