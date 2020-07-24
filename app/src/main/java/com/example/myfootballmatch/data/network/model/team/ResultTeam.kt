@@ -12,5 +12,5 @@ data class ResultTeam(
     val results:Int,
     @Expose
     @SerializedName("teams")
-    val fixtures: MutableList<Team>
+    val teams: List<Team>
 ) : Parcelable

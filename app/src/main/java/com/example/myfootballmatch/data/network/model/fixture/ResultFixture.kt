@@ -12,5 +12,5 @@ data class ResultFixture(
     val results:Int,
     @Expose
     @SerializedName("fixtures")
-    val fixtures: MutableList<Fixture>
+    val fixtures: List<Fixture>
 ) : Parcelable

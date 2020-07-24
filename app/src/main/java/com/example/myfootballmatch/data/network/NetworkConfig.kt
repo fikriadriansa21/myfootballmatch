@@ -44,6 +44,7 @@ object NetworkConfig {
         .build()
 
     val leagueService: LeagueService = builder.create(LeagueService::class.java)
+    val teamService: TeamService = builder.create(TeamService::class.java)
     val fixtureService: FixtureService = builder.create(FixtureService::class.java)
     val standingService: StandingService = builder.create(StandingService::class.java)
     val playerService: PlayerService = builder.create(PlayerService::class.java)

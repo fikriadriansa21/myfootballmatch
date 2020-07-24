@@ -9,6 +9,7 @@ interface FixtureService {
     @GET("/fixtures/team/{team_id}")
     fun getFixtureFromTeamId(@Path("team_id") team_id: Int): Call<ApiFixture>
 
-    @GET("/fixtures/league/{league_id}")
-    fun getFixtureFromLeagueId(@Path("league_id") league_id: Int): Call<ApiFixture>
+
+    @GET("/fixtures/league/{league_id}/{date}")
+    fun getFixtureFromLeagueId(@Path("league_id") league_id: Int, @Path("date") date: String): Call<ApiFixture>
 }

@@ -3,31 +3,22 @@ package com.example.myfootballmatch.ui.league
 import android.os.Bundle
 import android.util.Log
 import android.view.View
-import android.widget.ProgressBar
 import androidx.annotation.Nullable
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
-import butterknife.BindView
 import butterknife.ButterKnife
 import com.example.myfootballmatch.R
 import com.example.myfootballmatch.data.network.NetworkConfig
-import com.example.myfootballmatch.data.network.NetworkConfig.leagueService
 import com.example.myfootballmatch.data.network.model.league.League
+import com.example.myfootballmatch.data.network.model.team.Team
 import com.example.myfootballmatch.data.network.services.LeagueService
-import com.example.myfootballmatch.ui.base.BaseActivity
+import com.example.myfootballmatch.ui.team.register.TeamRegisterActivity
 import kotlinx.android.synthetic.main.activity_pick_league_register.*
 
 
 class PickLeagueRegisterActivity : AppCompatActivity(), LeagueAdapter.LeagueListener{
-
-//    @BindView(R.id.rv_league)
-//    lateinit var rvLeague: RecyclerView
-//
-//    @BindView(R.id.progress_bar_league)
-//    lateinit var pbLeague: ProgressBar
 
     private lateinit var leagueService: LeagueService
     lateinit var leagueAdapter: LeagueAdapter
@@ -83,6 +74,8 @@ class PickLeagueRegisterActivity : AppCompatActivity(), LeagueAdapter.LeagueList
         }
     }
     override fun onLeagueListener(id: Int) {
-
+        val teamActivity = TeamRegisterActivity()
+        val league = League()
+        league.league_id?.let { teamActivity.start(this, it) }
     }
 }

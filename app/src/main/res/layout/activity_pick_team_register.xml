@@ -66,6 +66,7 @@
         android:background="@drawable/border_white_background"
         android:padding="@dimen/dimen8"
         android:layout_marginTop="@dimen/dimen8"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
         android:layout_marginLeft="@dimen/dimen24"
         android:layout_marginRight="@dimen/dimen24"
         app:layout_constraintEnd_toEndOf="parent"

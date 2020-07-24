@@ -9,7 +9,7 @@ import kotlinx.android.parcel.Parcelize
 data class Team(
     @Expose
     @SerializedName("team_id")
-    val team_id:Int,
+    var team_id:Int?=null,
     @Expose
     @SerializedName("name")
     val name:String,

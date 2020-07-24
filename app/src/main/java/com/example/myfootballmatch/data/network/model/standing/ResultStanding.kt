@@ -12,5 +12,5 @@ data class ResultStanding(
     val results:Int,
     @Expose
     @SerializedName("standings")
-    val fixtures: MutableList<Standing>
+    val standings: List<Standing>
 ) : Parcelable

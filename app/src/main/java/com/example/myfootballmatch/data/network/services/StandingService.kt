@@ -7,5 +7,5 @@ import retrofit2.http.Path
 
 interface StandingService {
     @GET("/leagueTable/{league_id}")
-    fun getStandingData(@Path("league_id") team_id: Int, @Path("season") season: String): Call<ApiStanding>
+    fun getStandingData(@Path("league_id") team_id: Int): Call<ApiStanding>
 }

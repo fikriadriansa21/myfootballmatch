@@ -6,9 +6,9 @@ import retrofit2.http.GET
 import retrofit2.http.Path
 
 interface TeamService {
-    @GET("/teams/team/{team_id}")
+    @GET("teams/team/{team_id}")
     fun getTeamId(@Path("team_id") team_id: Int): Call<ApiTeam>
 
-    @GET("/teams/league/{league_id}")
+    @GET("teams/league/{league_id}")
     fun getTeamFromLeagueId(@Path("league_id") league_id: Int): Call<ApiTeam>
 }
