@@ -1,4 +1,4 @@
-package com.example.myfootballmatch.ui.team.adapter
+package com.example.myfootballmatch.ui.team.register
 
 import android.view.LayoutInflater
 import android.view.View
@@ -26,7 +26,10 @@ class TeamAdapter(private var listener: TeamListener) : RecyclerView.Adapter<Tea
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder
-            = ViewHolder(LayoutInflater.from(parent.context).inflate(R.layout.item_rv_team, parent, false))
+            =
+        ViewHolder(
+            LayoutInflater.from(parent.context).inflate(R.layout.item_rv_team, parent, false)
+        )
 
     override fun getItemCount(): Int {
         return arrList.size

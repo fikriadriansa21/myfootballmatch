@@ -47,13 +47,13 @@ class FixtureAdapter(private var listener: FixtureListener) : RecyclerView.Adapt
             .load(arrListAwayTeam[position]!!.logo)
             .into(holder.imageViewClubAway)
 
-        holder.textViewClubHome.text = arrListHomeTeam?.get(position)?.team_name
-        holder.textViewClubAway.text = arrListAwayTeam?.get(position)?.team_name
-        holder.textViewScoreHome.text = arrList?.get(position)?.goalsHomeTeam.toString()
-        holder.textViewScoreAway.text = arrList?.get(position)?.goalsAwayTeam.toString()
-//        holder.itemView.setOnClickListener {
-//            arrList?.get(position)?.fixture_id?.let { it1 -> listener.onFixtureListener(it1) }
-//        }
+        holder.textViewClubHome.text = arrListHomeTeam[position]?.team_name
+        holder.textViewClubAway.text = arrListAwayTeam[position]?.team_name
+        holder.textViewScoreHome.text = arrList[position]?.goalsHomeTeam.toString()
+        holder.textViewScoreAway.text = arrList[position]?.goalsAwayTeam.toString()
+        holder.itemView.setOnClickListener {
+            arrList[position]?.fixture_id?.let { it1 -> listener.onFixtureListener(it1) }
+        }
     }
 
     interface FixtureListener {

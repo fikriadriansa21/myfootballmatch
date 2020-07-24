@@ -12,7 +12,7 @@ import com.example.myfootballmatch.data.network.model.standing.Standing
 class StandingAdapter(private var listener: StandingListener) : RecyclerView.Adapter<StandingAdapter.ViewHolder>(){
 
     private var arrList : List<Standing?> =  ArrayList<Standing>()
-    private var detailStanding : List<DetailStanding?> =  ArrayList<DetailStanding>()
+    private lateinit var detailStanding : DetailStanding
 
     class ViewHolder(view: View): RecyclerView.ViewHolder(view){
         val textViewRank: TextView = view.findViewById(R.id.tv_pos_number)
@@ -38,7 +38,7 @@ class StandingAdapter(private var listener: StandingListener) : RecyclerView.Ada
         holder.textViewClub.text = arrList?.get(position)?.teamName
         holder.textViewRank.text = arrList?.get(position)?.rank.toString()
         holder.textViewGoalDrawn.text = arrList?.get(position)?.goalsDiff.toString()
-        holder.textViewGame.text = detailStanding[position]?.matchsPlayed.toString()
+        holder.textViewGame.text = detailStanding?.matchsPlayed.toString()
         holder.textViewPoints.text = arrList?.get(position)?.points.toString()
         holder.itemView.setOnClickListener {
             arrList?.get(position)?.team_id?.let { it1 -> listener.onStandingListener(it1) }

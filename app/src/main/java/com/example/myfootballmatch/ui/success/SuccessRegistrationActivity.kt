@@ -1,14 +1,13 @@
 package com.example.myfootballmatch.ui.success
 
-import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
+import androidx.fragment.app.FragmentTransaction
 import com.example.myfootballmatch.R
-import com.example.myfootballmatch.ui.home.HomeActivity
 import com.example.myfootballmatch.ui.home.HomeFragment
-import com.example.myfootballmatch.ui.login.google.LoginWithGoogleActivity
-import com.example.myfootballmatch.ui.team.register.TeamRegisterActivity
 import kotlinx.android.synthetic.main.activity_success_registration.*
+import java.lang.Error
+
 
 class SuccessRegistrationActivity : AppCompatActivity() {
 
@@ -17,8 +16,17 @@ class SuccessRegistrationActivity : AppCompatActivity() {
         setContentView(R.layout.activity_success_registration)
 
         btn_jump_in.setOnClickListener {
-            val intent = Intent(this, HomeActivity::class.java)
-            startActivity(intent)
+
+            try {
+//                val intent = Intent(this, HomeActivity::class.java)
+//                intent.putExtra(HomeFragment.KEY_ACTIVITY, "this")
+                val fragment = HomeFragment()
+                val transaction: FragmentTransaction = supportFragmentManager.beginTransaction()
+                transaction.add(R.id.fragment_container, fragment)
+                transaction.commit()
+            }catch (error: Error){
+                print(error)
+            }
         }
     }
 }

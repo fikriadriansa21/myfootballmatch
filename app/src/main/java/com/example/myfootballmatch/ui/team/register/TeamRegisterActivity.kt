@@ -8,12 +8,9 @@ import androidx.lifecycle.ViewModelProviders
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.myfootballmatch.R
 import com.example.myfootballmatch.data.network.NetworkConfig
-import com.example.myfootballmatch.data.network.model.league.League
 import com.example.myfootballmatch.data.network.services.TeamService
 import com.example.myfootballmatch.ui.success.SuccessRegistrationActivity
-import com.example.myfootballmatch.ui.team.adapter.TeamAdapter
 import com.example.myfootballmatch.utils.Utils
-import kotlinx.android.synthetic.main.activity_pick_league_register.*
 import kotlinx.android.synthetic.main.activity_pick_team_register.*
 
 class TeamRegisterActivity : AppCompatActivity(), TeamAdapter.TeamListener {
@@ -26,7 +23,8 @@ class TeamRegisterActivity : AppCompatActivity(), TeamAdapter.TeamListener {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_pick_team_register)
 
-        teamAdapter = TeamAdapter(this)
+        teamAdapter =
+            TeamAdapter(this)
 
         rv_team.layoutManager = LinearLayoutManager(this)
         rv_team.setHasFixedSize(true)

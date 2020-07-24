@@ -1,28 +1,21 @@
 package com.example.myfootballmatch.ui.home
 
 import android.os.Bundle
-import android.util.Log
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import androidx.recyclerview.widget.LinearLayoutManager
-
 import com.example.myfootballmatch.R
 import com.example.myfootballmatch.data.network.NetworkConfig
 import com.example.myfootballmatch.data.network.services.FixtureService
-import com.example.myfootballmatch.data.network.services.PlayerService
 import com.example.myfootballmatch.data.network.services.StandingService
 import com.example.myfootballmatch.data.network.services.TopScoreService
 import com.example.myfootballmatch.ui.fixture.FixtureAdapter
 import com.example.myfootballmatch.ui.fixture.FixtureViewModel
 import com.example.myfootballmatch.ui.fixture.FixtureViewModelFactory
-import com.example.myfootballmatch.ui.league.LeagueAdapter
-import com.example.myfootballmatch.ui.league.LeagueViewModel
-import com.example.myfootballmatch.ui.league.LeagueViewModelFactory
-import com.example.myfootballmatch.ui.squad.SquadAdapter
 import com.example.myfootballmatch.ui.standing.StandingAdapter
 import com.example.myfootballmatch.ui.standing.StandingViewModel
 import com.example.myfootballmatch.ui.standing.StandingViewModelFactory
@@ -30,7 +23,6 @@ import com.example.myfootballmatch.ui.topscorer.TopScorerAdapter
 import com.example.myfootballmatch.ui.topscorer.TopScorerViewModel
 import com.example.myfootballmatch.ui.topscorer.TopScorerViewModelFactory
 import com.example.myfootballmatch.utils.Utils
-import kotlinx.android.synthetic.main.activity_pick_league_register.*
 import kotlinx.android.synthetic.main.fragment_home.*
 
 
@@ -45,10 +37,10 @@ class HomeFragment : Fragment(), StandingAdapter.StandingListener , FixtureAdapt
     private lateinit var standingViewModel : StandingViewModel
     private lateinit var fixtureViewModel: FixtureViewModel
     private lateinit var topScorerViewModel: TopScorerViewModel
+    companion object{const val KEY_ACTIVITY = "msg_activity"}
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
         standingAdapter = StandingAdapter(this)
         fixtureAdapter = FixtureAdapter(this)
         topScorerAdapter = TopScorerAdapter(this)
@@ -92,7 +84,6 @@ class HomeFragment : Fragment(), StandingAdapter.StandingListener , FixtureAdapt
         standingViewModel.loadStandingNetwork(Utils.getIntSharedPrefereces(Utils.LEAGUE_ID))
         fixtureViewModel.loadFixtureByLeagueId(Utils.getIntSharedPrefereces(Utils.LEAGUE_ID))
         topScorerViewModel.loadTopScorerNetwork(Utils.getIntSharedPrefereces(Utils.LEAGUE_ID))
-
     }
 
     override fun onCreateView(
@@ -100,10 +91,6 @@ class HomeFragment : Fragment(), StandingAdapter.StandingListener , FixtureAdapt
         savedInstanceState: Bundle?
     ): View? {
         return inflater.inflate(R.layout.fragment_home, container, false)
-    }
-
-    override fun onStandingListener(id: Int) {
-
     }
 
     private fun createViewModelStanding(): StandingViewModel {
@@ -123,12 +110,16 @@ class HomeFragment : Fragment(), StandingAdapter.StandingListener , FixtureAdapt
 
     }
 
+    override fun onStandingListener(id: Int) {
+
+    }
+
     override fun onFixtureListener(id: Int) {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+
     }
 
     override fun onTopScorerListener(id: Int) {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+        
     }
 
 }
