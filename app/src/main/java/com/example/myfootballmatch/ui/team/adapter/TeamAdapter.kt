@@ -8,7 +8,7 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.myfootballmatch.R
-import com.example.myfootballmatch.data.network.model.team.Team
+import com.example.myfootballmatch.data.network.model.team.byleagueid.Team
 
 
 class TeamAdapter(private var listener: TeamListener) : RecyclerView.Adapter<TeamAdapter.ViewHolder>(){
@@ -38,12 +38,13 @@ class TeamAdapter(private var listener: TeamListener) : RecyclerView.Adapter<Tea
             .into(holder.imageViewClub)
 
         holder.textViewClub.text = arrList?.get(position)?.name
-//        holder.itemView.setOnClickListener {
-//            arrList?.get(position)?.team_id?.let { it1 -> listener.onTeamListener(it1) }
-//        }
+        holder.itemView.setOnClickListener {
+            listener.onTeamListener(arrList[position]!!.team_id!!, arrList[position]!!.name!!)
+        }
+
     }
 
     interface TeamListener {
-        fun onTeamListener(id: Int)
+        fun onTeamListener(id: Int, name: String)
     }
 }

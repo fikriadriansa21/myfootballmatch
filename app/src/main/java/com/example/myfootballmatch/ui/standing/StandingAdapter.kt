@@ -35,7 +35,6 @@ class StandingAdapter(private var listener: StandingListener) : RecyclerView.Ada
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-
         holder.textViewClub.text = arrList?.get(position)?.teamName
         holder.textViewRank.text = arrList?.get(position)?.rank.toString()
         holder.textViewGoalDrawn.text = arrList?.get(position)?.goalsDiff.toString()

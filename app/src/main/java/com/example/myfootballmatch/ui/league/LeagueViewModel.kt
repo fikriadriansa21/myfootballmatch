@@ -32,16 +32,6 @@ class LeagueViewModel(private var leagueService: LeagueService) : BaseViewModel(
             .enqueue(callback)
     }
 
-//    fun getLeagues(
-//        pickLeagueRegisterActivity: PickLeagueRegisterActivity,
-//        movieObserver: Observer<List<League?>?>
-//    ): MutableLiveData<List<League>>? {
-//        return league
-//    }
-
-    //    fun getLoadingStatus(): MutableLiveData<Boolean>? {
-//        return isLoading
-//    }
     private fun setIsLoading(loading: Boolean) {
         isLoading?.postValue(loading)
     }
@@ -55,13 +45,8 @@ class LeagueViewModel(private var leagueService: LeagueService) : BaseViewModel(
         override fun onResponse(@NonNull call: Call<ApiLeague?>, @NonNull response: Response<ApiLeague?>) {
             val leagueResult: ApiLeague? = response.body()
             if (leagueResult != null) {
-                Log.d("asdakasas","result tidak null")
-
                 setLeagues(leagueResult.api.leagues)
-                Log.d("asdakasas",leagueResult.api.leagues[0].name)
             } else {
-                Log.d("asdakasas","result null")
-
                 setLeagues(emptyList<League>())
             }
         }
@@ -71,7 +56,6 @@ class LeagueViewModel(private var leagueService: LeagueService) : BaseViewModel(
             t: Throwable
         ) {
             Log.d("asdakasas","result failure")
-
             setLeagues(emptyList<League>())
         }
     }

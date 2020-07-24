@@ -39,11 +39,11 @@ class LeagueAdapter(private var listener: LeagueListener) : RecyclerView.Adapter
 
         holder.textViewClub.text = arrList?.get(position)?.name
         holder.itemView.setOnClickListener {
-            arrList?.get(position)?.league_id?.let { it1 -> listener.onLeagueListener(it1) }
+            listener.onLeagueListener(arrList[position]!!.league_id!!, arrList[position]!!.name!!)
         }
     }
 
     interface LeagueListener {
-        fun onLeagueListener(id: Int)
+        fun onLeagueListener(id: Int, name: String)
     }
 }

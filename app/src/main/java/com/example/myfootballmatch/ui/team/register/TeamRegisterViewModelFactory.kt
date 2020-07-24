@@ -7,11 +7,11 @@ import com.example.myfootballmatch.data.network.model.league.League
 import com.example.myfootballmatch.data.network.services.TeamService
 import java.lang.IllegalArgumentException
 
-class TeamRegisterViewModelFactory(private var teamService: TeamService, private var league: League): ViewModelProvider.Factory{
+class TeamRegisterViewModelFactory(private var teamService: TeamService): ViewModelProvider.Factory{
     @NonNull
     override fun <T : ViewModel?> create(modelClass: Class<T>): T {
         if (modelClass.isAssignableFrom(TeamRegisterViewModel::class.java)){
-            return TeamRegisterViewModel(teamService,league) as T
+            return TeamRegisterViewModel(teamService) as T
         }
         throw IllegalArgumentException("Unknown Class")
     }

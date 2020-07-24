@@ -49,13 +49,13 @@
         app:layout_constraintTop_toBottomOf="@+id/tv_success_title" />
 
     <Button
-        android:id="@+id/btn_login_register"
+        android:id="@+id/btn_jump_in"
         android:layout_width="312dp"
         android:layout_height="48dp"
         android:layout_marginTop="148dp"
-        android:background="@color/colorPrimary"
+        android:background="@drawable/background_rounded_button"
         android:fontFamily="@font/poppins_bold"
-        android:text="Login"
+        android:text="Jump In"
         android:textSize="16sp"
         android:layout_marginRight="24dp"
         android:layout_marginLeft="24dp"

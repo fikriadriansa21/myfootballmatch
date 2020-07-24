@@ -4,37 +4,27 @@ import android.app.Activity
 import android.content.SharedPreferences
 
 object Utils {
-
     var sharedPreferences : SharedPreferences? = null
-
     const val NAMA = "NAMA"
     const val EMAIL = "EMAIL"
     const val PASSWORD = "PASSWORD"
     const val USERNAME = "USERNAME"
-
+    const val LEAGUE_ID = "LEAGUE_ID"
+    const val LEAGUE_NAME = "LEAGUE_NAME"
+    const val TEAM_ID = "LEAGUE_ID"
+    const val TEAM_NAME = "TEAM_NAME"
 
     fun makeSharedPreference(activity: Activity){
         sharedPreferences = activity.getSharedPreferences("USER_PREF", 0)
     }
 
-    fun putSharedPrferences(key : String,data : String){
+    fun putSharedPreferences(key : String,data : String){
         val editor = sharedPreferences!!.edit()
         editor.putString(key, data)
         editor.apply()
     }
 
-    fun putFavoriteSharedPreference(key : String,data : HashSet<String>){
-        val editor = sharedPreferences!!.edit()
-        editor.putStringSet(key, data)
-        editor.apply()
-    }
-
-    fun getFavoriteSharedPrefereces(key:String) : HashSet<String>{
-        val o = sharedPreferences!!.getStringSet(key,HashSet<String>())!!
-        return  o as HashSet<String>
-    }
-
-    fun putSharedPrferences(key : String,data : Int){
+    fun putSharedPreferences(key : String,data : Int){
         val editor = sharedPreferences!!.edit()
         editor.putInt(key, data)
         editor.apply()

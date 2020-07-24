@@ -12,5 +12,8 @@ data class Player(
     val player_id:Int,
     @Expose
     @SerializedName("player_name")
-    val player_name:String
+    val player_name:String,
+    @Expose
+    @SerializedName("position")
+    val position:String
 ) : Parcelable

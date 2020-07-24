@@ -58,7 +58,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="@font/poppins_medium"
-            android:text="Matchweek 32 in Premier League"
+            android:text="Matchweek"
             android:layout_marginTop="@dimen/dimen40"
             android:padding="@dimen/dimen4"
             android:textColor="@color/colorBlack"
@@ -67,16 +67,16 @@
             app:layout_constraintTop_toBottomOf="@id/tv_football_dream" />
 
         <TextView
-            android:id="@+id/tv_see_all_match"
+            android:id="@+id/tv_league_name_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:fontFamily="@font/poppins_regular"
-            android:text="See All Match"
             android:layout_marginTop="@dimen/dimen40"
+            android:fontFamily="@font/poppins_bold"
             android:padding="@dimen/dimen4"
-            android:textColor="@color/colorPrimary"
+            android:text="Premier League"
+            android:textColor="@color/colorBlueDark"
             android:textSize="@dimen/font12"
-            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/tv_matchweek"
             app:layout_constraintTop_toBottomOf="@id/tv_football_dream" />
 
         <androidx.recyclerview.widget.RecyclerView

@@ -63,12 +63,14 @@
 
     <EditText
         android:id="@+id/et_email"
-        android:layout_width="@dimen/dimen360"
+        android:layout_width="@dimen/dimen312"
         android:layout_height="@dimen/dimen48"
         android:layout_marginTop="@dimen/dimen8"
         android:background="@drawable/edit_text_border_background"
         android:fontFamily="@font/poppins_semibold"
-        android:hint="ex. user@gmail.com"
+        android:hint="@string/email_placeholder"
+        android:layout_marginLeft="@dimen/dimen24"
+        android:layout_marginRight="@dimen/dimen24"
         android:paddingStart="@dimen/dimen14"
         android:paddingLeft="@dimen/dimen14"
         android:paddingTop="@dimen/dimen14"
@@ -96,7 +98,7 @@
 
     <EditText
         android:id="@+id/et_password"
-        android:layout_width="@dimen/dimen360"
+        android:layout_width="@dimen/dimen312"
         android:layout_height="@dimen/dimen48"
         android:layout_marginTop="@dimen/dimen8"
         android:background="@drawable/edit_text_border_background"
@@ -118,13 +120,13 @@
 
     <Button
         android:id="@+id/btn_login"
-        android:layout_width="@dimen/dimen360"
+        android:layout_width="@dimen/dimen312"
         android:layout_height="@dimen/dimen48"
         android:layout_marginLeft="@dimen/dimen24"
         android:layout_marginTop="@dimen/dimen32"
         android:layout_marginRight="@dimen/dimen24"
         android:layout_marginBottom="@dimen/dimen78"
-        android:background="@color/colorPrimary"
+        android:background="@drawable/background_rounded_button"
         android:fontFamily="@font/poppins_bold"
         android:text="Login"
         android:textColor="@color/colorWhitePale"
@@ -147,7 +149,7 @@
 
     <Button
         android:id="@+id/btn_login_with_google"
-        android:layout_width="@dimen/dimen360"
+        android:layout_width="@dimen/dimen312"
         android:layout_height="@dimen/dimen48"
         android:layout_marginLeft="@dimen/dimen24"
         android:layout_marginTop="@dimen/dimen32"

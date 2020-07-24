@@ -10,7 +10,7 @@
     android:layout_height="match_parent">
 <androidx.constraintlayout.widget.ConstraintLayout
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     tools:viewBindingIgnore="true"
     tools:context=".ui.league.PickLeagueRegisterActivity">
 
@@ -91,22 +91,17 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tv_league_title" />
 
-    <Button
-        android:id="@+id/btn_continue"
-        android:layout_width="@dimen/dimen312"
-        android:layout_height="@dimen/dimen48"
+    <ImageView
+        android:id="@+id/indicator2"
+        android:layout_width="@dimen/dimen142"
+        android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/dimen40"
-        android:layout_marginLeft="@dimen/dimen24"
-        android:layout_marginRight="@dimen/dimen24"
-        android:layout_marginBottom="@dimen/dimen78"
-        android:background="@color/colorPrimary"
-        android:fontFamily="@font/poppins_bold"
-        android:text="Continue"
-        android:textColor="@color/colorWhitePale"
-        android:textSize="@dimen/font16"
+        android:src="@drawable/step2_indicator"
+        android:layout_marginBottom="@dimen/dimen8"
+        android:layout_marginStart="@dimen/dimen24"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/rv_league" />
+        app:layout_constraintTop_toBottomOf="@+id/rv_league"
+        android:layout_marginLeft="@dimen/dimen24" />
 </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>

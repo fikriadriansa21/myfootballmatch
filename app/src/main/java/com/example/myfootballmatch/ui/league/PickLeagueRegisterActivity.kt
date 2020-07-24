@@ -13,9 +13,10 @@ import butterknife.ButterKnife
 import com.example.myfootballmatch.R
 import com.example.myfootballmatch.data.network.NetworkConfig
 import com.example.myfootballmatch.data.network.model.league.League
-import com.example.myfootballmatch.data.network.model.team.Team
 import com.example.myfootballmatch.data.network.services.LeagueService
+import com.example.myfootballmatch.ui.success.SuccessRegistrationActivity
 import com.example.myfootballmatch.ui.team.register.TeamRegisterActivity
+import com.example.myfootballmatch.utils.Utils
 import kotlinx.android.synthetic.main.activity_pick_league_register.*
 
 
@@ -24,7 +25,6 @@ class PickLeagueRegisterActivity : AppCompatActivity(), LeagueAdapter.LeagueList
     private lateinit var leagueService: LeagueService
     lateinit var leagueAdapter: LeagueAdapter
     private lateinit var viewModel : LeagueViewModel
-    private lateinit var league: League
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -39,9 +39,6 @@ class PickLeagueRegisterActivity : AppCompatActivity(), LeagueAdapter.LeagueList
         viewModel = createViewModel()
 
         viewModel.league.observe(this, Observer{
-            Log.d("cjxchsasasa",it[0].name)
-            Log.d("cjxchsasasa","league henshin")
-
             leagueAdapter.setItems(it)
             leagueAdapter.notifyDataSetChanged()
         })
@@ -57,9 +54,9 @@ class PickLeagueRegisterActivity : AppCompatActivity(), LeagueAdapter.LeagueList
         override fun onChanged(@Nullable isLoading: Boolean?) {
             if (isLoading == null) return
             if (isLoading) {
-                progress_bar_league.setVisibility(View.VISIBLE)
+                progress_bar_league.visibility = View.VISIBLE
             } else {
-                progress_bar_league.setVisibility(View.GONE)
+                progress_bar_league.visibility = View.GONE
             }
         }
     }
@@ -68,15 +65,14 @@ class PickLeagueRegisterActivity : AppCompatActivity(), LeagueAdapter.LeagueList
         override fun onChanged(@Nullable league: List<League?>?) {
             if (league == null) return
             leagueAdapter.setItems(league)
-//            if (league.isEmpty()) {
-//                emptyView.setVisibility(View.VISIBLE)
-//            } else {
-//                emptyView.setVisibility(View.GONE)
-//            }
         }
     }
-    override fun onLeagueListener(id: Int) {
-        val teamActivity = TeamRegisterActivity()
-        league.league_id?.let { teamActivity.start(this, it) }
+    override fun onLeagueListener(id: Int, name: String) {
+        val intent = Intent(this, TeamRegisterActivity::class.java)
+        intent.putExtra(TeamRegisterActivity.EXTRA_LEAGUE_ID,id)
+        Utils.makeSharedPreference(this)
+        Utils.putSharedPreferences(Utils.LEAGUE_ID, id)
+        Utils.putSharedPreferences(Utils.LEAGUE_NAME, name)
+        startActivity(intent)
     }
 }

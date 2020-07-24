@@ -1,19 +1,14 @@
 package com.example.myfootballmatch.ui.standing
 
-import android.util.Log
 import androidx.annotation.NonNull
 import androidx.lifecycle.MutableLiveData
-import com.example.myfootballmatch.data.network.model.league.ApiLeague
-import com.example.myfootballmatch.data.network.model.league.League
 import com.example.myfootballmatch.data.network.model.standing.ApiStanding
 import com.example.myfootballmatch.data.network.model.standing.Standing
-import com.example.myfootballmatch.data.network.services.LeagueService
 import com.example.myfootballmatch.data.network.services.StandingService
 import com.example.myfootballmatch.ui.base.BaseViewModel
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
-import java.util.*
 
 class StandingViewModel(private var standingService: StandingService) : BaseViewModel(){
 
@@ -24,10 +19,9 @@ class StandingViewModel(private var standingService: StandingService) : BaseView
         isLoading = MutableLiveData()
     }
 
-
-    fun loadStandingNetwork() {
+    fun loadStandingNetwork(id: Int) {
         setIsLoading(true)
-        standingService.getStandingData(524).enqueue(callback)
+        standingService.getStandingData(id).enqueue(callback)
     }
 
     private fun setIsLoading(loading: Boolean) {
@@ -43,13 +37,8 @@ class StandingViewModel(private var standingService: StandingService) : BaseView
         override fun onResponse(@NonNull call: Call<ApiStanding?>, @NonNull response: Response<ApiStanding?>) {
             val standingResult: ApiStanding? = response.body()
             if (standingResult != null) {
-                Log.d("asdakasas","result tidak null")
-
                 setLeagues(standingResult.api.standings)
-                Log.d("asdakasas",standingResult.api.standings[0].teamName)
             } else {
-                Log.d("asdakasas","result null")
-
                 setLeagues(emptyList<Standing>())
             }
         }
@@ -58,8 +47,6 @@ class StandingViewModel(private var standingService: StandingService) : BaseView
             call: Call<ApiStanding?>,
             t: Throwable
         ) {
-            Log.d("asdakasas","result failure")
-
             setLeagues(emptyList<Standing>())
         }
     }

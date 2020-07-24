@@ -1,4 +1,4 @@
-package com.example.myfootballmatch.data.network.model.team
+package com.example.myfootballmatch.data.network.model.team.byleagueid
 
 import android.os.Parcelable
 import com.google.gson.annotations.Expose

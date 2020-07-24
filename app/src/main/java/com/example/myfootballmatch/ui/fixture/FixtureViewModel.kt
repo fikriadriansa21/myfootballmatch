@@ -21,9 +21,14 @@ class FixtureViewModel(private var fixtureService: FixtureService) : BaseViewMod
     }
 
 
-    fun loadFixtureNetwork() {
+    fun loadFixtureByTeamId(id: Int) {
         setIsLoading(true)
-        fixtureService.getFixtureFromTeamId(524)
+        fixtureService.getFixtureFromTeamIdLast10(id)
+    }
+
+    fun loadFixtureByLeagueId(id: Int) {
+        setIsLoading(true)
+        fixtureService.getFixtureFromLeagueIdLast10(id)
     }
 
     private fun setIsLoading(loading: Boolean) {
@@ -32,7 +37,7 @@ class FixtureViewModel(private var fixtureService: FixtureService) : BaseViewMod
 
     private fun setLeagues(fixtures: List<Fixture>) {
         setIsLoading(false)
-        fixture.value=fixtures
+        fixture.value = fixtures
     }
 
     private var callback = object : Callback<ApiFixture> {
@@ -40,9 +45,7 @@ class FixtureViewModel(private var fixtureService: FixtureService) : BaseViewMod
             val fixtureResult: ApiFixture? = response.body()
             if (fixtureResult != null) {
                 Log.d("asdakasas","result tidak null")
-
                 setLeagues(fixtureResult.api.fixtures)
-                Log.d("asdakasas", fixtureResult.api.fixtures[0].fixture_id.toString())
             } else {
                 Log.d("asdakasas","result null")
 
@@ -55,7 +58,6 @@ class FixtureViewModel(private var fixtureService: FixtureService) : BaseViewMod
             t: Throwable
         ) {
             Log.d("asdakasas","result failure")
-
             setLeagues(emptyList<Fixture>())
         }
     }

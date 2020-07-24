@@ -6,10 +6,13 @@ import retrofit2.http.GET
 import retrofit2.http.Path
 
 interface FixtureService {
-    @GET("/fixtures/team/{team_id}")
+    @GET("fixtures/team/{team_id}")
     fun getFixtureFromTeamId(@Path("team_id") team_id: Int): Call<ApiFixture>
 
 
-    @GET("/fixtures/league/{league_id}/{date}")
-    fun getFixtureFromLeagueId(@Path("league_id") league_id: Int, @Path("date") date: String): Call<ApiFixture>
+    @GET("fixtures/team/{team_id}/last/10")
+    fun getFixtureFromTeamIdLast10(@Path("league_id") team_id: Int): Call<ApiFixture>
+
+    @GET("fixtures/league/{league_id}/last/10")
+    fun getFixtureFromLeagueIdLast10(@Path("league_id") league_id: Int): Call<ApiFixture>
 }

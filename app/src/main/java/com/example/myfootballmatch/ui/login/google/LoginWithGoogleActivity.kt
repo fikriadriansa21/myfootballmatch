@@ -3,7 +3,11 @@ package com.example.myfootballmatch.ui.login.google
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.Toast
 import com.example.myfootballmatch.R
+import com.example.myfootballmatch.ui.home.HomeFragment
+import com.example.myfootballmatch.ui.league.PickLeagueRegisterActivity
+import com.example.myfootballmatch.utils.Utils
 import com.google.android.gms.auth.api.signin.GoogleSignIn
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount
 import com.google.android.gms.auth.api.signin.GoogleSignInClient
@@ -11,70 +15,41 @@ import com.google.android.gms.auth.api.signin.GoogleSignInOptions
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.GoogleAuthProvider
 import kotlinx.android.synthetic.main.activity_login_with_google.*
+import kotlinx.android.synthetic.main.activity_login_with_google.et_email
+import kotlinx.android.synthetic.main.activity_login_with_google.et_password
+import kotlinx.android.synthetic.main.activity_register.*
 
 class LoginWithGoogleActivity : AppCompatActivity() {
-
-    private lateinit var mGoogleSignInClient: GoogleSignInClient
-    private var RC_SIGN_IN = 123
-    private lateinit var mAuth: FirebaseAuth
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login_with_google)
 
-        mAuth = FirebaseAuth.getInstance()
-
-        createRequest()
-
         btn_login_with_google.setOnClickListener {
-            signIn()
-        }
-    }
+            Utils.makeSharedPreference(this)
+            val email = et_email.text.toString()
+            val password = et_password.text.toString()
 
-    private fun createRequest(){
-        // Configure Google Sign In
-        val gso = GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
-            .requestIdToken(getString(R.string.default_web_client_id))
-            .requestEmail()
-            .build()
-
-        mGoogleSignInClient = GoogleSignIn.getClient(this, gso)
-    }
-
-    private fun signIn() {
-        val signInIntent = mGoogleSignInClient.signInIntent
-        startActivityForResult(signInIntent, RC_SIGN_IN)
-    }
-
-    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
-        super.onActivityResult(requestCode, resultCode, data)
-
-        // Result returned from launching the Intent from GoogleSignInApi.getSignInIntent(...);
-        if (requestCode == RC_SIGN_IN) {
-            val task = GoogleSignIn.getSignedInAccountFromIntent(data)
-//            try {
-//                // Google Sign In was successful, authenticate with Firebase
-//                val account = task.getResult(ApiException::class.java)!!
-//                Log.d(TAG, "firebaseAuthWithGoogle:" + account.id)
-//                firebaseAuthWithGoogle(account.idToken!!)
-//            } catch (e: ApiException) {
-//                // Google Sign In failed, update UI appropriately
-//                Log.w(TAG, "Google sign in failed", e)
-//                // ...
-//            }
-        }
-    }
-
-    private fun firebaseAuthWithGoogle(account: GoogleSignInAccount){
-        val credential = GoogleAuthProvider.getCredential(account.idToken, null)
-        mAuth.signInWithCredential(credential)
-            .addOnCompleteListener(this) { task ->
-                if (task.isSuccessful) {
-                    val user = mAuth.currentUser
-                } else {
-
-                }
+            if (email.isEmpty() && password.isEmpty()) {
+                Toast.makeText(this, "Email atau password belum terisi !", Toast.LENGTH_SHORT).show()
+                return@setOnClickListener
             }
+
+            if(email != Utils.getSharedPrefereces(Utils.EMAIL) && password != Utils.getSharedPrefereces(Utils.PASSWORD)){
+                Toast.makeText(this, "Email atau password salah!", Toast.LENGTH_SHORT).show()
+                return@setOnClickListener
+            }
+
+            if(email == Utils.getSharedPrefereces(Utils.EMAIL) && password == Utils.getSharedPrefereces(Utils.PASSWORD)){
+                Toast.makeText(this,"Login berhasil!", Toast.LENGTH_SHORT).show()
+                val  intent = Intent(this, HomeFragment::class.java)
+                startActivity(intent)
+            }
+        }
     }
+
+
+
+
 
 }

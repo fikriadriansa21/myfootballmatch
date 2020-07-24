@@ -51,9 +51,9 @@ class FixtureAdapter(private var listener: FixtureListener) : RecyclerView.Adapt
         holder.textViewClubAway.text = arrListAwayTeam?.get(position)?.team_name
         holder.textViewScoreHome.text = arrList?.get(position)?.goalsHomeTeam.toString()
         holder.textViewScoreAway.text = arrList?.get(position)?.goalsAwayTeam.toString()
-        holder.itemView.setOnClickListener {
-            arrList?.get(position)?.fixture_id?.let { it1 -> listener.onFixtureListener(it1) }
-        }
+//        holder.itemView.setOnClickListener {
+//            arrList?.get(position)?.fixture_id?.let { it1 -> listener.onFixtureListener(it1) }
+//        }
     }
 
     interface FixtureListener {

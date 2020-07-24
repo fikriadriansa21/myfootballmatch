@@ -3,19 +3,16 @@ package com.example.myfootballmatch.ui.team.register
 import android.util.Log
 import androidx.annotation.NonNull
 import androidx.lifecycle.MutableLiveData
-import com.example.myfootballmatch.data.network.model.league.ApiLeague
 import com.example.myfootballmatch.data.network.model.league.League
-import com.example.myfootballmatch.data.network.model.team.ApiTeam
-import com.example.myfootballmatch.data.network.model.team.Team
-import com.example.myfootballmatch.data.network.services.LeagueService
+import com.example.myfootballmatch.data.network.model.team.byleagueid.ApiTeam
+import com.example.myfootballmatch.data.network.model.team.byleagueid.Team
 import com.example.myfootballmatch.data.network.services.TeamService
 import com.example.myfootballmatch.ui.base.BaseViewModel
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
-import java.util.*
 
-class TeamRegisterViewModel(private var teamService: TeamService, private var league: League) : BaseViewModel(){
+class TeamRegisterViewModel(private var teamService: TeamService) : BaseViewModel(){
 
     var team: MutableLiveData<List<Team>> = MutableLiveData()
     private var isLoading: MutableLiveData<Boolean>? = null
@@ -24,12 +21,9 @@ class TeamRegisterViewModel(private var teamService: TeamService, private var le
         isLoading = MutableLiveData()
     }
 
-    fun loadTeamNetwork() {
+    fun loadTeamNetwork(id: Int) {
         setIsLoading(true)
-        league.league_id?.let {
-            teamService.getTeamFromLeagueId(it)
-                .enqueue(callback)
-        }
+        teamService.getTeamFromLeagueId(id).enqueue(callback)
     }
 
     private fun setIsLoading(loading: Boolean) {
@@ -46,12 +40,9 @@ class TeamRegisterViewModel(private var teamService: TeamService, private var le
             val teamResult: ApiTeam? = response.body()
             if (teamResult != null) {
                 Log.d("asdakasas","result tidak null")
-
                 setLeagues(teamResult.api.teams)
-                Log.d("asdakasas",teamResult.api.teams[0].name)
             } else {
                 Log.d("asdakasas","result null")
-
                 setLeagues(emptyList<Team>())
             }
         }

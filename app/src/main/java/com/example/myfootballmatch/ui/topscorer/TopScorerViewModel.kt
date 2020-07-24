@@ -20,10 +20,9 @@ class TopScorerViewModel(private var topScorerService: TopScoreService) : BaseVi
         isLoading = MutableLiveData()
     }
 
-
-    fun loadTopScorerNetwork() {
+    fun loadTopScorerNetwork(id: Int) {
         setIsLoading(true)
-        topScorerService.getFixtureFromTeamId(524).enqueue(callback)
+        topScorerService.getFixtureFromTeamId(id).enqueue(callback)
     }
 
 
