@@ -14,10 +14,13 @@ import com.example.myfootballmatch.R
 import com.example.myfootballmatch.data.network.NetworkConfig
 import com.example.myfootballmatch.data.network.model.league.League
 import com.example.myfootballmatch.data.network.services.LeagueService
+import com.example.myfootballmatch.ui.main.MainActivity
+import com.example.myfootballmatch.ui.register.RegisterActivity
 import com.example.myfootballmatch.ui.success.SuccessRegistrationActivity
 import com.example.myfootballmatch.ui.team.register.TeamRegisterActivity
 import com.example.myfootballmatch.utils.Utils
 import kotlinx.android.synthetic.main.activity_pick_league_register.*
+import kotlinx.android.synthetic.main.activity_register.*
 
 
 class PickLeagueRegisterActivity : AppCompatActivity(), LeagueAdapter.LeagueListener{
@@ -29,6 +32,11 @@ class PickLeagueRegisterActivity : AppCompatActivity(), LeagueAdapter.LeagueList
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_pick_league_register)
+
+        btn_back_account.setOnClickListener {
+            val intent = Intent(this, RegisterActivity::class.java)
+            startActivity(intent)
+        }
 
         ButterKnife.bind(this)
         leagueAdapter = LeagueAdapter(this)

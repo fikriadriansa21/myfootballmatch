@@ -9,9 +9,12 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.myfootballmatch.R
 import com.example.myfootballmatch.data.network.NetworkConfig
 import com.example.myfootballmatch.data.network.services.TeamService
+import com.example.myfootballmatch.ui.league.PickLeagueRegisterActivity
+import com.example.myfootballmatch.ui.main.MainActivity
 import com.example.myfootballmatch.ui.success.SuccessRegistrationActivity
 import com.example.myfootballmatch.utils.Utils
 import kotlinx.android.synthetic.main.activity_pick_team_register.*
+import kotlinx.android.synthetic.main.activity_register.*
 
 class TeamRegisterActivity : AppCompatActivity(), TeamAdapter.TeamListener {
     companion object { const val EXTRA_LEAGUE_ID = "EXTRA_LEAGUE_ID" }
@@ -22,6 +25,11 @@ class TeamRegisterActivity : AppCompatActivity(), TeamAdapter.TeamListener {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_pick_team_register)
+
+        btn_back_league.setOnClickListener {
+            val intent = Intent(this, PickLeagueRegisterActivity::class.java)
+            startActivity(intent)
+        }
 
         teamAdapter =
             TeamAdapter(this)

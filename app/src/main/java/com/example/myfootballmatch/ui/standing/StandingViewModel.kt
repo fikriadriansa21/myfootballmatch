@@ -12,7 +12,7 @@ import retrofit2.Response
 
 class StandingViewModel(private var standingService: StandingService) : BaseViewModel(){
 
-    var standings: MutableLiveData<List<Standing>> = MutableLiveData()
+    var standings: MutableLiveData<List<List<Standing>>> = MutableLiveData()
     private var isLoading: MutableLiveData<Boolean>? = null
 
     init {
@@ -28,7 +28,7 @@ class StandingViewModel(private var standingService: StandingService) : BaseView
         isLoading?.postValue(loading)
     }
 
-    private fun setLeagues(standing: List<Standing>) {
+    private fun setStanding(standing: List<List<Standing>>) {
         setIsLoading(false)
         standings.value = standing
     }
@@ -37,9 +37,9 @@ class StandingViewModel(private var standingService: StandingService) : BaseView
         override fun onResponse(@NonNull call: Call<ApiStanding?>, @NonNull response: Response<ApiStanding?>) {
             val standingResult: ApiStanding? = response.body()
             if (standingResult != null) {
-                setLeagues(standingResult.api.standings)
+                setStanding(standingResult.api.standings)
             } else {
-                setLeagues(emptyList<Standing>())
+                setStanding(emptyList<List<Standing>>())
             }
         }
 
@@ -47,7 +47,7 @@ class StandingViewModel(private var standingService: StandingService) : BaseView
             call: Call<ApiStanding?>,
             t: Throwable
         ) {
-            setLeagues(emptyList<Standing>())
+            setStanding(emptyList<List<Standing>>())
         }
     }
 

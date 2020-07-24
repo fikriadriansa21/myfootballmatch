@@ -12,5 +12,5 @@ data class ResultTopScorer(
     val results:Int,
     @Expose
     @SerializedName("topscorers")
-    val topScorers: MutableList<TopScorer>
+    val topScorers: List<TopScorer>
 ) : Parcelable

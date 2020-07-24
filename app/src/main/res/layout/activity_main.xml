@@ -19,7 +19,7 @@
         android:layout_width="64dp"
         android:layout_height="64dp"
         android:layout_marginTop="120dp"
-        android:src="@mipmap/ic_launcher"
+        android:src="@drawable/icon_fd"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -60,11 +60,11 @@
         android:textColor="@color/colorPrimaryDark"
         android:textSize="20sp"
         android:layout_marginRight="@dimen/dimen48"
-        android:layout_marginLeft="@dimen/dimen1"
+        android:layout_marginLeft="@dimen/dimen12"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@id/tv_football"
         app:layout_constraintTop_toTopOf="@+id/tv_football"
-        android:layout_marginStart="@dimen/dimen4"
+        android:layout_marginStart="@dimen/dimen12"
         android:layout_marginEnd="@dimen/dimen48" />
 
     <TextView

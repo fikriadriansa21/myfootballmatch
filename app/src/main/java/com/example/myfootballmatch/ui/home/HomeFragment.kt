@@ -37,7 +37,24 @@ class HomeFragment : Fragment(), StandingAdapter.StandingListener , FixtureAdapt
     private lateinit var standingViewModel : StandingViewModel
     private lateinit var fixtureViewModel: FixtureViewModel
     private lateinit var topScorerViewModel: TopScorerViewModel
-    companion object{const val KEY_ACTIVITY = "msg_activity"}
+
+//    companion object {
+//        const val ARG_NAME = "Home_Fragment"
+//
+//
+//        fun newInstance(name: String): HomeFragment {
+//            val fragment = HomeFragment()
+//
+//            val bundle = Bundle().apply {
+//                putString(ARG_NAME, name)
+//            }
+//
+//            fragment.arguments = bundle
+//
+//            return fragment
+//        }
+//    }
+//    companion object{const val KEY_ACTIVITY = "msg_activity"}
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -90,6 +107,7 @@ class HomeFragment : Fragment(), StandingAdapter.StandingListener , FixtureAdapt
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+//        val name = arguments?.getString(ARG_NAME)
         return inflater.inflate(R.layout.fragment_home, container, false)
     }
 

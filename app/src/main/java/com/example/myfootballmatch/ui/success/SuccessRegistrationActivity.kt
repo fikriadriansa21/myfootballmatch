@@ -16,10 +16,9 @@ class SuccessRegistrationActivity : AppCompatActivity() {
         setContentView(R.layout.activity_success_registration)
 
         btn_jump_in.setOnClickListener {
-
+//            val name = intent.getStringExtra("Home_Fragment")
+//            val fragment = HomeFragment.newInstance(name)
             try {
-//                val intent = Intent(this, HomeActivity::class.java)
-//                intent.putExtra(HomeFragment.KEY_ACTIVITY, "this")
                 val fragment = HomeFragment()
                 val transaction: FragmentTransaction = supportFragmentManager.beginTransaction()
                 transaction.add(R.id.fragment_container, fragment)
