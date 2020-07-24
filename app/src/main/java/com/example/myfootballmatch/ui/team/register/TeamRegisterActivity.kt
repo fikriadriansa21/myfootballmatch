@@ -10,6 +10,7 @@ import androidx.lifecycle.ViewModelProviders
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.myfootballmatch.R
 import com.example.myfootballmatch.data.network.NetworkConfig
+import com.example.myfootballmatch.data.network.model.league.League
 import com.example.myfootballmatch.data.network.model.team.Team
 import com.example.myfootballmatch.data.network.services.TeamService
 import com.example.myfootballmatch.ui.team.adapter.TeamAdapter
@@ -21,6 +22,8 @@ class TeamRegisterActivity : AppCompatActivity(), TeamAdapter.TeamListener {
     private lateinit var teamService: TeamService
     lateinit var teamAdapter: TeamAdapter
     private lateinit var viewModel : TeamRegisterViewModel
+    private lateinit var team: Team
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -41,12 +44,12 @@ class TeamRegisterActivity : AppCompatActivity(), TeamAdapter.TeamListener {
             teamAdapter.setItems(it)
             teamAdapter.notifyDataSetChanged()
         })
-        viewModel.loadLeaguesNetwork()
+        viewModel.loadTeamNetwork()
     }
 
     private fun createViewModel(): TeamRegisterViewModel {
-        val team: Team = intent.getParcelableExtra(EXTRA_MOVIE)
-        val factory = TeamRegisterViewModelFactory(teamService)
+        val league: League = intent.getParcelableExtra(EXTRA_MOVIE)
+        val factory = TeamRegisterViewModelFactory(teamService, league)
         return ViewModelProviders.of(this, factory)[TeamRegisterViewModel::class.java]
     }
 

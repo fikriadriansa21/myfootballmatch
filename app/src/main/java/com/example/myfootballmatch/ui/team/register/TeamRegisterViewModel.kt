@@ -15,7 +15,7 @@ import retrofit2.Callback
 import retrofit2.Response
 import java.util.*
 
-class TeamRegisterViewModel(private var teamService: TeamService) : BaseViewModel(){
+class TeamRegisterViewModel(private var teamService: TeamService, private var league: League) : BaseViewModel(){
 
     var team: MutableLiveData<List<Team>> = MutableLiveData()
     private var isLoading: MutableLiveData<Boolean>? = null
@@ -24,23 +24,14 @@ class TeamRegisterViewModel(private var teamService: TeamService) : BaseViewMode
         isLoading = MutableLiveData()
     }
 
-
-    fun loadLeaguesNetwork() {
+    fun loadTeamNetwork() {
         setIsLoading(true)
-        teamService.getTeamFromLeagueId(524)
-            .enqueue(callback)
+        league.league_id?.let {
+            teamService.getTeamFromLeagueId(it)
+                .enqueue(callback)
+        }
     }
 
-//    fun getLeagues(
-//        pickLeagueRegisterActivity: PickLeagueRegisterActivity,
-//        movieObserver: Observer<List<League?>?>
-//    ): MutableLiveData<List<League>>? {
-//        return league
-//    }
-
-    //    fun getLoadingStatus(): MutableLiveData<Boolean>? {
-//        return isLoading
-//    }
     private fun setIsLoading(loading: Boolean) {
         isLoading?.postValue(loading)
     }

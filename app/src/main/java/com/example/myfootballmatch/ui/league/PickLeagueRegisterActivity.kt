@@ -1,5 +1,6 @@
 package com.example.myfootballmatch.ui.league
 
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.view.View
@@ -23,6 +24,7 @@ class PickLeagueRegisterActivity : AppCompatActivity(), LeagueAdapter.LeagueList
     private lateinit var leagueService: LeagueService
     lateinit var leagueAdapter: LeagueAdapter
     private lateinit var viewModel : LeagueViewModel
+    private lateinit var league: League
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -62,7 +64,7 @@ class PickLeagueRegisterActivity : AppCompatActivity(), LeagueAdapter.LeagueList
         }
     }
 
-    private var movieObserver = object : Observer<List<League?>?> {
+    private var leagueObserver = object : Observer<List<League?>?> {
         override fun onChanged(@Nullable league: List<League?>?) {
             if (league == null) return
             leagueAdapter.setItems(league)
@@ -75,7 +77,6 @@ class PickLeagueRegisterActivity : AppCompatActivity(), LeagueAdapter.LeagueList
     }
     override fun onLeagueListener(id: Int) {
         val teamActivity = TeamRegisterActivity()
-        val league = League()
         league.league_id?.let { teamActivity.start(this, it) }
     }
 }
