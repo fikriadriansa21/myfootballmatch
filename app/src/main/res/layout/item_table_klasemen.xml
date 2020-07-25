@@ -1,69 +1,87 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
+<androidx.cardview.widget.CardView
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:layout_height="wrap_content"
+    app:cardCornerRadius="@dimen/dimen8"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
-        <RelativeLayout
-            android:layout_width="match_parent"
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/dimen8">
+
+        <TextView
+            android:id="@+id/tv_pos_number"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:padding="@dimen/dimen4">
+            android:fontFamily="@font/poppins_regular"
+            android:text="1"
+            android:layout_marginStart="@dimen/dimen16"
+            android:textColor="@color/colorBlack"
+            android:textSize="@dimen/font14"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginLeft="@dimen/dimen16" />
 
-            <TextView
-                android:id="@+id/tv_pos_number"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="1"
-                android:textSize="@dimen/font14"
-                android:textColor="@color/colorBlack"
-                android:fontFamily="@font/poppins_regular"/>
-            <TextView
-                android:id="@+id/tv_club_name"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Liverpool"
-                android:layout_marginLeft="@dimen/dimen32"
-                android:layout_toRightOf="@id/tv_pos_number"
-                android:textSize="@dimen/font14"
-                android:textColor="@color/colorBlack"
-                android:fontFamily="@font/poppins_regular"
-                android:layout_toEndOf="@id/tv_pos_number"
-                android:layout_marginStart="@dimen/dimen32" />
-            <TextView
-                android:id="@+id/tv_play_game"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="31"
-                android:layout_marginLeft="@dimen/dimen72"
-                android:layout_toRightOf="@id/tv_club_name"
-                android:textSize="@dimen/font14"
-                android:textColor="@color/colorBlack"
-                android:fontFamily="@font/poppins_regular"/>
-            <TextView
-                android:id="@+id/tv_goal_drawn"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="49"
-                android:layout_marginLeft="@dimen/dimen24"
-                android:layout_toRightOf="@id/tv_play_game"
-                android:textSize="@dimen/font14"
-                android:textColor="@color/colorBlack"
-                android:fontFamily="@font/poppins_regular"
-                android:layout_marginStart="@dimen/dimen24" />
-            <TextView
-                android:id="@+id/tv_points_gained"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="86"
-                android:layout_marginLeft="@dimen/dimen24"
-                android:layout_toRightOf="@id/tv_goal_drawn"
-                android:textSize="@dimen/font14"
-                android:textColor="@color/colorBlack"
-                android:fontFamily="@font/poppins_semibold"
-                android:layout_toEndOf="@id/tv_goal_drawn"
-                android:layout_marginStart="@dimen/dimen24" />
+        <TextView
+            android:id="@+id/tv_club_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dimen12"
+            android:layout_marginLeft="@dimen/dimen12"
+            android:fontFamily="@font/poppins_regular"
+            android:text="Liverpool"
+            android:textColor="@color/colorBlack"
+            android:textSize="@dimen/font14"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@id/tv_pos_number"
+            app:layout_constraintTop_toTopOf="parent" />
 
-        </RelativeLayout>
+        <TextView
+            android:id="@+id/tv_play_game"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dimen80"
+            android:layout_marginLeft="@dimen/dimen64"
+            android:fontFamily="@font/poppins_regular"
+            android:text="31"
+            android:textColor="@color/colorBlack"
+            android:textSize="@dimen/font14"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@id/tv_club_name"
+            app:layout_constraintTop_toTopOf="parent" />
 
-</LinearLayout>
+        <TextView
+            android:id="@+id/tv_goal_drawn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dimen24"
+            android:layout_marginLeft="@dimen/dimen24"
+            android:fontFamily="@font/poppins_regular"
+            android:text="49"
+            android:textColor="@color/colorBlack"
+            android:textSize="@dimen/font14"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@id/tv_play_game"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_points_gained"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dimen24"
+            android:layout_marginLeft="@dimen/dimen24"
+            android:fontFamily="@font/poppins_semibold"
+            android:text="86"
+            android:textColor="@color/colorBlack"
+            android:textSize="@dimen/font14"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/tv_goal_drawn"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.cardview.widget.CardView>

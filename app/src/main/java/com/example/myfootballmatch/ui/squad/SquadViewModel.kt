@@ -21,9 +21,9 @@ class SquadViewModel(private var playerService: PlayerService) : BaseViewModel()
     }
 
 
-    fun loadPlayerNetwork() {
+    fun loadPlayerNetwork(id: Int, season: String) {
         setIsLoading(true)
-        playerService.getPlayerSquad(33,"2019-2020").enqueue(callback)
+        playerService.getPlayerSquad(id,season).enqueue(callback)
     }
 
     private fun setIsLoading(loading: Boolean) {

@@ -7,5 +7,5 @@ import retrofit2.http.Path
 
 interface FixtureTeamService {
     @GET("fixtures/team/{team_id}/last/10")
-    fun getFixtureTeam(@Path("league_id") team_id: Int): Call<ApiFixture>
+    fun getFixtureTeam(@Path("team_id") team_id: Int): Call<ApiFixture>
 }

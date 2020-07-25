@@ -86,9 +86,9 @@ class HomeFragment : Fragment(), StandingAdapter.StandingListener , FixtureAdapt
         standingViewModel.loadStandingNetwork(Utils.getIntSharedPrefereces(Utils.LEAGUE_ID))
         fixtureViewModel.loadFixtureLeague(Utils.getIntSharedPrefereces(Utils.LEAGUE_ID))
         topScorerViewModel.loadTopScorerNetwork(Utils.getIntSharedPrefereces(Utils.LEAGUE_ID))
-        tv_league_name_title.text = Utils.getSharedPrefereces(Utils.LEAGUE_NAME)
-        tv_league_name_1.text = Utils.getSharedPrefereces(Utils.LEAGUE_NAME)
-        tv_league_name_2.text = Utils.getSharedPrefereces(Utils.LEAGUE_NAME)
+//        tv_league_name_title.text = Utils.getSharedPrefereces(Utils.LEAGUE_NAME)
+//        tv_league_name_1.text = Utils.getSharedPrefereces(Utils.LEAGUE_NAME)
+//        tv_league_name_2.text = Utils.getSharedPrefereces(Utils.LEAGUE_NAME)
     }
 
 

@@ -28,7 +28,7 @@
 
 
         <TextView
-            android:id="@+id/tv_matchweek"
+            android:id="@+id/tv_last_10_match"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="@font/poppins_medium"
@@ -40,10 +40,25 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/tv_football_dream" />
 
+        <TextView
+            android:id="@+id/tv_club_favorite_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/poppins_bold"
+            android:text="Club Name"
+            android:layout_marginLeft="@dimen/dimen8"
+            android:layout_marginTop="@dimen/dimen40"
+            android:padding="@dimen/dimen4"
+            android:textColor="@color/colorBlack"
+            android:textSize="@dimen/font14"
+            app:layout_constraintStart_toEndOf="@id/tv_last_10_match"
+            app:layout_constraintTop_toBottomOf="@id/tv_football_dream"
+            android:layout_marginStart="@dimen/dimen8" />
+
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/rv_upcoming_match"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/dimen12"
             android:padding="@dimen/dimen8"
@@ -52,7 +67,7 @@
             app:layout_constraintStart_toStartOf="parent"
             android:orientation="horizontal"
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-            app:layout_constraintTop_toBottomOf="@id/tv_matchweek" />
+            app:layout_constraintTop_toBottomOf="@id/tv_last_10_match" />
 
         <androidx.cardview.widget.CardView
             android:id="@+id/card_squad_member"
@@ -102,6 +117,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/dimen72"
                 android:gravity="center_vertical"
+                android:background="@color/colorPrimaryDark"
                 android:orientation="horizontal">
                 <ImageView
                     android:id="@+id/iv_stat_club"
@@ -115,7 +131,7 @@
                     android:id="@+id/tv_stat_club"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Statistic Club"
+                    android:text="@string/under_development_text"
                     android:layout_marginLeft="@dimen/dimen12"
                     android:textSize="@dimen/font12"
                     android:textColor="@color/colorBlack"
@@ -141,6 +157,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/dimen72"
                 android:gravity="center_vertical"
+                android:background="@color/colorPrimaryDark"
                 android:orientation="horizontal">
 
                 <ImageView
@@ -158,7 +175,7 @@
                     android:layout_marginStart="@dimen/dimen12"
                     android:layout_marginLeft="@dimen/dimen12"
                     android:fontFamily="@font/poppins_medium"
-                    android:text="Manchester United"
+                    android:text="Position"
                     android:textColor="@color/colorBlack"
                     android:textSize="@dimen/font12" />
 
@@ -169,7 +186,7 @@
                     android:layout_marginStart="@dimen/dimen12"
                     android:layout_marginLeft="@dimen/dimen12"
                     android:fontFamily="@font/poppins_semibold"
-                    android:text="5th"
+                    android:text="Club"
                     android:textColor="@color/colorBlack"
                     android:textSize="@dimen/font12" />
 
@@ -180,7 +197,7 @@
                     android:layout_marginStart="@dimen/dimen12"
                     android:layout_marginLeft="@dimen/dimen2"
                     android:fontFamily="@font/poppins_semibold"
-                    android:text="in League"
+                    android:text="@string/under_development_text"
                     android:textColor="@color/colorBlack"
                     android:textSize="@dimen/font12" />
             </LinearLayout>

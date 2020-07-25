@@ -15,8 +15,8 @@ class SquadAdapter(private var listener: SquadListener) : RecyclerView.Adapter<S
     private var arrList : List<Player?> =  ArrayList<Player>()
 
     class ViewHolder(view: View): RecyclerView.ViewHolder(view){
-        val textViewPlayerName: TextView = view.findViewById(R.id.tv_league_name)
-        val textViewPlayerPosition: TextView = view.findViewById(R.id.tv_league_name)
+        val textViewPlayerName: TextView = view.findViewById(R.id.tv_player_name_squad)
+        val textViewPlayerPosition: TextView = view.findViewById(R.id.tv_position_player)
     }
 
     fun setItems(items: List<Player?>) {
@@ -25,15 +25,15 @@ class SquadAdapter(private var listener: SquadListener) : RecyclerView.Adapter<S
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder
-            = ViewHolder(LayoutInflater.from(parent.context).inflate(R.layout.item_rv_league, parent, false))
+            = ViewHolder(LayoutInflater.from(parent.context).inflate(R.layout.item_player, parent, false))
 
     override fun getItemCount(): Int {
         return arrList.size
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        holder.textViewPlayerName.text = arrList?.get(position)?.player_name
-        holder.textViewPlayerName.text = arrList?.get(position)?.position
+        holder.textViewPlayerName.text = arrList[position]!!.player_name
+        holder.textViewPlayerPosition.text = arrList[position]!!.position
         holder.itemView.setOnClickListener {
             arrList?.get(position)?.player_id?.let { it1 -> listener.onSquadListener(it1) }
         }

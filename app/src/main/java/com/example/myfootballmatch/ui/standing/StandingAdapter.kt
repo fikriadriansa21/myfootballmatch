@@ -33,13 +33,13 @@ class StandingAdapter(private var listener: StandingListener) : RecyclerView.Ada
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        holder.textViewClub.text = arrList[position][0]!!.teamName
-        holder.textViewRank.text = arrList[position][0]!!.rank.toString()
-        holder.textViewGoalDrawn.text =arrList[position][0]!!.goalsDiff.toString()
-//        holder.textViewGame.text = arrList[position][0]!!.all.matchsPlayed.toString()
-        holder.textViewPoints.text = arrList[position][0]!!.points.toString()
+        holder.textViewClub.text = arrList[0][position]!!.teamName
+        holder.textViewRank.text = arrList[0][position]!!.rank.toString()
+        holder.textViewGoalDrawn.text =arrList[0][position]!!.goalsDiff.toString()
+//        holder.textViewGame.text = arrList[0][position]!!.all.matchsPlayed.toString()
+        holder.textViewPoints.text = arrList[0][position]!!.points.toString()
         holder.itemView.setOnClickListener {
-            listener.onStandingListener(arrList[position][0]!!.team_id)
+            listener.onStandingListener(arrList[0][position]!!.team_id)
 
         }
     }

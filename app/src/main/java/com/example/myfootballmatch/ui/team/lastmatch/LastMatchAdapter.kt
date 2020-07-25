@@ -32,7 +32,7 @@ class LastMatchAdapter(private var listener: LastMatchListener) : RecyclerView.A
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder
-            = ViewHolder(LayoutInflater.from(parent.context).inflate(R.layout.item_rv_league, parent, false))
+            = ViewHolder(LayoutInflater.from(parent.context).inflate(R.layout.item_matchweek, parent, false))
 
     override fun getItemCount(): Int {
         return arrList.size
