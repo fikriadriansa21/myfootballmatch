@@ -24,10 +24,10 @@ class ProfileFragment : Fragment() {
 
         Utils.makeSharedPreference(this.context as Activity)
         val textName = Utils.getSharedPrefereces(Utils.NAMA)
-        tv_name_user.text = textName
-
-        val textUsername = Utils.getSharedPrefereces(Utils.USERNAME)
-        tv_username.text = textUsername
+//        tv_name_user.text = textName
+//
+//        val textUsername = Utils.getSharedPrefereces(Utils.USERNAME)
+//        tv_username.text = textUsername
     }
 
     override fun onCreateView(

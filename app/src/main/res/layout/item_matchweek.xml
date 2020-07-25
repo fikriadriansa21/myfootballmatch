@@ -22,16 +22,15 @@
 
             <TextView
                 android:id="@+id/tv_team_nick_name"
-                android:layout_width="wrap_content"
+                android:layout_width="@dimen/dimen64"
                 android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins_regular"
                 android:text="MUN"
-                android:textSize="@dimen/font16"
                 android:textColor="@color/colorBlack"
-                android:fontFamily="@font/poppins_regular"/>
+                android:textSize="@dimen/font16" />
 
             <ImageView
                 android:id="@+id/iv_club_logo_fav_team"
-                android:background="@color/colorPrimary"
                 android:layout_marginLeft="@dimen/dimen12"
                 android:layout_toRightOf="@id/tv_team_nick_name"
                 android:layout_width="@dimen/dimen24"
@@ -80,7 +79,6 @@
 
             <ImageView
                 android:id="@+id/iv_club_logo_opponent"
-                android:background="@color/colorPrimary"
                 android:layout_marginLeft="@dimen/dimen16"
                 android:layout_toRightOf="@id/tv_score_opponent"
                 android:layout_width="@dimen/dimen24"
@@ -90,16 +88,16 @@
 
             <TextView
                 android:id="@+id/tv_team_nick_name_opponent"
-                android:layout_width="wrap_content"
+                android:layout_width="@dimen/dimen64"
                 android:layout_height="wrap_content"
-                android:text="MCI"
-                android:layout_toRightOf="@id/iv_club_logo_opponent"
-                android:textSize="@dimen/font16"
-                android:layout_marginLeft="@dimen/dimen12"
-                android:textColor="@color/colorBlack"
-                android:fontFamily="@font/poppins_regular"
                 android:layout_marginStart="@dimen/dimen12"
-                android:layout_toEndOf="@id/iv_club_logo_opponent" />
+                android:layout_marginLeft="@dimen/dimen12"
+                android:layout_toEndOf="@id/iv_club_logo_opponent"
+                android:layout_toRightOf="@id/iv_club_logo_opponent"
+                android:fontFamily="@font/poppins_regular"
+                android:text="MCI"
+                android:textColor="@color/colorBlack"
+                android:textSize="@dimen/font16" />
 
         </RelativeLayout>
 

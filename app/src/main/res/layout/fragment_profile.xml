@@ -8,64 +8,68 @@
     tools:context=".ui.profile.ProfileFragment">
 
     <ImageView
-        android:id="@+id/iv_user_picture"
-        android:layout_width="@dimen/dimen80"
-        android:layout_height="@dimen/dimen80"
-        android:layout_marginTop="@dimen/dimen56"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/tv_name_user"
+        android:src="@drawable/under_dev"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/dimen8"
-        android:padding="@dimen/dimen8"
-        android:text="Fikri Adriansa"
-        android:textAlignment="center"
-        android:textSize="@dimen/font16"
-        android:textColor="@color/colorBlack"
-        android:fontFamily="@font/poppins_semibold"
-        android:layout_marginLeft="@dimen/dimen24"
-        android:layout_marginRight="@dimen/dimen24"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/iv_user_picture"
-        android:gravity="center_horizontal" />
+        android:layout_height="match_parent"/>
+<!--    <ImageView-->
+<!--        android:id="@+id/iv_user_picture"-->
+<!--        android:layout_width="@dimen/dimen80"-->
+<!--        android:layout_height="@dimen/dimen80"-->
+<!--        android:layout_marginTop="@dimen/dimen56"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toTopOf="parent" />-->
 
-    <TextView
-        android:id="@+id/tv_username"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/dimen8"
-        android:layout_marginRight="@dimen/dimen24"
-        android:layout_marginLeft="@dimen/dimen24"
-        android:fontFamily="@font/poppins_regular"
-        android:gravity="center_horizontal"
-        android:padding="@dimen/dimen8"
-        android:text="#krayz21"
-        android:textAlignment="center"
-        android:textColor="@color/colorBlack"
-        android:textSize="@dimen/font14"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_name_user" />
+<!--    <TextView-->
+<!--        android:id="@+id/tv_name_user"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginTop="@dimen/dimen8"-->
+<!--        android:padding="@dimen/dimen8"-->
+<!--        android:text="Fikri Adriansa"-->
+<!--        android:textAlignment="center"-->
+<!--        android:textSize="@dimen/font16"-->
+<!--        android:textColor="@color/colorBlack"-->
+<!--        android:fontFamily="@font/poppins_semibold"-->
+<!--        android:layout_marginLeft="@dimen/dimen24"-->
+<!--        android:layout_marginRight="@dimen/dimen24"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toBottomOf="@id/iv_user_picture"-->
+<!--        android:gravity="center_horizontal" />-->
 
-    <Button
-        android:id="@+id/btn_logout"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:fontFamily="@font/poppins_semibold"
-        android:text="Logout"
-        android:textColor="@color/colorWhite"
-        android:background="@drawable/background_button_red"
-        android:layout_marginRight="@dimen/dimen24"
-        android:layout_marginLeft="@dimen/dimen24"
-        android:layout_marginBottom="@dimen/dimen48"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+<!--    <TextView-->
+<!--        android:id="@+id/tv_username"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginTop="@dimen/dimen8"-->
+<!--        android:layout_marginRight="@dimen/dimen24"-->
+<!--        android:layout_marginLeft="@dimen/dimen24"-->
+<!--        android:fontFamily="@font/poppins_regular"-->
+<!--        android:gravity="center_horizontal"-->
+<!--        android:padding="@dimen/dimen8"-->
+<!--        android:text="#krayz21"-->
+<!--        android:textAlignment="center"-->
+<!--        android:textColor="@color/colorBlack"-->
+<!--        android:textSize="@dimen/font14"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/tv_name_user" />-->
+
+<!--    <Button-->
+<!--        android:id="@+id/btn_logout"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:fontFamily="@font/poppins_semibold"-->
+<!--        android:text="Button Logout Under Development"-->
+<!--        android:textColor="@color/colorWhite"-->
+<!--        android:background="@drawable/background_button_red"-->
+<!--        android:layout_marginRight="@dimen/dimen24"-->
+<!--        android:layout_marginLeft="@dimen/dimen24"-->
+<!--        android:layout_marginBottom="@dimen/dimen48"-->
+<!--        app:layout_constraintBottom_toBottomOf="parent"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintStart_toStartOf="parent" />-->
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
