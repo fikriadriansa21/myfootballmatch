@@ -35,7 +35,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="31"
-                android:layout_marginLeft="@dimen/dimen48"
+                android:layout_marginLeft="@dimen/dimen72"
                 android:layout_toRightOf="@id/tv_club_name"
                 android:textSize="@dimen/font14"
                 android:textColor="@color/colorBlack"

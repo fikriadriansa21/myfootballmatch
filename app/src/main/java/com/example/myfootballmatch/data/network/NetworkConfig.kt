@@ -24,7 +24,7 @@ object NetworkConfig {
 
             val request = original.newBuilder()
                 .header("x-rapidapi-host","api-football-v1.p.rapidapi.com")
-                .header("x-rapidapi-key","da2296771bmsh53b2c02cf954dd9p11db83jsnc23498be70d0")
+                .header("x-rapidapi-key","0f8e9f6a8emsh3f7b707df800091p167597jsn6c4c09a752d2")
                 .header("useQueryString","true")
                 .method(original.method,original.body)
                 .build()
