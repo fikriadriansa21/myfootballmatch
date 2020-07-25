@@ -32,7 +32,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="@font/poppins_medium"
-            android:text="Upcoming match"
+            android:text="Last 10 match"
             android:layout_marginTop="@dimen/dimen40"
             android:padding="@dimen/dimen4"
             android:textColor="@color/colorBlack"
@@ -124,95 +124,65 @@
             </LinearLayout>
         </androidx.cardview.widget.CardView>
 
-        <androidx.cardview.widget.CardView
-            android:id="@+id/card_transfer_player"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/dimen32"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/card_statistic_club" >
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="@dimen/dimen72"
-                android:gravity="center_vertical"
-                android:orientation="horizontal">
-                <ImageView
-                    android:id="@+id/iv_transfer"
-                    android:src="@drawable/ic_transfer"
-                    android:layout_marginLeft="@dimen/dimen12"
-                    android:layout_width="@dimen/dimen24"
-                    android:layout_height="@dimen/dimen24"
-                    android:layout_marginStart="@dimen/dimen12" />
-
-                <TextView
-                    android:id="@+id/tv_transfer"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Transfer Player"
-                    android:layout_marginLeft="@dimen/dimen12"
-                    android:textSize="@dimen/font12"
-                    android:textColor="@color/colorBlack"
-                    android:fontFamily="@font/poppins_semibold"
-                    android:layout_marginStart="@dimen/dimen12" />
-            </LinearLayout>
-        </androidx.cardview.widget.CardView>
 
         <androidx.cardview.widget.CardView
             android:id="@+id/card_pos_club"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/dimen32"
+            android:layout_marginBottom="@dimen/dimen48"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/card_transfer_player" >
+            app:layout_constraintTop_toBottomOf="@id/card_statistic_club">
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/dimen72"
                 android:gravity="center_vertical"
                 android:orientation="horizontal">
+
                 <ImageView
                     android:id="@+id/iv_club_logo"
-                    android:src="@drawable/ic_launcher_background"
-                    android:layout_marginLeft="@dimen/dimen12"
                     android:layout_width="@dimen/dimen24"
                     android:layout_height="@dimen/dimen24"
-                    android:layout_marginStart="@dimen/dimen12" />
+                    android:layout_marginStart="@dimen/dimen12"
+                    android:layout_marginLeft="@dimen/dimen12"
+                    android:src="@drawable/ic_launcher_background" />
 
                 <TextView
                     android:id="@+id/tv_club_name"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Manchester United"
+                    android:layout_marginStart="@dimen/dimen12"
                     android:layout_marginLeft="@dimen/dimen12"
-                    android:textSize="@dimen/font12"
-                    android:textColor="@color/colorBlack"
                     android:fontFamily="@font/poppins_medium"
-                    android:layout_marginStart="@dimen/dimen12" />
+                    android:text="Manchester United"
+                    android:textColor="@color/colorBlack"
+                    android:textSize="@dimen/font12" />
 
                 <TextView
                     android:id="@+id/tv_status_position"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="5th"
+                    android:layout_marginStart="@dimen/dimen12"
                     android:layout_marginLeft="@dimen/dimen12"
-                    android:textSize="@dimen/font12"
-                    android:textColor="@color/colorBlack"
                     android:fontFamily="@font/poppins_semibold"
-                    android:layout_marginStart="@dimen/dimen12" />
+                    android:text="5th"
+                    android:textColor="@color/colorBlack"
+                    android:textSize="@dimen/font12" />
 
                 <TextView
                     android:id="@+id/tv_in_league"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="in League"
+                    android:layout_marginStart="@dimen/dimen12"
                     android:layout_marginLeft="@dimen/dimen2"
-                    android:textSize="@dimen/font12"
-                    android:textColor="@color/colorBlack"
                     android:fontFamily="@font/poppins_semibold"
-                    android:layout_marginStart="@dimen/dimen12" />
+                    android:text="in League"
+                    android:textColor="@color/colorBlack"
+                    android:textSize="@dimen/font12" />
             </LinearLayout>
         </androidx.cardview.widget.CardView>
     </androidx.constraintlayout.widget.ConstraintLayout>

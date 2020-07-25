@@ -1,18 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical">
 
         <RelativeLayout
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:padding="@dimen/dimen4"
-            android:layout_marginLeft="@dimen/dimen24"
-            android:layout_marginRight="@dimen/dimen24"
-            android:layout_marginTop="@dimen/dimen12">
+            android:padding="@dimen/dimen4">
 
             <TextView
                 android:id="@+id/tv_pos_number"
@@ -39,7 +35,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="31"
-                android:layout_marginLeft="@dimen/dimen142"
+                android:layout_marginLeft="@dimen/dimen48"
                 android:layout_toRightOf="@id/tv_club_name"
                 android:textSize="@dimen/font14"
                 android:textColor="@color/colorBlack"
@@ -53,7 +49,8 @@
                 android:layout_toRightOf="@id/tv_play_game"
                 android:textSize="@dimen/font14"
                 android:textColor="@color/colorBlack"
-                android:fontFamily="@font/poppins_regular"/>
+                android:fontFamily="@font/poppins_regular"
+                android:layout_marginStart="@dimen/dimen24" />
             <TextView
                 android:id="@+id/tv_points_gained"
                 android:layout_width="wrap_content"
@@ -63,7 +60,9 @@
                 android:layout_toRightOf="@id/tv_goal_drawn"
                 android:textSize="@dimen/font14"
                 android:textColor="@color/colorBlack"
-                android:fontFamily="@font/poppins_semibold"/>
+                android:fontFamily="@font/poppins_semibold"
+                android:layout_toEndOf="@id/tv_goal_drawn"
+                android:layout_marginStart="@dimen/dimen24" />
 
         </RelativeLayout>
 

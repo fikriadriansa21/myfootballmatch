@@ -10,12 +10,12 @@ import androidx.lifecycle.ViewModelProviders
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.myfootballmatch.R
 import com.example.myfootballmatch.data.network.NetworkConfig
-import com.example.myfootballmatch.data.network.services.FixtureService
+import com.example.myfootballmatch.data.network.services.FixtureLeagueService
 import com.example.myfootballmatch.data.network.services.StandingService
 import com.example.myfootballmatch.data.network.services.TopScoreService
-import com.example.myfootballmatch.ui.fixture.FixtureAdapter
-import com.example.myfootballmatch.ui.fixture.FixtureViewModel
-import com.example.myfootballmatch.ui.fixture.FixtureViewModelFactory
+import com.example.myfootballmatch.ui.fixture.league.FixtureAdapter
+import com.example.myfootballmatch.ui.fixture.league.FixtureViewModel
+import com.example.myfootballmatch.ui.fixture.league.FixtureViewModelFactory
 import com.example.myfootballmatch.ui.standing.StandingAdapter
 import com.example.myfootballmatch.ui.standing.StandingViewModel
 import com.example.myfootballmatch.ui.standing.StandingViewModelFactory
@@ -29,7 +29,7 @@ import kotlinx.android.synthetic.main.fragment_home.*
 class HomeFragment : Fragment(), StandingAdapter.StandingListener , FixtureAdapter.FixtureListener, TopScorerAdapter.TopScorerListener{
 
     private lateinit var standingService: StandingService
-    private lateinit var fixtureService: FixtureService
+    private lateinit var fixtureLeagueService: FixtureLeagueService
     private lateinit var topScorerService: TopScoreService
     lateinit var standingAdapter: StandingAdapter
     lateinit var fixtureAdapter: FixtureAdapter
@@ -38,26 +38,11 @@ class HomeFragment : Fragment(), StandingAdapter.StandingListener , FixtureAdapt
     private lateinit var fixtureViewModel: FixtureViewModel
     private lateinit var topScorerViewModel: TopScorerViewModel
 
-//    companion object {
-//        const val ARG_NAME = "Home_Fragment"
-//
-//
-//        fun newInstance(name: String): HomeFragment {
-//            val fragment = HomeFragment()
-//
-//            val bundle = Bundle().apply {
-//                putString(ARG_NAME, name)
-//            }
-//
-//            fragment.arguments = bundle
-//
-//            return fragment
-//        }
-//    }
-//    companion object{const val KEY_ACTIVITY = "msg_activity"}
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        this.activity?.let { Utils.makeSharedPreference(it) }
+
         standingAdapter = StandingAdapter(this)
         fixtureAdapter = FixtureAdapter(this)
         topScorerAdapter = TopScorerAdapter(this)
@@ -77,7 +62,7 @@ class HomeFragment : Fragment(), StandingAdapter.StandingListener , FixtureAdapt
         standingService = NetworkConfig.standingService
         standingViewModel = createViewModelStanding()
 
-        fixtureService = NetworkConfig.fixtureService
+        fixtureLeagueService = NetworkConfig.fixtureLeagueService
         fixtureViewModel = createViewModelFixture()
 
         topScorerService = NetworkConfig.topScoreService
@@ -99,32 +84,36 @@ class HomeFragment : Fragment(), StandingAdapter.StandingListener , FixtureAdapt
         })
 
         standingViewModel.loadStandingNetwork(Utils.getIntSharedPrefereces(Utils.LEAGUE_ID))
-        fixtureViewModel.loadFixtureByLeagueId(Utils.getIntSharedPrefereces(Utils.LEAGUE_ID))
+        fixtureViewModel.loadFixtureLeague(Utils.getIntSharedPrefereces(Utils.LEAGUE_ID))
         topScorerViewModel.loadTopScorerNetwork(Utils.getIntSharedPrefereces(Utils.LEAGUE_ID))
+        tv_league_name_title.text = Utils.getSharedPrefereces(Utils.LEAGUE_NAME)
+        tv_league_name_1.text = Utils.getSharedPrefereces(Utils.LEAGUE_NAME)
+        tv_league_name_2.text = Utils.getSharedPrefereces(Utils.LEAGUE_NAME)
     }
+
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-//        val name = arguments?.getString(ARG_NAME)
+
         return inflater.inflate(R.layout.fragment_home, container, false)
     }
 
     private fun createViewModelStanding(): StandingViewModel {
-        val standingStanding = StandingViewModelFactory(standingService)
-        return ViewModelProviders.of(this, standingStanding)[StandingViewModel::class.java]
+        val standingFactory = StandingViewModelFactory(standingService)
+        return ViewModelProviders.of(this, standingFactory)[StandingViewModel::class.java]
     }
 
     private fun createViewModelFixture(): FixtureViewModel {
-        val fixtureStanding = FixtureViewModelFactory(fixtureService)
-        return ViewModelProviders.of(this, fixtureStanding)[FixtureViewModel::class.java]
+        val fixtureFactory = FixtureViewModelFactory(fixtureLeagueService)
+        return ViewModelProviders.of(this, fixtureFactory)[FixtureViewModel::class.java]
     }
 
     private fun createViewModelTopScorer(): TopScorerViewModel {
-        val topScorerStanding = TopScorerViewModelFactory(topScorerService)
+        val topScorerFactory = TopScorerViewModelFactory(topScorerService)
 
-        return ViewModelProviders.of(this, topScorerStanding)[TopScorerViewModel::class.java]
+        return ViewModelProviders.of(this, topScorerFactory)[TopScorerViewModel::class.java]
 
     }
 

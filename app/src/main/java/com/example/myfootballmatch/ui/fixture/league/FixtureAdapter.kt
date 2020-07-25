@@ -1,4 +1,4 @@
-package com.example.myfootballmatch.ui.fixture
+package com.example.myfootballmatch.ui.fixture.league
 
 import android.view.LayoutInflater
 import android.view.View
@@ -9,15 +9,10 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.myfootballmatch.R
 import com.example.myfootballmatch.data.network.model.fixture.Fixture
-import com.example.myfootballmatch.data.network.model.fixture.away.AwayTeam
-import com.example.myfootballmatch.data.network.model.fixture.home.HomeTeam
 
 class FixtureAdapter(private var listener: FixtureListener) : RecyclerView.Adapter<FixtureAdapter.ViewHolder>(){
 
     private var arrList : List<Fixture?> =  ArrayList<Fixture>()
-    private var arrListHomeTeam : List<HomeTeam?> =  ArrayList<HomeTeam>()
-    private var arrListAwayTeam : List<AwayTeam?> =  ArrayList<AwayTeam>()
-
     class ViewHolder(view: View): RecyclerView.ViewHolder(view){
         val imageViewClubHome: ImageView = view.findViewById(R.id.iv_club_logo_fav_team)
         val imageViewClubAway: ImageView = view.findViewById(R.id.iv_club_logo_opponent)
@@ -32,8 +27,10 @@ class FixtureAdapter(private var listener: FixtureListener) : RecyclerView.Adapt
         notifyDataSetChanged()
     }
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder
-            = ViewHolder(LayoutInflater.from(parent.context).inflate(R.layout.item_matchweek, parent, false))
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder =
+        ViewHolder(
+            LayoutInflater.from(parent.context).inflate(R.layout.item_matchweek, parent, false)
+        )
 
     override fun getItemCount(): Int {
         return arrList.size
@@ -41,16 +38,16 @@ class FixtureAdapter(private var listener: FixtureListener) : RecyclerView.Adapt
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         Glide.with(holder.itemView.context)
-            .load(arrListHomeTeam[position]!!.logo)
+            .load(arrList[position]!!.homeTeam.logo)
             .into(holder.imageViewClubHome)
         Glide.with(holder.itemView.context)
-            .load(arrListAwayTeam[position]!!.logo)
+            .load(arrList[position]!!.awayTeam.logo)
             .into(holder.imageViewClubAway)
 
-        holder.textViewClubHome.text = arrListHomeTeam[position]?.team_name
-        holder.textViewClubAway.text = arrListAwayTeam[position]?.team_name
-        holder.textViewScoreHome.text = arrList[position]?.goalsHomeTeam.toString()
-        holder.textViewScoreAway.text = arrList[position]?.goalsAwayTeam.toString()
+        holder.textViewClubHome.text = arrList[position]!!.homeTeam.team_name
+        holder.textViewClubAway.text = arrList[position]!!.awayTeam.team_name
+        holder.textViewScoreHome.text = arrList[position]!!.goalsHomeTeam.toString()
+        holder.textViewScoreAway.text = arrList[position]!!.goalsAwayTeam.toString()
         holder.itemView.setOnClickListener {
             arrList[position]?.fixture_id?.let { it1 -> listener.onFixtureListener(it1) }
         }

@@ -37,8 +37,6 @@ class PickLeagueRegisterActivity : AppCompatActivity(), LeagueAdapter.LeagueList
             val intent = Intent(this, RegisterActivity::class.java)
             startActivity(intent)
         }
-
-        ButterKnife.bind(this)
         leagueAdapter = LeagueAdapter(this)
         rv_league.layoutManager = LinearLayoutManager(this)
         rv_league.setHasFixedSize(true)

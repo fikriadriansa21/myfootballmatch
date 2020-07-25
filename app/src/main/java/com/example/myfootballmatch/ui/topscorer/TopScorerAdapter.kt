@@ -15,7 +15,6 @@ import com.example.myfootballmatch.data.network.model.topscore.TopScorer
 class TopScorerAdapter(private var listener: TopScorerListener) : RecyclerView.Adapter<TopScorerAdapter.ViewHolder>(){
 
     private var arrList : List<TopScorer?> =  ArrayList<TopScorer>()
-    private lateinit var goals : Goals
 
     class ViewHolder(view: View): RecyclerView.ViewHolder(view){
         val imageViewClub: ImageView = view.findViewById(R.id.iv_club_player)
@@ -36,8 +35,8 @@ class TopScorerAdapter(private var listener: TopScorerListener) : RecyclerView.A
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        holder.textViewPlayer.text = arrList?.get(position)?.player_name
-        holder.textViewGoals.text = goals.total.toString()
+        holder.textViewPlayer.text = arrList[position]!!.player_name
+        holder.textViewGoals.text = arrList[position]!!.goals.total.toString()
         holder.itemView.setOnClickListener {
             arrList?.get(position)?.player_id?.let { it1 -> listener.onTopScorerListener(it1) }
         }

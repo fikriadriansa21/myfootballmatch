@@ -21,7 +21,7 @@ data class Standing(
     val logo:String,
     @Expose
     @SerializedName("all")
-    val detail: DetailStanding,
+    val all: All,
     @Expose
     @SerializedName("points")
     val points:Int,

@@ -6,13 +6,11 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.myfootballmatch.R
-import com.example.myfootballmatch.data.network.model.standing.DetailStanding
 import com.example.myfootballmatch.data.network.model.standing.Standing
 
 class StandingAdapter(private var listener: StandingListener) : RecyclerView.Adapter<StandingAdapter.ViewHolder>(){
 
-    private var arrList : List<List<Standing?>> =  ArrayList<List<Standing>>()
-    private lateinit var detailStanding : DetailStanding
+    private var arrList : List<List<Standing?>> =  ArrayList<List<Standing?>>()
 
     class ViewHolder(view: View): RecyclerView.ViewHolder(view){
         val textViewRank: TextView = view.findViewById(R.id.tv_pos_number)
@@ -35,11 +33,11 @@ class StandingAdapter(private var listener: StandingListener) : RecyclerView.Ada
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        holder.textViewClub.text = arrList[position][0]?.teamName
-        holder.textViewRank.text = arrList[position][0]?.rank.toString()
-        holder.textViewGoalDrawn.text = arrList[position][0]?.goalsDiff.toString()
-        holder.textViewGame.text = detailStanding?.matchsPlayed.toString()
-        holder.textViewPoints.text = arrList[position][0]?.points.toString()
+        holder.textViewClub.text = arrList[position][0]!!.teamName
+        holder.textViewRank.text = arrList[position][0]!!.rank.toString()
+        holder.textViewGoalDrawn.text =arrList[position][0]!!.goalsDiff.toString()
+//        holder.textViewGame.text = arrList[position][0]!!.all.matchsPlayed.toString()
+        holder.textViewPoints.text = arrList[position][0]!!.points.toString()
         holder.itemView.setOnClickListener {
             listener.onStandingListener(arrList[position][0]!!.team_id)
 

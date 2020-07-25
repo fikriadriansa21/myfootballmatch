@@ -10,7 +10,7 @@ import java.lang.IllegalArgumentException
 class StandingViewModelFactory(private var standingService: StandingService): ViewModelProvider.Factory{
     @NonNull
     override fun <T : ViewModel?> create(modelClass: Class<T>): T {
-        if (modelClass.isAssignableFrom(LeagueViewModel::class.java)){
+        if (modelClass.isAssignableFrom(StandingViewModel::class.java)){
             return StandingViewModel(standingService) as T
         }
         throw IllegalArgumentException("Unknown Class")

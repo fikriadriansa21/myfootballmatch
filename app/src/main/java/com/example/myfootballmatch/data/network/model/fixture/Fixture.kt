@@ -16,15 +16,15 @@ data class Fixture(
     @SerializedName("event_date")
     val event_date:String,
     @Expose
-    @SerializedName("home_team")
+    @SerializedName("homeTeam")
     val homeTeam: HomeTeam,
     @Expose
-    @SerializedName("away_team")
+    @SerializedName("awayTeam")
     val awayTeam: AwayTeam,
     @Expose
     @SerializedName("goalsHomeTeam")
     val goalsHomeTeam: Int,
     @Expose
-    @SerializedName("goalsHomeTeam")
+    @SerializedName("goalsAwayTeam")
     val goalsAwayTeam: Int
 ) : Parcelable

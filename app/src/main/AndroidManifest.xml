@@ -14,20 +14,21 @@
         <activity android:name=".ui.statistic.StatisticActivity"/>
         <activity android:name=".ui.squad.SquadActivity" />
         <activity android:name=".ui.team.register.TeamRegisterActivity" />
-        <activity android:name=".ui.home.HomeActivity" />
-        <activity android:name=".ui.success.SuccessRegistrationActivity" />
-        <activity android:name=".ui.login.registeredaccount.LoginWithRegisteredAccountActivity" />
-        <activity android:name=".ui.login.google.LoginWithGoogleActivity" />
-        <activity android:name=".ui.login.LoginActivity" />
-        <activity android:name=".ui.league.PickLeagueRegisterActivity"/>
-        <activity android:name=".ui.register.pickteamregister.PickTeamRegisterActivity" />
-        <activity android:name=".ui.register.RegisterActivity" />
-        <activity android:name=".ui.main.MainActivity" >
+        <activity android:name=".ui.home.HomeActivity" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+        <activity android:name=".ui.success.SuccessRegistrationActivity" />
+        <activity android:name=".ui.login.registeredaccount.LoginWithRegisteredAccountActivity" />
+        <activity android:name=".ui.login.google.LoginWithGoogleActivity" />
+        <activity android:name=".ui.login.LoginActivity" />
+        <activity android:name=".ui.league.PickLeagueRegisterActivity"/>
+        <activity android:name=".ui.register.RegisterActivity" />
+        <activity android:name=".ui.main.MainActivity" >
+
         </activity>
     </application>
 

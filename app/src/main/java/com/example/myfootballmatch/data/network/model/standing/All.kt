@@ -6,7 +6,7 @@ import com.google.gson.annotations.SerializedName
 import kotlinx.android.parcel.Parcelize
 
 @Parcelize
-data class DetailStanding(
+data class All(
     @Expose
     @SerializedName("matchsPlayed")
     val matchsPlayed: Int,
