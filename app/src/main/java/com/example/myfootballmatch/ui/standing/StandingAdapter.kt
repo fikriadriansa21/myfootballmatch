@@ -10,7 +10,7 @@ import com.example.myfootballmatch.data.network.model.standing.Standing
 
 class StandingAdapter(private var listener: StandingListener) : RecyclerView.Adapter<StandingAdapter.ViewHolder>(){
 
-    private var arrList : List<List<Standing?>> =  ArrayList<List<Standing?>>()
+    private var arrList : List<Standing?> =  ArrayList<Standing?>()
 
     class ViewHolder(view: View): RecyclerView.ViewHolder(view){
         val textViewRank: TextView = view.findViewById(R.id.tv_pos_number)
@@ -20,7 +20,7 @@ class StandingAdapter(private var listener: StandingListener) : RecyclerView.Ada
         val textViewPoints: TextView = view.findViewById(R.id.tv_points_gained)
     }
 
-    fun setItems(items: List<List<Standing>>) {
+    fun setItems(items: List<Standing>) {
         arrList = items
         notifyDataSetChanged()
     }
@@ -33,13 +33,14 @@ class StandingAdapter(private var listener: StandingListener) : RecyclerView.Ada
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        holder.textViewClub.text = arrList[0][position]!!.teamName
-        holder.textViewRank.text = arrList[0][position]!!.rank.toString()
-        holder.textViewGoalDrawn.text =arrList[0][position]!!.goalsDiff.toString()
-//        holder.textViewGame.text = arrList[0][position]!!.all.matchsPlayed.toString()
-        holder.textViewPoints.text = arrList[0][position]!!.points.toString()
+        val gamePlay = arrList[position]?.all?.draw
+        holder.textViewClub.text = arrList[position]!!.teamName
+        holder.textViewRank.text = arrList[position]!!.rank.toString()
+        holder.textViewGoalDrawn.text =arrList[position]!!.goalsDiff.toString()
+        holder.textViewGame.text = (gamePlay?:0).toString()
+        holder.textViewPoints.text = arrList[position]!!.points.toString()
         holder.itemView.setOnClickListener {
-            listener.onStandingListener(arrList[0][position]!!.team_id)
+            listener.onStandingListener(arrList[position]!!.team_id)
 
         }
     }

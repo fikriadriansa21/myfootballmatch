@@ -25,9 +25,7 @@ import com.example.myfootballmatch.ui.topscorer.TopScorerViewModelFactory
 import com.example.myfootballmatch.utils.Utils
 import kotlinx.android.synthetic.main.fragment_home.*
 
-
 class HomeFragment : Fragment(), StandingAdapter.StandingListener , FixtureAdapter.FixtureListener, TopScorerAdapter.TopScorerListener{
-
     private lateinit var standingService: StandingService
     private lateinit var fixtureLeagueService: FixtureLeagueService
     private lateinit var topScorerService: TopScoreService
@@ -39,22 +37,12 @@ class HomeFragment : Fragment(), StandingAdapter.StandingListener , FixtureAdapt
     private lateinit var topScorerViewModel: TopScorerViewModel
 
     companion object {
-        const val ARG_SUCCESS = "success_registration"
-
-
-        fun newInstance(name: String): HomeFragment {
+        fun newInstance(): HomeFragment {
             val fragment = HomeFragment()
-
-            val bundle = Bundle().apply {
-                putString(ARG_SUCCESS, name)
-            }
-
-            fragment.arguments = bundle
 
             return fragment
         }
     }
-
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -86,7 +74,7 @@ class HomeFragment : Fragment(), StandingAdapter.StandingListener , FixtureAdapt
         topScorerViewModel = createViewModelTopScorer()
 
         standingViewModel.standings.observe(this, Observer{
-            standingAdapter.setItems(it)
+            standingAdapter.setItems(it[0])
             standingAdapter.notifyDataSetChanged()
         })
 
@@ -107,7 +95,6 @@ class HomeFragment : Fragment(), StandingAdapter.StandingListener , FixtureAdapt
         tv_league_name_1.text = Utils.getSharedPrefereces(Utils.LEAGUE_NAME)
         tv_league_name_2.text = Utils.getSharedPrefereces(Utils.LEAGUE_NAME)
     }
-
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,

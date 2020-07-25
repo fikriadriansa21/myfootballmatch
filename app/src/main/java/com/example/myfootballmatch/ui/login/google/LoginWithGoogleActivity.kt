@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.widget.Toast
 import androidx.fragment.app.FragmentTransaction
 import com.example.myfootballmatch.R
+import com.example.myfootballmatch.ui.home.HomeActivity
 import com.example.myfootballmatch.ui.home.HomeFragment
 import com.example.myfootballmatch.ui.league.PickLeagueRegisterActivity
 import com.example.myfootballmatch.utils.Utils
@@ -44,16 +45,9 @@ class LoginWithGoogleActivity : AppCompatActivity() {
 
             if(email == Utils.getSharedPrefereces(Utils.EMAIL) && password == Utils.getSharedPrefereces(Utils.PASSWORD)){
                 Toast.makeText(this,"Login berhasil!", Toast.LENGTH_SHORT).show()
-//                val  intent = Intent(this, HomeFragment::class.java)
-//                startActivity(intent)
-                try {
-                    val fragment = HomeFragment()
-                    val transaction: FragmentTransaction = supportFragmentManager.beginTransaction()
-                    transaction.add(R.id.fragment_container, fragment)
-                    transaction.commit()
-                }catch (error: Error){
-                    print(error)
-                }
+                val  intent = Intent(this, HomeActivity::class.java)
+                startActivity(intent)
+
             }
         }
     }

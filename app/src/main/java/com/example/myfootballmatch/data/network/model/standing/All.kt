@@ -9,20 +9,20 @@ import kotlinx.android.parcel.Parcelize
 data class All(
     @Expose
     @SerializedName("matchsPlayed")
-    val matchsPlayed: Int,
+    val matchsPlayed: Int? = null,
     @Expose
     @SerializedName("win")
-    val win: Int,
+    val win: Int? = null,
     @Expose
     @SerializedName("draw")
-    val draw: Int,
+    val draw: Int? = null,
     @Expose
     @SerializedName("lose")
-    val lose: Int,
+    val lose: Int? = null,
     @Expose
     @SerializedName("goalsFor")
-    val goalsFor: Int,
+    val goalsFor: Int? = null,
     @Expose
     @SerializedName("goalsAgainst")
-    val goalsAgainst: Int
+    val goalsAgainst: Int? = null
 ) : Parcelable
