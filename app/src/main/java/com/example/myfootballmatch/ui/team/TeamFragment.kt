@@ -16,7 +16,6 @@ import com.example.myfootballmatch.data.network.NetworkConfig
 import com.example.myfootballmatch.data.network.model.fixture.Fixture
 import com.example.myfootballmatch.data.network.services.FixtureTeamService
 import com.example.myfootballmatch.ui.squad.SquadActivity
-import com.example.myfootballmatch.ui.squad.SquadAdapter
 import com.example.myfootballmatch.ui.team.lastmatch.LastMatchAdapter
 import com.example.myfootballmatch.ui.team.lastmatch.LastMatchViewModel
 import com.example.myfootballmatch.ui.team.lastmatch.LastMatchViewModelFactory

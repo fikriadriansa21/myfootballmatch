@@ -11,7 +11,7 @@ object Utils {
     const val USERNAME = "USERNAME"
     const val LEAGUE_ID = "LEAGUE_ID"
     const val LEAGUE_NAME = "LEAGUE_NAME"
-    const val TEAM_ID = "LEAGUE_ID"
+    const val TEAM_ID = "TEAM_ID"
     const val TEAM_ID_FAV = "TEAM_ID_FAV"
     const val TEAM_NAME = "TEAM_NAME"
 
