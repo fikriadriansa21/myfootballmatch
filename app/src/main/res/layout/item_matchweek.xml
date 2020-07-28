@@ -4,6 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     app:cardCornerRadius="@dimen/dimen8"
+    android:layout_margin="@dimen/dimen8"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <LinearLayout
@@ -14,11 +15,11 @@
         <RelativeLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
-            android:layout_marginLeft="@dimen/dimen20"
-            android:layout_marginRight="@dimen/dimen20"
-            android:layout_marginBottom="@dimen/dimen24"
-            android:layout_marginTop="@dimen/dimen24">
+            android:layout_gravity="center"
+            android:layout_marginLeft="@dimen/dimen8"
+            android:layout_marginRight="@dimen/dimen8"
+            android:layout_marginBottom="@dimen/dimen8"
+            android:layout_marginTop="@dimen/dimen8">
 
             <TextView
                 android:id="@+id/tv_team_nick_name"
@@ -27,7 +28,7 @@
                 android:fontFamily="@font/poppins_regular"
                 android:text="MUN"
                 android:textColor="@color/colorBlack"
-                android:textSize="@dimen/font16" />
+                android:textSize="@dimen/font14" />
 
             <ImageView
                 android:id="@+id/iv_club_logo_fav_team"
@@ -97,9 +98,7 @@
                 android:fontFamily="@font/poppins_regular"
                 android:text="MCI"
                 android:textColor="@color/colorBlack"
-                android:textSize="@dimen/font16" />
-
+                android:textSize="@dimen/font14" />
         </RelativeLayout>
-
     </LinearLayout>
 </androidx.cardview.widget.CardView>

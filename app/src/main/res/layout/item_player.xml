@@ -20,15 +20,15 @@
         android:id="@+id/tv_player_name_squad"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/dimen16"
-        android:layout_marginLeft="@dimen/dimen16"
         android:fontFamily="@font/poppins_regular"
         android:text="Marcus Rashford"
         android:textColor="@color/colorBlack"
         android:textSize="@dimen/font14"
+        android:layout_marginLeft="@dimen/dimen16"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toEndOf="@id/iv_jersey"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintStart_toEndOf="@+id/iv_jersey"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginStart="@dimen/dimen16" />
 
     <TextView
         android:id="@+id/tv_position_player"
@@ -42,7 +42,7 @@
         android:layout_marginLeft="@dimen/dimen40"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/tv_player_name_squad"
+
         app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
