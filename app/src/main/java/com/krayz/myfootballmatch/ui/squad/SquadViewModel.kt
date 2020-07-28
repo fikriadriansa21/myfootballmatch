@@ -30,7 +30,7 @@ class SquadViewModel(private var playerService: PlayerService) : BaseViewModel()
         isLoading?.postValue(loading)
     }
 
-    private fun setLeagues(players: List<Player>) {
+    private fun setPlayerSquad(players: List<Player>) {
         setIsLoading(false)
         player.value=players
     }
@@ -39,14 +39,9 @@ class SquadViewModel(private var playerService: PlayerService) : BaseViewModel()
         override fun onResponse(@NonNull call: Call<ApiPlayer?>, @NonNull response: Response<ApiPlayer?>) {
             val playerResult: ApiPlayer? = response.body()
             if (playerResult != null) {
-                Log.d("asdakasas","result tidak null")
-
-                setLeagues(playerResult.api.players)
-                Log.d("asdakasas",playerResult.api.players[0].player_name)
+                setPlayerSquad(playerResult.api.players)
             } else {
-                Log.d("asdakasas","result null")
-
-                setLeagues(emptyList<Player>())
+                setPlayerSquad(emptyList<Player>())
             }
         }
 
@@ -56,7 +51,7 @@ class SquadViewModel(private var playerService: PlayerService) : BaseViewModel()
         ) {
             Log.d("asdakasas","result failure")
 
-            setLeagues(emptyList<Player>())
+            setPlayerSquad(emptyList<Player>())
         }
     }
 

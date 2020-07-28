@@ -8,7 +8,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.krayz.myfootballmatch.R
 import com.krayz.myfootballmatch.data.network.model.standing.Standing
 
-class StandingAdapter(private var listener: StandingListener) : RecyclerView.Adapter<StandingAdapter.ViewHolder>(){
+class StandingAdapter() : RecyclerView.Adapter<StandingAdapter.ViewHolder>(){
 
     private var arrList : List<Standing?> =  ArrayList<Standing?>()
 
@@ -39,13 +39,5 @@ class StandingAdapter(private var listener: StandingListener) : RecyclerView.Ada
         holder.textViewGoalDrawn.text =arrList[position]!!.goalsDiff.toString()
         holder.textViewGame.text = (gamePlay?:0).toString()
         holder.textViewPoints.text = arrList[position]!!.points.toString()
-        holder.itemView.setOnClickListener {
-            listener.onStandingListener(arrList[position]!!.team_id)
-
-        }
-    }
-
-    interface StandingListener {
-        fun onStandingListener(id: Int)
     }
 }

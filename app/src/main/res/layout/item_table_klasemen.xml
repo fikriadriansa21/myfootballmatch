@@ -27,7 +27,7 @@
 
         <TextView
             android:id="@+id/tv_club_name"
-            android:layout_width="wrap_content"
+            android:layout_width="@dimen/dimen64"
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/dimen12"
             android:layout_marginLeft="@dimen/dimen12"
@@ -49,9 +49,11 @@
             android:text="31"
             android:textColor="@color/colorBlack"
             android:textSize="@dimen/font14"
+            android:layout_marginRight="@dimen/dimen40"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toEndOf="@id/tv_club_name"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintEnd_toStartOf="@+id/tv_goal_drawn"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginEnd="@dimen/dimen40" />
 
         <TextView
             android:id="@+id/tv_goal_drawn"
@@ -61,11 +63,13 @@
             android:layout_marginLeft="@dimen/dimen24"
             android:fontFamily="@font/poppins_regular"
             android:text="49"
+            android:layout_marginRight="@dimen/dimen40"
             android:textColor="@color/colorBlack"
             android:textSize="@dimen/font14"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toEndOf="@id/tv_play_game"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintEnd_toStartOf="@+id/tv_points_gained"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginEnd="@dimen/dimen40" />
 
         <TextView
             android:id="@+id/tv_points_gained"
@@ -77,10 +81,11 @@
             android:text="86"
             android:textColor="@color/colorBlack"
             android:textSize="@dimen/font14"
+            android:layout_marginRight="@dimen/dimen40"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@id/tv_goal_drawn"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginEnd="@dimen/dimen40" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

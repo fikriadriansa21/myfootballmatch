@@ -25,7 +25,7 @@ import com.krayz.myfootballmatch.ui.topscorer.TopScorerViewModelFactory
 import com.krayz.myfootballmatch.utils.Utils
 import kotlinx.android.synthetic.main.fragment_home.*
 
-class HomeFragment : Fragment(), StandingAdapter.StandingListener , FixtureAdapter.FixtureListener, TopScorerAdapter.TopScorerListener{
+class HomeFragment : Fragment(), FixtureAdapter.FixtureListener{
     private lateinit var standingService: StandingService
     private lateinit var fixtureLeagueService: FixtureLeagueService
     private lateinit var topScorerService: TopScoreService
@@ -48,9 +48,9 @@ class HomeFragment : Fragment(), StandingAdapter.StandingListener , FixtureAdapt
         super.onViewCreated(view, savedInstanceState)
         this.activity?.let { Utils.makeSharedPreference(it) }
 
-        standingAdapter = StandingAdapter(this)
+        standingAdapter = StandingAdapter()
         fixtureAdapter = FixtureAdapter(this)
-        topScorerAdapter = TopScorerAdapter(this)
+        topScorerAdapter = TopScorerAdapter()
 
         rv_league_table.layoutManager = LinearLayoutManager(this.context)
         rv_league_table.setHasFixedSize(true)
@@ -116,20 +116,11 @@ class HomeFragment : Fragment(), StandingAdapter.StandingListener , FixtureAdapt
 
     private fun createViewModelTopScorer(): TopScorerViewModel {
         val topScorerFactory = TopScorerViewModelFactory(topScorerService)
-
         return ViewModelProviders.of(this, topScorerFactory)[TopScorerViewModel::class.java]
 
     }
 
-    override fun onStandingListener(id: Int) {
-
-    }
-
     override fun onFixtureListener(id: Int) {
-
-    }
-
-    override fun onTopScorerListener(id: Int) {
 
     }
 

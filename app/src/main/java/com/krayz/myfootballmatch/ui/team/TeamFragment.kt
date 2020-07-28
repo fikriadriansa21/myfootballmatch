@@ -34,11 +34,11 @@ class TeamFragment : Fragment(), LastMatchAdapter.LastMatchListener{
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        val snapHelper: SnapHelper = LinearSnapHelper()
 
         lastMatchAdapter = LastMatchAdapter(this)
-        rv_upcoming_match.layoutManager = LinearLayoutManager(this.context, RecyclerView.HORIZONTAL, false)
+        rv_upcoming_match.layoutManager = LinearLayoutManager(this.context)
         rv_upcoming_match.setHasFixedSize(true)
-        val snapHelper: SnapHelper = LinearSnapHelper()
         snapHelper.attachToRecyclerView(rv_upcoming_match)
 
         rv_upcoming_match.adapter = lastMatchAdapter
@@ -94,11 +94,4 @@ class TeamFragment : Fragment(), LastMatchAdapter.LastMatchListener{
 
     }
 
-    private fun squadIntent(id: Int){
-        val intent = Intent(activity, SquadActivity::class.java)
-        Utils.makeSharedPreference(activity!!)
-        intent.putExtra(SquadActivity.TEAM_SQUAD,id)
-
-        startActivity(intent)
-    }
 }

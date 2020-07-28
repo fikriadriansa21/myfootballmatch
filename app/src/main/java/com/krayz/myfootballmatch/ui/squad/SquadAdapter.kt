@@ -8,14 +8,13 @@ import androidx.recyclerview.widget.RecyclerView
 import com.krayz.myfootballmatch.R
 import com.krayz.myfootballmatch.data.network.model.player.Player
 
-class SquadAdapter(private var listener: SquadListener) : RecyclerView.Adapter<SquadAdapter.ViewHolder>(){
+class SquadAdapter() : RecyclerView.Adapter<SquadAdapter.ViewHolder>(){
 
     private var arrList : List<Player?> =  ArrayList<Player>()
 
     class ViewHolder(view: View): RecyclerView.ViewHolder(view){
         val textViewPlayerName: TextView = view.findViewById(R.id.tv_player_name_squad)
         val textViewPlayerPosition: TextView = view.findViewById(R.id.tv_position_player)
-//        val textViewAge: TextView = view.findViewById(R.id.tv_position_player)
     }
 
     fun setItems(items: List<Player?>) {
@@ -33,12 +32,6 @@ class SquadAdapter(private var listener: SquadListener) : RecyclerView.Adapter<S
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         holder.textViewPlayerName.text = arrList[position]!!.player_name
         holder.textViewPlayerPosition.text = arrList[position]!!.position
-        holder.itemView.setOnClickListener {
-            arrList?.get(position)?.player_id?.let { it1 -> listener.onSquadListener(it1) }
-        }
     }
 
-    interface SquadListener {
-        fun onSquadListener(id: Int)
-    }
 }
