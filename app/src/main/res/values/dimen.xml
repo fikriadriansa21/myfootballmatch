@@ -18,12 +18,16 @@
     <dimen name="dimen72">72dp</dimen>
     <dimen name="dimen78">78dp</dimen>
     <dimen name="dimen80">80dp</dimen>
+    <dimen name="dimen96">96dp</dimen>
+    <dimen name="dimen104">104dp</dimen>
+    <dimen name="dimen120">120dp</dimen>
     <dimen name="dimen142">142dp</dimen>
     <dimen name="dimen275">275dp</dimen>
     <dimen name="dimen312">312dp</dimen>
     <dimen name="dimen360">360dp</dimen>
 
     <dimen name="font24">24sp</dimen>
+    <dimen name="font32">32sp</dimen>
     <dimen name="font20">20sp</dimen>
     <dimen name="font16">16sp</dimen>
     <dimen name="font14">14sp</dimen>

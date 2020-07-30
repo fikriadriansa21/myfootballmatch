@@ -6,4 +6,15 @@
     <string name="profile_menu_title">Profile</string>
     <string name="email_placeholder">ex. user@gmail.com</string>
     <string name="under_development_text">Under Development</string>
+    <string name="win">Win</string>
+    <string name="draw">Draw</string>
+    <string name="lose">Lose</string>
+    <string name="win_32">32</string>
+    <string name="match_played">Match Played</string>
+    <string name="home">Home</string>
+    <string name="_46">46</string>
+    <string name="away">Away</string>
+    <string name="goal_statistic">Goal Statistic</string>
+    <string name="goal_average">Goal Average</string>
+    <string name="logout">Logout</string>
 </resources>

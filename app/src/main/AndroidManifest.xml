@@ -12,14 +12,12 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name="com.krayz.myfootballmatch.ui.statistic.StatisticActivity"/>
-        <activity android:name="com.krayz.myfootballmatch.ui.squad.SquadActivity" />
+        <activity android:name="com.krayz.myfootballmatch.ui.squad.SquadActivity" >
+
+        </activity>
         <activity android:name="com.krayz.myfootballmatch.ui.team.register.TeamRegisterActivity" />
         <activity android:name="com.krayz.myfootballmatch.ui.home.HomeActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
         <activity android:name="com.krayz.myfootballmatch.ui.success.SuccessRegistrationActivity" />
         <activity android:name="com.krayz.myfootballmatch.ui.login.google.LoginWithGoogleActivity" />
@@ -27,7 +25,11 @@
         <activity android:name="com.krayz.myfootballmatch.ui.league.PickLeagueRegisterActivity"/>
         <activity android:name="com.krayz.myfootballmatch.ui.register.RegisterActivity" />
         <activity android:name="com.krayz.myfootballmatch.ui.main.MainActivity" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
 
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
     </application>
 

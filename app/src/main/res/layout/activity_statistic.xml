@@ -1,8 +1,523 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".ui.home.HomeActivity"
+    android:id="@+id/scroll_daily"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="match_parent">
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
     tools:context=".ui.statistic.StatisticActivity">
 
+    <Button
+        android:id="@+id/btn_back_myteam"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:background="@drawable/ic_back"
+        android:layout_marginLeft="@dimen/dimen24"
+        android:layout_marginTop="@dimen/dimen40"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginStart="@dimen/dimen24" />
+
+    <TextView
+        android:id="@+id/tv_back_myteam"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/poppins_medium"
+        android:text="MyTeam"
+        android:textColor="@color/colorBlack"
+        android:textSize="@dimen/font12"
+        android:layout_marginTop="@dimen/dimen45"
+        android:layout_marginLeft="@dimen/dimen4"
+        app:layout_constraintStart_toEndOf="@+id/btn_back_myteam"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginStart="4dp" />
+
+    <TextView
+        android:id="@+id/tv_title_statistic"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dimen40"
+        android:fontFamily="@font/poppins_bold"
+        android:padding="@dimen/dimen4"
+        android:layout_marginLeft="@dimen/dimen24"
+        android:text="Statistic"
+        android:textColor="@color/colorPrimaryDark"
+        android:textSize="@dimen/font20"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btn_back_myteam"
+        android:layout_marginStart="@dimen/dimen24" />
+
+    <TextView
+        android:id="@+id/tv_title_team"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dimen8"
+        android:fontFamily="@font/poppins_semibold"
+        android:padding="@dimen/dimen4"
+        android:layout_marginLeft="@dimen/dimen24"
+        android:text="Club Name"
+        android:textColor="@color/colorBlueDark"
+        android:textSize="@dimen/font12"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_title_statistic"
+        android:layout_marginStart="@dimen/dimen24" />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/card_win"
+        android:layout_width="@dimen/dimen96"
+        android:layout_height="@dimen/dimen96"
+        android:layout_marginStart="@dimen/dimen24"
+        android:layout_marginLeft="@dimen/dimen24"
+        android:layout_marginTop="@dimen/dimen20"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_title_team">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+        <TextView
+            android:id="@+id/tv_win_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/poppins_regular"
+            android:textSize="@dimen/font14"
+            android:text="@string/win"
+            android:textColor="@color/colorBlack"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="@dimen/dimen8"/>
+
+        <TextView
+            android:id="@+id/tv_win_total"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/poppins_bold"
+            android:textSize="@dimen/font32"
+            android:text="@string/win_32"
+            android:textColor="@color/colorBlack"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="@dimen/dimen8"/>
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/card_draw"
+        android:layout_width="@dimen/dimen96"
+        android:layout_height="@dimen/dimen96"
+        android:layout_marginTop="@dimen/dimen20"
+        android:layout_marginLeft="@dimen/dimen16"
+        android:layout_marginRight="@dimen/dimen16"
+        app:layout_constraintEnd_toStartOf="@+id/card_lose"
+        app:layout_constraintStart_toEndOf="@+id/card_win"
+        app:layout_constraintTop_toBottomOf="@+id/tv_title_team">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+            <TextView
+                android:id="@+id/tv_draw_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins_regular"
+                android:textSize="@dimen/font14"
+                android:text="@string/draw"
+                android:textColor="@color/colorBlack"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="@dimen/dimen8"/>
+
+            <TextView
+                android:id="@+id/tv_draw_total"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins_bold"
+                android:textSize="@dimen/font32"
+                android:text="@string/win_32"
+                android:textColor="@color/colorBlack"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="@dimen/dimen8"/>
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/card_lose"
+        android:layout_width="@dimen/dimen96"
+        android:layout_height="@dimen/dimen96"
+        android:layout_marginTop="@dimen/dimen20"
+        android:layout_marginRight="@dimen/dimen24"
+        android:layout_marginLeft="@dimen/dimen16"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_title_team"
+        android:layout_marginEnd="@dimen/dimen24"
+        android:layout_marginStart="@dimen/dimen16">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+            <TextView
+                android:id="@+id/tv_lose_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins_regular"
+                android:textSize="@dimen/font14"
+                android:text="@string/lose"
+                android:textColor="@color/colorBlack"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="@dimen/dimen8"/>
+
+            <TextView
+                android:id="@+id/tv_lose_total"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins_bold"
+                android:textSize="@dimen/font32"
+                android:text="@string/win_32"
+                android:textColor="@color/colorBlack"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="@dimen/dimen8"/>
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+    <LinearLayout
+        android:id="@+id/header_match_played"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dimen24"
+        android:layout_marginLeft="@dimen/dimen24"
+        android:layout_marginRight="@dimen/dimen24"
+        android:background="@color/colorSuccess"
+        android:orientation="horizontal"
+        android:padding="@dimen/dimen8"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/card_win">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dimen16"
+            android:layout_marginLeft="@dimen/dimen16"
+            android:fontFamily="@font/poppins_regular"
+            android:text="@string/match_played"
+            android:textColor="@color/colorBlack"
+            android:textSize="@dimen/font12" />
+    </LinearLayout>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/card_match_played"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/header_match_played"
+        android:layout_marginTop="@dimen/dimen12"
+        android:layout_marginRight="@dimen/dimen24"
+        android:layout_marginLeft="@dimen/dimen24">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/home_constraint"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/tv_home"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins_semibold"
+                android:text="@string/home"
+                android:textSize="@dimen/font14"
+                android:layout_marginLeft="@dimen/dimen16"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:layout_marginStart="@dimen/dimen16" />
+
+            <TextView
+                android:id="@+id/tv_home_match"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins_semibold"
+                android:text="@string/_46"
+                android:textSize="@dimen/font14"
+                android:textColor="@color/colorBlack"
+                android:layout_marginRight="@dimen/dimen16"
+                android:layout_marginEnd="@dimen/dimen16"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/away_constraint"
+            android:layout_marginTop="@dimen/dimen12"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/tv_away"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins_semibold"
+                android:text="@string/away"
+                android:textSize="@dimen/font14"
+                android:layout_marginLeft="@dimen/dimen16"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:layout_marginStart="@dimen/dimen16" />
+
+            <TextView
+                android:id="@+id/tv_away_match"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins_semibold"
+                android:text="@string/_46"
+                android:textSize="@dimen/font14"
+                android:textColor="@color/colorBlack"
+                android:layout_marginRight="@dimen/dimen16"
+                android:layout_marginEnd="@dimen/dimen16"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+    <LinearLayout
+        android:id="@+id/header_goal_statistic"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dimen24"
+        android:layout_marginLeft="@dimen/dimen24"
+        android:layout_marginRight="@dimen/dimen24"
+        android:background="@color/colorSuccess"
+        android:orientation="horizontal"
+        android:padding="@dimen/dimen8"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/card_match_played">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dimen16"
+            android:layout_marginLeft="@dimen/dimen16"
+            android:fontFamily="@font/poppins_regular"
+            android:text="@string/goal_statistic"
+            android:textColor="@color/colorBlack"
+            android:textSize="@dimen/font12" />
+    </LinearLayout>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/card_goal_statistic"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/header_goal_statistic"
+        android:layout_marginTop="@dimen/dimen12"
+        android:layout_marginRight="@dimen/dimen24"
+        android:layout_marginLeft="@dimen/dimen24">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/goal_for_constraint"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/tv_goal_for"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/poppins_semibold"
+                    android:text="Goals For"
+                    android:textSize="@dimen/font14"
+                    android:layout_marginLeft="@dimen/dimen16"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:layout_marginStart="@dimen/dimen16" />
+
+                <TextView
+                    android:id="@+id/tv_goal_for_score"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/poppins_semibold"
+                    android:text="@string/_46"
+                    android:textSize="@dimen/font14"
+                    android:layout_marginRight="@dimen/dimen16"
+                    android:layout_marginEnd="@dimen/dimen16"
+                    android:textColor="@color/colorBlack"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/goal_against_constraint"
+                android:layout_marginTop="@dimen/dimen12"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/tv_goal_against"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/poppins_semibold"
+                    android:text="Goals Against"
+                    android:textSize="@dimen/font14"
+                    android:layout_marginLeft="@dimen/dimen16"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:layout_marginStart="@dimen/dimen16" />
+
+                <TextView
+                    android:id="@+id/v_goal_against_score"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/poppins_semibold"
+                    android:text="@string/_46"
+                    android:textSize="@dimen/font14"
+                    android:layout_marginRight="@dimen/dimen16"
+                    android:layout_marginEnd="@dimen/dimen16"
+                    android:textColor="@color/colorBlack"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+
+    <LinearLayout
+        android:id="@+id/header_goal_average"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dimen24"
+        android:layout_marginLeft="@dimen/dimen24"
+        android:layout_marginRight="@dimen/dimen24"
+        android:background="@color/colorSuccess"
+        android:orientation="horizontal"
+        android:padding="@dimen/dimen8"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/card_goal_statistic">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dimen16"
+            android:layout_marginLeft="@dimen/dimen16"
+            android:fontFamily="@font/poppins_regular"
+            android:text="@string/goal_average"
+            android:textColor="@color/colorBlack"
+            android:textSize="@dimen/font12" />
+    </LinearLayout>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/card_goal_average"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/header_goal_average"
+        android:layout_marginTop="@dimen/dimen12"
+        android:layout_marginRight="@dimen/dimen24"
+        android:layout_marginLeft="@dimen/dimen24">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/goal_for_constraint_average"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/tv_goal_for_average"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/poppins_semibold"
+                    android:text="Goals For"
+                    android:textSize="@dimen/font14"
+                    android:layout_marginLeft="@dimen/dimen16"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:layout_marginStart="@dimen/dimen16" />
+
+                <TextView
+                    android:id="@+id/tv_goal_for_score_average"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/poppins_semibold"
+                    android:text="@string/_46"
+                    android:textSize="@dimen/font14"
+                    android:layout_marginRight="@dimen/dimen16"
+                    android:layout_marginEnd="@dimen/dimen16"
+                    android:textColor="@color/colorBlack"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/goal_against_constraint_average"
+                android:layout_marginTop="@dimen/dimen12"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/tv_goal_against_average"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/poppins_semibold"
+                    android:text="Goals Against"
+                    android:textSize="@dimen/font14"
+                    android:layout_marginLeft="@dimen/dimen16"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:layout_marginStart="@dimen/dimen16" />
+
+                <TextView
+                    android:id="@+id/v_goal_against_score_average"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/poppins_semibold"
+                    android:text="@string/_46"
+                    android:textSize="@dimen/font14"
+                    android:layout_marginRight="@dimen/dimen16"
+                    android:layout_marginEnd="@dimen/dimen16"
+                    android:textColor="@color/colorBlack"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
 </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

@@ -21,7 +21,7 @@ class StandingViewModel(private var standingService: StandingService) : BaseView
 
     fun loadStandingNetwork(id: Int) {
         setIsLoading(true)
-        standingService.getStandingData(id).enqueue(callback)
+        standingService.getStanding(id).enqueue(callback)
     }
 
     private fun setIsLoading(loading: Boolean) {

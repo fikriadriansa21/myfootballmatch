@@ -49,6 +49,7 @@ object NetworkConfig {
     val standingService: StandingService = builder.create(StandingService::class.java)
     val playerService: PlayerService = builder.create(PlayerService::class.java)
     val topScoreService: TopScoreService = builder.create(TopScoreService::class.java)
+    val statisticService: StatisticService = builder.create(StatisticService::class.java)
 
 
 }

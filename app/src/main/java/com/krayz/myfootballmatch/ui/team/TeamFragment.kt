@@ -11,7 +11,6 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.LinearSnapHelper
-import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.SnapHelper
 import com.krayz.myfootballmatch.R
 import com.krayz.myfootballmatch.data.network.NetworkConfig
@@ -37,7 +36,7 @@ class TeamFragment : Fragment(), LastMatchAdapter.LastMatchListener{
         val snapHelper: SnapHelper = LinearSnapHelper()
 
         lastMatchAdapter = LastMatchAdapter(this)
-        rv_upcoming_match.layoutManager = LinearLayoutManager(this.context)
+        rv_upcoming_match.layoutManager = LinearLayoutManager(this.context, LinearLayoutManager.HORIZONTAL, false)
         rv_upcoming_match.setHasFixedSize(true)
         snapHelper.attachToRecyclerView(rv_upcoming_match)
 

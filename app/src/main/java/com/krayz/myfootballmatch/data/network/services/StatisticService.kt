@@ -5,7 +5,7 @@ import retrofit2.Call
 import retrofit2.http.GET
 import retrofit2.http.Path
 
-interface StandingService {
-    @GET("leagueTable/{league_id}")
-    fun getStanding(@Path("league_id") league_id: Int): Call<ApiStanding>
+interface StatisticService {
+    @GET("statistics/{league_id}/{team_id}")
+    fun getStandingData(@Path("league_id") league_id: Int, @Path("team_id") team_id: Int): Call<ApiStanding>
 }
