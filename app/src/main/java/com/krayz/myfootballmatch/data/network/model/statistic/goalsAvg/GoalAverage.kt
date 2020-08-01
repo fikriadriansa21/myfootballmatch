@@ -9,8 +9,8 @@ import kotlinx.android.parcel.Parcelize
 data class GoalAverage(
     @Expose
     @SerializedName("goalsFor")
-    val goalForGoals: GoalForAvg,
+    val goalForAverage: GoalForAvg,
     @Expose
     @SerializedName("goalsAgainst")
-    val goalAgainstGoals: GoalAgainstAvg
+    val goalAgainstAverage: GoalAgainstAvg
 ): Parcelable

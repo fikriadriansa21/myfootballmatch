@@ -16,9 +16,15 @@ class LoginWithGoogleActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login_with_google)
+        Utils.makeSharedPreference(this)
+
+        if (Utils.getSharedPrefereces(Utils.EMAIL) != ""){
+            val  intent = Intent(this, HomeActivity::class.java)
+            startActivity(intent)
+        }
 
         btn_login.setOnClickListener {
-            Utils.makeSharedPreference(this)
+
             val email = et_email.text.toString()
             val password = et_password.text.toString()
 

@@ -20,7 +20,6 @@ class SquadViewModel(private var playerService: PlayerService) : BaseViewModel()
         isLoading = MutableLiveData()
     }
 
-
     fun loadPlayerNetwork(id: Int, season: String) {
         setIsLoading(true)
         playerService.getPlayerSquad(id,season).enqueue(callback)

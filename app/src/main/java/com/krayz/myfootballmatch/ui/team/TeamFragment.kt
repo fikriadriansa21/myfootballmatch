@@ -17,6 +17,7 @@ import com.krayz.myfootballmatch.data.network.NetworkConfig
 import com.krayz.myfootballmatch.data.network.model.fixture.Fixture
 import com.krayz.myfootballmatch.data.network.services.FixtureTeamService
 import com.krayz.myfootballmatch.ui.squad.SquadActivity
+import com.krayz.myfootballmatch.ui.statistic.StatisticActivity
 import com.krayz.myfootballmatch.ui.team.lastmatch.LastMatchAdapter
 import com.krayz.myfootballmatch.ui.team.lastmatch.LastMatchViewModel
 import com.krayz.myfootballmatch.ui.team.lastmatch.LastMatchViewModelFactory
@@ -30,23 +31,6 @@ class TeamFragment : Fragment(), LastMatchAdapter.LastMatchListener{
     private lateinit var fixtureTeamService: FixtureTeamService
     lateinit var lastMatchAdapter: LastMatchAdapter
     private lateinit var viewModelLastMatchTeam : LastMatchViewModel
-
-//    companion object {
-//        private const val ARG_NAME = Utils.TEAM_ID
-//
-//
-//        fun newInstance(name: String): Fragment {
-//            val fragment = Fragment()
-//
-//            val bundle = Bundle().apply {
-//                putString(ARG_NAME, name)
-//            }
-//
-//            fragment.arguments = bundle
-//
-//            return fragment
-//        }
-//    }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -70,6 +54,11 @@ class TeamFragment : Fragment(), LastMatchAdapter.LastMatchListener{
 
         card_squad_member.setOnClickListener {
             val intent = Intent(this.context, SquadActivity::class.java)
+            startActivity(intent)
+        }
+
+        card_statistic_club.setOnClickListener {
+            val intent = Intent(this.context, StatisticActivity::class.java)
             startActivity(intent)
         }
 

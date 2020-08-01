@@ -68,12 +68,13 @@ class PickLeagueRegisterActivity : AppCompatActivity(), LeagueAdapter.LeagueList
             leagueAdapter.setItems(league)
         }
     }
-    override fun onLeagueListener(id: Int, name: String) {
+    override fun onLeagueListener(id: Int, name: String, logo: String) {
         val intent = Intent(this, TeamRegisterActivity::class.java)
         intent.putExtra(TeamRegisterActivity.EXTRA_LEAGUE_ID,id)
         Utils.makeSharedPreference(this)
         Utils.putSharedPreferences(Utils.LEAGUE_ID, id)
         Utils.putSharedPreferences(Utils.LEAGUE_NAME, name)
+        Utils.putSharedPreferences(Utils.LOGO_LEAGUE, logo)
         startActivity(intent)
     }
 }

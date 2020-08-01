@@ -22,7 +22,6 @@ class LeagueViewModel(private var leagueService: LeagueService) : BaseViewModel(
         isLoading = MutableLiveData()
     }
 
-
     fun loadLeaguesNetwork() {
         setIsLoading(true)
         leagueService.getListDataLeague(Calendar.getInstance().get(Calendar.YEAR)-1)
@@ -52,7 +51,6 @@ class LeagueViewModel(private var leagueService: LeagueService) : BaseViewModel(
             call: Call<ApiLeague?>,
             t: Throwable
         ) {
-            Log.d("asdakasas","result failure")
             setLeagues(emptyList<League>())
         }
     }

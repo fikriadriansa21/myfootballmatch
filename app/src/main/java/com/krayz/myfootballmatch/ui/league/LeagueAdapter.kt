@@ -38,11 +38,11 @@ class LeagueAdapter(private var listener: LeagueListener) : RecyclerView.Adapter
 
         holder.textViewClub.text = arrList?.get(position)?.name
         holder.itemView.setOnClickListener {
-            listener.onLeagueListener(arrList[position]!!.league_id!!, arrList[position]!!.name!!)
+            listener.onLeagueListener(arrList[position]!!.league_id!!, arrList[position]!!.name!!, arrList[position]!!.logo!!)
         }
     }
 
     interface LeagueListener {
-        fun onLeagueListener(id: Int, name: String)
+        fun onLeagueListener(id: Int, name: String, logo: String)
     }
 }

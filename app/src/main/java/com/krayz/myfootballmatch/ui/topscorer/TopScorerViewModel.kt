@@ -1,6 +1,5 @@
 package com.krayz.myfootballmatch.ui.topscorer
 
-import android.util.Log
 import androidx.annotation.NonNull
 import androidx.lifecycle.MutableLiveData
 import com.krayz.myfootballmatch.data.network.model.topscore.ApiTopScorer
@@ -39,13 +38,8 @@ class TopScorerViewModel(private var topScorerService: TopScoreService) : BaseVi
         override fun onResponse(@NonNull call: Call<ApiTopScorer?>, @NonNull response: Response<ApiTopScorer?>) {
             val topScorerResult: ApiTopScorer? = response.body()
             if (topScorerResult != null) {
-                Log.d("asdakasas","result tidak null")
-
                 setLeagues(topScorerResult.api.topScorers)
-                Log.d("asdakasas",topScorerResult.api.topScorers[0].player_name)
             } else {
-                Log.d("asdakasas","result null")
-
                 setLeagues(emptyList<TopScorer>())
             }
         }
@@ -54,7 +48,6 @@ class TopScorerViewModel(private var topScorerService: TopScoreService) : BaseVi
             call: Call<ApiTopScorer?>,
             t: Throwable
         ) {
-            Log.d("asdakasas","result failure")
 
             setLeagues(emptyList<TopScorer>())
         }

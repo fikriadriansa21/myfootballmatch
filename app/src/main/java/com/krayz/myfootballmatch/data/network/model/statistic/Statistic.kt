@@ -12,7 +12,7 @@ import kotlinx.android.parcel.Parcelize
 data class Statistic(
     @Expose
     @SerializedName("matchs")
-    val matchs:Matchs,
+    val matchs: Matchs,
     @Expose
     @SerializedName("goals")
     val goals: Goals,

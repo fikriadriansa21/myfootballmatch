@@ -12,8 +12,9 @@ object Utils {
     const val LEAGUE_ID = "LEAGUE_ID"
     const val LEAGUE_NAME = "LEAGUE_NAME"
     const val TEAM_ID = "TEAM_ID"
-    const val TEAM_ID_FAV = "TEAM_ID_FAV"
     const val TEAM_NAME = "TEAM_NAME"
+    const val LOGO_LEAGUE = "LOGO_LEAGUE"
+    const val LOGO_TEAM = "LOGO_TEAM"
 
     fun makeSharedPreference(activity: Activity){
         sharedPreferences = activity.getSharedPreferences("USER_PREF", 0)

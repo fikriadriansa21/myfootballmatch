@@ -19,4 +19,5 @@
     <string name="logout">Logout</string>
     <string name="premier_league">Premier League</string>
     <string name="manchester_united">Manchester United</string>
+    <string name="statistic_team">Statistic Team</string>
 </resources>

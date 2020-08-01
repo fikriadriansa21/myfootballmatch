@@ -391,7 +391,7 @@
                     android:layout_marginStart="@dimen/dimen16" />
 
                 <TextView
-                    android:id="@+id/v_goal_against_score"
+                    android:id="@+id/tv_goal_against_score"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/poppins_semibold"
@@ -440,9 +440,11 @@
         android:layout_height="wrap_content"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/header_goal_average"
+        app:layout_constraintBottom_toBottomOf="parent"
         android:layout_marginTop="@dimen/dimen12"
         android:layout_marginRight="@dimen/dimen24"
-        android:layout_marginLeft="@dimen/dimen24">
+        android:layout_marginLeft="@dimen/dimen24"
+        android:layout_marginBottom="@dimen/dimen24">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -503,7 +505,7 @@
                     android:layout_marginStart="@dimen/dimen16" />
 
                 <TextView
-                    android:id="@+id/v_goal_against_score_average"
+                    android:id="@+id/tv_goal_against_score_average"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/poppins_semibold"

@@ -8,11 +8,8 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.krayz.myfootballmatch.R
 import com.krayz.myfootballmatch.data.network.NetworkConfig
 import com.krayz.myfootballmatch.data.network.services.PlayerService
-import com.krayz.myfootballmatch.ui.team.TeamFragment
 import com.krayz.myfootballmatch.utils.Utils
 import kotlinx.android.synthetic.main.activity_squad.*
-
-
 
 class  SquadActivity : AppCompatActivity(){
     private lateinit var playerService: PlayerService
@@ -42,12 +39,7 @@ class  SquadActivity : AppCompatActivity(){
 
 
         btn_back_myteam.setOnClickListener {
-            val fragment = supportFragmentManager.findFragmentById(R.id.fragment_container) as TeamFragment
-            val fragmentManager = supportFragmentManager
-            val fragmentTransaction = fragmentManager.beginTransaction()
-            fragmentTransaction.replace(R.id.fragment_container, fragment)
-            fragmentTransaction.addToBackStack(null)
-            fragmentTransaction.commit()
+            finish()
         }
     }
 
