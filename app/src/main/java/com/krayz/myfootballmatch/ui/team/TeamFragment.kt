@@ -31,22 +31,22 @@ class TeamFragment : Fragment(), LastMatchAdapter.LastMatchListener{
     lateinit var lastMatchAdapter: LastMatchAdapter
     private lateinit var viewModelLastMatchTeam : LastMatchViewModel
 
-    companion object {
-        private const val ARG_NAME = Utils.TEAM_ID
-
-
-        fun newInstance(name: String): Fragment {
-            val fragment = Fragment()
-
-            val bundle = Bundle().apply {
-                putString(ARG_NAME, name)
-            }
-
-            fragment.arguments = bundle
-
-            return fragment
-        }
-    }
+//    companion object {
+//        private const val ARG_NAME = Utils.TEAM_ID
+//
+//
+//        fun newInstance(name: String): Fragment {
+//            val fragment = Fragment()
+//
+//            val bundle = Bundle().apply {
+//                putString(ARG_NAME, name)
+//            }
+//
+//            fragment.arguments = bundle
+//
+//            return fragment
+//        }
+//    }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)

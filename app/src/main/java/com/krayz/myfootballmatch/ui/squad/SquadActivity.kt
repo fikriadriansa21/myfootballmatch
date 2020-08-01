@@ -39,7 +39,7 @@ class  SquadActivity : AppCompatActivity(){
         })
 
         viewModelSquad.loadPlayerNetwork(Utils.getIntSharedPrefereces(Utils.TEAM_ID),"2019-2020")
-        
+
 
         btn_back_myteam.setOnClickListener {
             val fragment = supportFragmentManager.findFragmentById(R.id.fragment_container) as TeamFragment
