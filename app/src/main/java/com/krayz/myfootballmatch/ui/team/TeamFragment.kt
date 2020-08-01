@@ -2,11 +2,11 @@ package com.krayz.myfootballmatch.ui.team
 
 import android.content.Intent
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.annotation.Nullable
+import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -30,6 +30,23 @@ class TeamFragment : Fragment(), LastMatchAdapter.LastMatchListener{
     private lateinit var fixtureTeamService: FixtureTeamService
     lateinit var lastMatchAdapter: LastMatchAdapter
     private lateinit var viewModelLastMatchTeam : LastMatchViewModel
+
+    companion object {
+        private const val ARG_NAME = Utils.TEAM_ID
+
+
+        fun newInstance(name: String): Fragment {
+            val fragment = Fragment()
+
+            val bundle = Bundle().apply {
+                putString(ARG_NAME, name)
+            }
+
+            fragment.arguments = bundle
+
+            return fragment
+        }
+    }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -86,6 +103,7 @@ class TeamFragment : Fragment(), LastMatchAdapter.LastMatchListener{
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
+//        val name = arguments?.getString(ARG_NAME)
         return inflater.inflate(R.layout.fragment_team, container, false)
     }
 

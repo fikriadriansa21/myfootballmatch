@@ -1,17 +1,20 @@
 package com.krayz.myfootballmatch.ui.squad
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.krayz.myfootballmatch.R
 import com.krayz.myfootballmatch.data.network.NetworkConfig
 import com.krayz.myfootballmatch.data.network.services.PlayerService
+import com.krayz.myfootballmatch.ui.team.TeamFragment
 import com.krayz.myfootballmatch.utils.Utils
 import kotlinx.android.synthetic.main.activity_squad.*
 
-class SquadActivity : AppCompatActivity(){
+
+
+class  SquadActivity : AppCompatActivity(){
     private lateinit var playerService: PlayerService
     lateinit var squadAdapter: SquadAdapter
     private lateinit var viewModelSquad : SquadViewModel
@@ -36,6 +39,16 @@ class SquadActivity : AppCompatActivity(){
         })
 
         viewModelSquad.loadPlayerNetwork(Utils.getIntSharedPrefereces(Utils.TEAM_ID),"2019-2020")
+        
+
+        btn_back_myteam.setOnClickListener {
+            val fragment = supportFragmentManager.findFragmentById(R.id.fragment_container) as TeamFragment
+            val fragmentManager = supportFragmentManager
+            val fragmentTransaction = fragmentManager.beginTransaction()
+            fragmentTransaction.replace(R.id.fragment_container, fragment)
+            fragmentTransaction.addToBackStack(null)
+            fragmentTransaction.commit()
+        }
     }
 
     private fun createViewModel(): SquadViewModel {
