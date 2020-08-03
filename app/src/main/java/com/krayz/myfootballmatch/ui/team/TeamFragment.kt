@@ -92,7 +92,6 @@ class TeamFragment : Fragment(), LastMatchAdapter.LastMatchListener{
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-//        val name = arguments?.getString(ARG_NAME)
         return inflater.inflate(R.layout.fragment_team, container, false)
     }
 

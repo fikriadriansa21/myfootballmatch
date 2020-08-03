@@ -12,7 +12,7 @@ import retrofit2.Callback
 import retrofit2.Response
 
 class StatisticViewModel(private var statisticService: StatisticService) : BaseViewModel(){
-    var statistics: MutableLiveData<Statistic?> = MutableLiveData()
+    var statistics: MutableLiveData<Statistic> = MutableLiveData()
     private var isLoading: MutableLiveData<Boolean>? = null
 
     init {

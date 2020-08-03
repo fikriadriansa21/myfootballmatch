@@ -1,13 +1,16 @@
 package com.krayz.myfootballmatch.ui.profile
 
 import android.app.Activity
+import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import com.bumptech.glide.Glide
 
 import com.krayz.myfootballmatch.R
+import com.krayz.myfootballmatch.ui.login.google.LoginWithGoogleActivity
 import com.krayz.myfootballmatch.utils.Utils
 import kotlinx.android.synthetic.main.fragment_profile.*
 
@@ -31,6 +34,28 @@ class ProfileFragment : Fragment() {
 
         val textTeamFavorite = Utils.getSharedPrefereces(Utils.TEAM_NAME)
         tv_team_favorite.text = textTeamFavorite
+
+        val imageLeague = Utils.getSharedPrefereces(Utils.LOGO_LEAGUE)
+        context?.let {
+            Glide.with(it)
+                .load(imageLeague)
+                .override(124,124)
+                .into(iv_league_fav)
+        }
+
+        val imageClub = Utils.getSharedPrefereces(Utils.LOGO_TEAM)
+        context?.let {
+            Glide.with(it)
+                .load(imageClub)
+                .override(124,124)
+                .into(iv_team_fav)
+        }
+
+        btn_logout.setOnClickListener {
+            val intent = Intent(this.context, LoginWithGoogleActivity::class.java)
+            startActivity(intent)
+            activity?.finish()
+        }
     }
 
     override fun onCreateView(

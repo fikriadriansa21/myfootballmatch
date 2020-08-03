@@ -74,6 +74,9 @@ class HomeFragment : Fragment(), FixtureAdapter.FixtureListener{
         topScorerViewModel = createViewModelTopScorer()
 
         standingViewModel.standings.observe(this, Observer{
+            if(it != null){
+                standingAdapter.setItems(it[0])
+            }
             standingAdapter.setItems(it[0])
             standingAdapter.notifyDataSetChanged()
         })

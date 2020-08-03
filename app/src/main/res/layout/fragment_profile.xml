@@ -12,7 +12,7 @@
 
 <androidx.constraintlayout.widget.ConstraintLayout
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     tools:context=".ui.profile.ProfileFragment">
 
     <TextView
@@ -47,8 +47,8 @@
 
             <ImageView
                 android:id="@+id/iv_league_fav"
-                android:layout_width="@dimen/dimen64"
-                android:layout_height="@dimen/dimen64"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
                 android:src="@drawable/ic_user" />
 
@@ -84,8 +84,8 @@
 
             <ImageView
                 android:id="@+id/iv_team_fav"
-                android:layout_width="@dimen/dimen64"
-                android:layout_height="@dimen/dimen64"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
                 android:src="@drawable/ic_user" />
 

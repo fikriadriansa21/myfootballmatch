@@ -18,5 +18,5 @@ data class Statistic(
     val goals: Goals,
     @Expose
     @SerializedName("goalsAvg")
-    val goalsAverage: GoalAverage
+    val goalsAvg: GoalAverage
 ) : Parcelable
