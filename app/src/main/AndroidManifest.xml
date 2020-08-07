@@ -20,7 +20,7 @@
 
         </activity>
         <activity android:name="com.krayz.myfootballmatch.ui.success.SuccessRegistrationActivity" />
-        <activity android:name="com.krayz.myfootballmatch.ui.login.google.LoginWithGoogleActivity" />
+        <activity android:name="com.krayz.myfootballmatch.ui.login.LoginWithGoogleActivity" />
         <activity android:name="com.krayz.myfootballmatch.ui.login.LoginActivity" />
         <activity android:name="com.krayz.myfootballmatch.ui.league.PickLeagueRegisterActivity"/>
         <activity android:name="com.krayz.myfootballmatch.ui.register.RegisterActivity" />

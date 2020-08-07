@@ -10,7 +10,6 @@ import android.view.ViewGroup
 import com.bumptech.glide.Glide
 
 import com.krayz.myfootballmatch.R
-import com.krayz.myfootballmatch.ui.login.google.LoginWithGoogleActivity
 import com.krayz.myfootballmatch.ui.main.MainActivity
 import com.krayz.myfootballmatch.utils.Utils
 import kotlinx.android.synthetic.main.fragment_profile.*

@@ -15,6 +15,13 @@
         android:layout_margin="@dimen/dimen16"
         android:layout_marginBottom="@dimen/dimen48">
 
+        <ImageView
+            android:layout_width="132dp"
+            android:layout_height="123dp"
+            android:src="@drawable/bubble_background"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
         <TextView
             android:id="@+id/tv_welcome_to"
             android:layout_width="match_parent"

@@ -40,7 +40,9 @@ class SearchFragment : Fragment(), TeamAdapter.TeamListener {
         viewModel = createViewModel()
 
         viewModel.team.observe(this, Observer{
-            teamAdapter.setItems(it)
+            if (it != null ){
+                teamAdapter.setItems(it)
+            }
             teamAdapter.notifyDataSetChanged()
         })
         et_search_team.addTextChangedListener ( object: TextWatcher {

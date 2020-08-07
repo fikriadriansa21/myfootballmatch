@@ -4,7 +4,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.krayz.myfootballmatch.R
-import com.krayz.myfootballmatch.ui.login.google.LoginWithGoogleActivity
+import com.krayz.myfootballmatch.ui.login.LoginWithGoogleActivity
 import com.krayz.myfootballmatch.ui.register.RegisterActivity
 import kotlinx.android.synthetic.main.activity_main.*
 

@@ -33,4 +33,14 @@
     <string name="top_scorer">Top Scorer</string>
     <string name="unknown_league">Unknown League</string>
     <string name="profile">Profile</string>
+    <string name="btn_continue_title">Continue</string>
+    <string name="password_hint_text">********</string>
+    <string name="password_title">Password</string>
+    <string name="username_hint">ex. @john</string>
+    <string name="username_title">Username</string>
+    <string name="name_hint_text">ex. John Doe</string>
+    <string name="name_title">Name</string>
+    <string name="register_your_account">Register your Account</string>
+    <string name="back_button_text">Back</string>
+    <string name="find_other_team_search">Find other team</string>
 </resources>

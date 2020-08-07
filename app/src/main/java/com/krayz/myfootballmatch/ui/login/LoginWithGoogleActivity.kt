@@ -1,4 +1,4 @@
-package com.krayz.myfootballmatch.ui.login.google
+package com.krayz.myfootballmatch.ui.login
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
