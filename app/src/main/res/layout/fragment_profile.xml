@@ -20,7 +20,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="@font/poppins_bold"
-        android:text="MyTeam"
+        android:text="@string/profile"
         android:layout_marginTop="@dimen/dimen32"
         android:layout_marginLeft="@dimen/dimen24"
         android:padding="@dimen/dimen4"

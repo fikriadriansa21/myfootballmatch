@@ -20,7 +20,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:fontFamily="@font/poppins_medium"
-            android:text="Welcome to"
+            android:text="@string/welcome_to"
             android:layout_marginTop="@dimen/dimen16"
             android:padding="@dimen/dimen4"
             android:textColor="@color/colorBlack"
@@ -33,7 +33,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="@font/poppins_bold"
-            android:text="Football"
+            android:text="@string/football"
             android:layout_marginTop="@dimen/dimen4"
             android:padding="@dimen/dimen4"
             android:textColor="@color/colorPrimary"
@@ -46,7 +46,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="@font/poppins_bold"
-            android:text="Dream"
+            android:text="@string/dream"
             android:layout_marginTop="@dimen/dimen4"
             android:padding="@dimen/dimen4"
             android:textColor="@color/colorPrimaryDark"
@@ -59,7 +59,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="@font/poppins_medium"
-            android:text="Matchweek"
+            android:text="@string/matchweek"
             android:layout_marginTop="@dimen/dimen40"
             android:padding="@dimen/dimen4"
             android:textColor="@color/colorBlack"
@@ -74,7 +74,7 @@
             android:layout_marginTop="@dimen/dimen40"
             android:fontFamily="@font/poppins_bold"
             android:padding="@dimen/dimen4"
-            android:text="Unknown League"
+            android:text="@string/unknown_league"
             android:textColor="@color/colorBlueDark"
             android:textSize="@dimen/font12"
             app:layout_constraintStart_toEndOf="@+id/tv_matchweek"
@@ -101,7 +101,7 @@
             android:layout_marginTop="@dimen/dimen16"
             android:fontFamily="@font/poppins_medium"
             android:padding="@dimen/dimen4"
-            android:text="League Table"
+            android:text="@string/league_table"
             android:textColor="@color/colorBlack"
             android:textSize="@dimen/font12"
             app:layout_constraintStart_toStartOf="parent"
@@ -114,7 +114,7 @@
             android:fontFamily="@font/poppins_bold"
             android:padding="@dimen/dimen4"
             android:layout_marginTop="@dimen/dimen16"
-            android:text="Unknown League"
+            android:text="@string/unknown_league"
             android:textColor="@color/colorBlueDark"
             android:textSize="@dimen/font12"
             app:layout_constraintStart_toEndOf="@+id/tv_league_table"
@@ -123,7 +123,7 @@
         <LinearLayout
             android:id="@+id/header_klasemen"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="@dimen/dimen40"
             android:orientation="horizontal"
             android:background="@color/colorSuccess"
             android:padding="@dimen/dimen8"
@@ -133,52 +133,53 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Pos"
-                android:layout_marginLeft="@dimen/dimen24"
+                android:text="@string/pos"
+                android:layout_marginLeft="@dimen/dimen8"
                 android:textColor="@color/colorBlack"
                 android:fontFamily="@font/poppins_regular"
                 android:textSize="@dimen/font12"
-                android:layout_marginStart="@dimen/dimen24" />
+                android:layout_marginStart="@dimen/dimen8" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Team"
-                android:layout_marginLeft="@dimen/dimen24"
+                android:text="@string/team"
+                android:layout_marginLeft="@dimen/dimen12"
                 android:textColor="@color/colorBlack"
                 android:fontFamily="@font/poppins_regular"
                 android:textSize="@dimen/font12"
-                android:layout_marginStart="@dimen/dimen24" />
+                android:layout_marginStart="@dimen/dimen12" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="P"
-                android:layout_marginLeft="@dimen/dimen142"
+                android:text="@string/p"
+                android:layout_marginLeft="@dimen/dimen64"
                 android:textColor="@color/colorBlack"
                 android:fontFamily="@font/poppins_regular"
                 android:textSize="@dimen/font12"
-                android:layout_marginStart="@dimen/dimen142" />
+                android:layout_marginStart="@dimen/dimen64" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="GD"
-                android:layout_marginLeft="@dimen/dimen24"
+                android:text="@string/gd"
+                android:layout_marginLeft="@dimen/dimen32"
                 android:textColor="@color/colorBlack"
                 android:fontFamily="@font/poppins_regular"
                 android:textSize="@dimen/font12"
-                android:layout_marginStart="@dimen/dimen24" />
+                android:layout_marginStart="@dimen/dimen32" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Pts"
-                android:layout_marginLeft="@dimen/dimen24"
-                android:layout_marginRight="@dimen/dimen24"
+                android:text="@string/pts"
+                android:layout_marginLeft="@dimen/dimen32"
+                android:layout_marginRight="@dimen/dimen32"
                 android:textColor="@color/colorBlack"
                 android:fontFamily="@font/poppins_regular"
-                android:textSize="@dimen/font12"/>
+                android:textSize="@dimen/font12"
+                android:layout_marginStart="@dimen/dimen32" />
         </LinearLayout>
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/rv_league_table"
@@ -200,7 +201,7 @@
             android:layout_marginTop="@dimen/dimen16"
             android:fontFamily="@font/poppins_medium"
             android:padding="@dimen/dimen4"
-            android:text="Top Scorer"
+            android:text="@string/top_scorer"
             android:textColor="@color/colorBlack"
             android:textSize="@dimen/font12"
             app:layout_constraintStart_toStartOf="parent"
@@ -213,7 +214,7 @@
             android:fontFamily="@font/poppins_bold"
             android:padding="@dimen/dimen4"
             android:layout_marginTop="@dimen/dimen16"
-            android:text="Unknown League"
+            android:text="@string/unknown_league"
             android:textColor="@color/colorBlueDark"
             android:textSize="@dimen/font12"
             app:layout_constraintStart_toEndOf="@+id/tv_top_scorer_title"

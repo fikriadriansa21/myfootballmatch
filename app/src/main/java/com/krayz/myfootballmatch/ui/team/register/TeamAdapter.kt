@@ -43,13 +43,13 @@ class TeamAdapter(private var listener: TeamListener) : RecyclerView.Adapter<Tea
         holder.textViewClub.text = arrList?.get(position)?.name
         holder.itemView.setOnClickListener {
             listener.onTeamListener(arrList[position]!!.team_id!!, arrList[position]!!.name,
-                arrList[position]!!.logo
+                arrList[position]!!.logo, arrList[position]!!.stadium
             )
         }
 
     }
 
     interface TeamListener {
-        fun onTeamListener(id: Int, name: String, logo: String)
+        fun onTeamListener(id: Int, name: String, logo: String, stadium: String)
     }
 }

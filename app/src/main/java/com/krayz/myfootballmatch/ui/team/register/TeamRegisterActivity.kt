@@ -50,12 +50,13 @@ class TeamRegisterActivity : AppCompatActivity(), TeamAdapter.TeamListener {
         return ViewModelProviders.of(this, factory)[TeamRegisterViewModel::class.java]
     }
 
-    override fun onTeamListener(id: Int, name: String, logo: String) {
+    override fun onTeamListener(id: Int, name: String, logo: String, stadium: String) {
         val intent = Intent(this, SuccessRegistrationActivity::class.java)
         Utils.makeSharedPreference(this)
         Utils.putSharedPreferences(Utils.TEAM_ID, id)
         Utils.putSharedPreferences(Utils.TEAM_NAME, name)
         Utils.putSharedPreferences(Utils.LOGO_TEAM, logo)
+        Utils.putSharedPreferences(Utils.STADIUM_NAME, stadium)
         startActivity(intent)
     }
 }

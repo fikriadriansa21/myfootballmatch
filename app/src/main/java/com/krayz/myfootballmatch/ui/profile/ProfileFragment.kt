@@ -11,6 +11,7 @@ import com.bumptech.glide.Glide
 
 import com.krayz.myfootballmatch.R
 import com.krayz.myfootballmatch.ui.login.google.LoginWithGoogleActivity
+import com.krayz.myfootballmatch.ui.main.MainActivity
 import com.krayz.myfootballmatch.utils.Utils
 import kotlinx.android.synthetic.main.fragment_profile.*
 
@@ -52,9 +53,12 @@ class ProfileFragment : Fragment() {
         }
 
         btn_logout.setOnClickListener {
-            val intent = Intent(this.context, LoginWithGoogleActivity::class.java)
+            val intent = Intent(this.context, MainActivity::class.java)
             startActivity(intent)
             activity?.finish()
+            Utils.putSharedPreferences(Utils.EMAIL, "")
+            Utils.putSharedPreferences(Utils.USERNAME, "")
+            Utils.putSharedPreferences(Utils.PASSWORD, "")
         }
     }
 

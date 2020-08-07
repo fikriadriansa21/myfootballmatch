@@ -155,7 +155,6 @@
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/dimen72"
                 android:gravity="center_vertical"
-                android:background="@color/colorPrimaryDark"
                 android:orientation="horizontal">
 
                 <ImageView
@@ -167,29 +166,18 @@
                     android:src="@drawable/ic_launcher_background" />
 
                 <TextView
-                    android:id="@+id/tv_club_name"
+                    android:id="@+id/tv_club"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="@dimen/dimen12"
                     android:layout_marginLeft="@dimen/dimen12"
-                    android:fontFamily="@font/poppins_medium"
-                    android:text="Position"
-                    android:textColor="@color/colorBlack"
-                    android:textSize="@dimen/font12" />
-
-                <TextView
-                    android:id="@+id/tv_status_position"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="@dimen/dimen12"
-                    android:layout_marginLeft="@dimen/dimen12"
-                    android:fontFamily="@font/poppins_semibold"
+                    android:fontFamily="@font/poppins_regular"
                     android:text="Club"
                     android:textColor="@color/colorBlack"
                     android:textSize="@dimen/font12" />
 
                 <TextView
-                    android:id="@+id/tv_in_league"
+                    android:id="@+id/tv_stadium"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="@dimen/dimen12"

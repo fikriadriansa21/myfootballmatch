@@ -1,5 +1,6 @@
 package com.krayz.myfootballmatch.ui.team
 
+import android.app.Activity
 import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -12,17 +13,21 @@ import androidx.lifecycle.ViewModelProviders
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.LinearSnapHelper
 import androidx.recyclerview.widget.SnapHelper
+import com.bumptech.glide.Glide
 import com.krayz.myfootballmatch.R
 import com.krayz.myfootballmatch.data.network.NetworkConfig
 import com.krayz.myfootballmatch.data.network.model.fixture.Fixture
 import com.krayz.myfootballmatch.data.network.services.FixtureTeamService
+import com.krayz.myfootballmatch.data.network.services.TeamService
 import com.krayz.myfootballmatch.ui.squad.SquadActivity
 import com.krayz.myfootballmatch.ui.statistic.StatisticActivity
 import com.krayz.myfootballmatch.ui.team.lastmatch.LastMatchAdapter
 import com.krayz.myfootballmatch.ui.team.lastmatch.LastMatchViewModel
 import com.krayz.myfootballmatch.ui.team.lastmatch.LastMatchViewModelFactory
+import com.krayz.myfootballmatch.ui.team.register.TeamAdapter
 import com.krayz.myfootballmatch.utils.Utils
 import kotlinx.android.synthetic.main.activity_pick_league_register.*
+import kotlinx.android.synthetic.main.fragment_profile.*
 import kotlinx.android.synthetic.main.fragment_team.*
 
 
@@ -32,9 +37,11 @@ class TeamFragment : Fragment(), LastMatchAdapter.LastMatchListener{
     lateinit var lastMatchAdapter: LastMatchAdapter
     private lateinit var viewModelLastMatchTeam : LastMatchViewModel
 
+
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         val snapHelper: SnapHelper = LinearSnapHelper()
+        Utils.makeSharedPreference(this.context as Activity)
 
         lastMatchAdapter = LastMatchAdapter(this)
         rv_upcoming_match.layoutManager = LinearLayoutManager(this.context, LinearLayoutManager.HORIZONTAL, false)
@@ -60,6 +67,20 @@ class TeamFragment : Fragment(), LastMatchAdapter.LastMatchListener{
         card_statistic_club.setOnClickListener {
             val intent = Intent(this.context, StatisticActivity::class.java)
             startActivity(intent)
+        }
+
+        val teamName = Utils.getSharedPrefereces(Utils.TEAM_NAME)
+        tv_club.text = teamName
+
+        val teamStadium = Utils.getSharedPrefereces(Utils.STADIUM_NAME)
+        tv_stadium.text = teamStadium
+
+        val imageClub = Utils.getSharedPrefereces(Utils.LOGO_TEAM)
+        context?.let {
+            Glide.with(it)
+                .load(imageClub)
+                .override(124,124)
+                .into(iv_club_logo)
         }
 
     }

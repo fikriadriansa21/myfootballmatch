@@ -20,4 +20,17 @@
     <string name="premier_league">Premier League</string>
     <string name="manchester_united">Manchester United</string>
     <string name="statistic_team">Statistic Team</string>
+    <string name="gd">GD</string>
+    <string name="pts">Pts</string>
+    <string name="team">Team</string>
+    <string name="p">P</string>
+    <string name="pos">Pos</string>
+    <string name="league_table">League Table</string>
+    <string name="matchweek">Matchweek</string>
+    <string name="dream">Dream</string>
+    <string name="welcome_to">Welcome to</string>
+    <string name="football">Football</string>
+    <string name="top_scorer">Top Scorer</string>
+    <string name="unknown_league">Unknown League</string>
+    <string name="profile">Profile</string>
 </resources>

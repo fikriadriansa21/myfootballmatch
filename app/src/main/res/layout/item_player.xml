@@ -18,17 +18,17 @@
 
     <TextView
         android:id="@+id/tv_player_name_squad"
-        android:layout_width="wrap_content"
+        android:layout_width="@dimen/dimen142"
         android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dimen16"
+        android:layout_marginLeft="@dimen/dimen16"
         android:fontFamily="@font/poppins_regular"
         android:text="Marcus Rashford"
         android:textColor="@color/colorBlack"
         android:textSize="@dimen/font14"
-        android:layout_marginLeft="@dimen/dimen16"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toEndOf="@+id/iv_jersey"
-        app:layout_constraintTop_toTopOf="parent"
-        android:layout_marginStart="@dimen/dimen16" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/tv_position_player"
@@ -38,11 +38,10 @@
         android:text="LW"
         android:textColor="@color/colorBlack"
         android:textSize="@dimen/font16"
-        android:layout_marginRight="@dimen/dimen40"
-        android:layout_marginLeft="@dimen/dimen40"
+        android:layout_marginRight="@dimen/dimen16"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginEnd="@dimen/dimen16" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

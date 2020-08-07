@@ -15,5 +15,8 @@ data class Club(
     val name:String,
     @Expose
     @SerializedName("logo")
-    val logo:String
+    val logo:String,
+    @Expose
+    @SerializedName("venue_name")
+    val stadium:String
 ) : Parcelable

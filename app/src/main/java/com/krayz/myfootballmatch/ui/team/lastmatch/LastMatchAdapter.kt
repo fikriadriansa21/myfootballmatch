@@ -15,13 +15,14 @@ class LastMatchAdapter(private var listener: LastMatchListener) : RecyclerView.A
     private var arrList : List<Fixture?> =  ArrayList<Fixture>()
 
     class ViewHolder(view: View): RecyclerView.ViewHolder(view){
-        val imageViewClubHome: ImageView = view.findViewById(R.id.iv_club_logo_fav_team)
-        val imageViewClubAway: ImageView = view.findViewById(R.id.iv_club_logo_opponent)
-        val textViewClubHome: TextView = view.findViewById(R.id.tv_team_nick_name)
-        val textViewClubAway: TextView = view.findViewById(R.id.tv_team_nick_name_opponent)
-        val textViewHomeScore: TextView = view.findViewById(R.id.tv_score_club)
-        val textViewAwayScore: TextView = view.findViewById(R.id.tv_score_opponent)
-
+        val imageViewClubHome: ImageView = view.findViewById(R.id.iv_home_club)
+        val imageViewClubAway: ImageView = view.findViewById(R.id.iv_away_club)
+        val textViewClubHome: TextView = view.findViewById(R.id.tv_home_team)
+        val textViewClubAway: TextView = view.findViewById(R.id.tv_away_team)
+        val textViewScoreHome: TextView = view.findViewById(R.id.tv_score_home_team)
+        val textViewScoreAway: TextView = view.findViewById(R.id.tv_score_away_team)
+//        val textViewDayName: TextView = view.findViewById(R.id.tv_date_name)
+        val textViewDateMatch: TextView = view.findViewById(R.id.tv_date)
     }
 
     fun setItems(items: List<Fixture?>) {
@@ -30,7 +31,7 @@ class LastMatchAdapter(private var listener: LastMatchListener) : RecyclerView.A
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder
-            = ViewHolder(LayoutInflater.from(parent.context).inflate(R.layout.item_matchweek, parent, false))
+            = ViewHolder(LayoutInflater.from(parent.context).inflate(R.layout.item_latest_match_team, parent, false))
 
     override fun getItemCount(): Int {
         return arrList.size
@@ -40,15 +41,15 @@ class LastMatchAdapter(private var listener: LastMatchListener) : RecyclerView.A
         Glide.with(holder.itemView.context)
             .load(arrList[position]!!.homeTeam.logo)
             .into(holder.imageViewClubHome)
-
         Glide.with(holder.itemView.context)
             .load(arrList[position]!!.awayTeam.logo)
             .into(holder.imageViewClubAway)
 
         holder.textViewClubHome.text = arrList[position]!!.homeTeam.team_name
         holder.textViewClubAway.text = arrList[position]!!.awayTeam.team_name
-        holder.textViewHomeScore.text = arrList[position]!!.goalsHomeTeam.toString()
-        holder.textViewAwayScore.text = arrList[position]!!.goalsAwayTeam.toString()
+        holder.textViewScoreHome.text = arrList[position]!!.goalsHomeTeam.toString()
+        holder.textViewScoreAway.text = arrList[position]!!.goalsAwayTeam.toString()
+        holder.textViewDateMatch.text = arrList[position]!!.event_date
         holder.itemView.setOnClickListener {
             listener.onLastMatchListener(arrList[position]!!.fixture_id!!)
         }
